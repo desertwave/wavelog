@@ -727,6 +727,10 @@
 												<input name="user_station_to_qso_tab" class="form-check-input" type="checkbox" role="switch" id="stationToQsoTab" <?php if ($user_station_to_qso_tab ?? false) { echo 'checked'; } ?>>
 												<label class="form-check-label" for="stationToQsoTab" ><?= __("Station Location"); ?></label>
 											</div>
+											<div class="form-check form-switch">
+												<input name="user_state_to_qso_tab" class="form-check-input" type="checkbox" role="switch" id="stateToQsoTab" <?php if ($user_state_to_qso_tab ?? false) { echo 'checked'; } ?>>
+												<label class="form-check-label" for="stateToQsoTab" ><?= __("DXCC/State/County"); ?></label>
+											</div>
 										</div>
 									</div>
 									<button type="button" onclick="clearRefSwitches();" class="btn btn-primary"><i class="fas fa-recycle"></i> <?= __("Reset"); ?></button>

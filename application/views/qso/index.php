@@ -356,6 +356,41 @@ if (typeof window.DX_WATERFALL_FIELD_MAP === 'undefined') {
               </div>
               <?php } ?>
 
+              
+              <?php if ($user_state_to_qso_tab ?? false) { // put dxcc/state on qso tab ?>
+              <div class="mb-3">
+                  <label for="dxcc_id"><?= __("DXCC"); ?></label>
+                  <select class="form-control" id="dxcc_id" name="dxcc_id">
+                      <?php
+                      foreach($dxcc as $d) {
+                          if ($d->adif == '0') {
+                              echo '<option value='.$d->adif.'>'.$d->name.'</option>';
+                          } else {
+                              echo '<option value=' . $d->adif . '>' . $d->prefix . ' - ' . ucwords(strtolower(($d->name)));
+                              if ($d->Enddate != null) {
+                                  echo ' ('.__("Deleted DXCC").')';
+                              }
+                              echo '</option>';
+                          }
+                      }
+                      ?>
+
+                  </select>
+              </div>
+              <div class="mb-3">
+              <label for="stateInput" id="stateInputLabel"></label>
+                <select class="form-select" name="input_state" id="stateDropdown">
+                  <option value=""></option>
+                </select>
+            </div>
+
+            <div class="mb-3" id="location_us_county">
+                <label for="stationCntyInputQso"><?= __("Station County"); ?></label>
+                <input class="form-control" id="stationCntyInputQso" type="text" name="county" value="" />
+            </div>
+
+              <?php } // -- end dxcc/state ?>
+
               <?php if ($user_dok_to_qso_tab ?? false) { ?>
               <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label" for="darc_dok"><?= __("DOK"); ?></label>
@@ -460,6 +495,7 @@ if (typeof window.DX_WATERFALL_FIELD_MAP === 'undefined') {
 
           <!-- General Items -->
           <div class="tab-pane fade" id="general" role="tabpanel" aria-labelledby="general-tab">
+            <?php if (!$user_state_to_qso_tab ?? false) { ?>
               <div class="mb-3">
                   <label for="dxcc_id"><?= __("DXCC"); ?></label>
                   <select class="form-control" id="dxcc_id" name="dxcc_id">
@@ -479,6 +515,7 @@ if (typeof window.DX_WATERFALL_FIELD_MAP === 'undefined') {
 
                   </select>
               </div>
+              <?php } ?>
 			  <div class="row">
 				  <div class="mb-3 col">
 					  <label for="continent"><?= __("Continent"); ?></label>
@@ -569,7 +606,8 @@ if (typeof window.DX_WATERFALL_FIELD_MAP === 'undefined') {
                 </div>
               </div>
             </div>
-
+            
+            <?php if (!$user_state_to_qso_tab ?? false) { ?>
             <div class="mb-3">
               <label for="stateInput" id="stateInputLabel"></label>
                 <select class="form-select" name="input_state" id="stateDropdown">
@@ -581,6 +619,7 @@ if (typeof window.DX_WATERFALL_FIELD_MAP === 'undefined') {
                 <label for="stationCntyInputQso"><?= __("Station County"); ?></label>
                 <input class="form-control" id="stationCntyInputQso" type="text" name="county" value="" />
             </div>
+            <?php } ?>
 
             <?php if (!$user_iota_to_qso_tab ?? false) { ?>
             <div class="mb-3">
