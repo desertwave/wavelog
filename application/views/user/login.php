@@ -86,6 +86,11 @@
                             <?php } ?>
                         </div>
                     </div>
+					<div class="row">
+						<div class="col text-start">
+							<small><a class="" href="<?= base_url(); ?>signup.php">Request an Account</a></small>
+						</div>
+					</div>
                 </div>
                 <?php $this->load->view('layout/messages'); ?>
                 <button class="w-100 btn btn-primary" type="submit"><?= __("Login"); ?> →</button>
