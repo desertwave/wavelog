@@ -90,6 +90,9 @@
 						<div class="col text-start">
 							<small><a class="" href="<?= base_url(); ?>signup.php">Request an Account</a></small>
 						</div>
+						<div class="col text-end">
+							<small><a class="" href="mailto:helpdesk@desertwave.net">Help Desk</a></small>
+						</div>
 					</div>
                 </div>
                 <?php $this->load->view('layout/messages'); ?>
