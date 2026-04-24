@@ -74,23 +74,32 @@ class API extends CI_Controller {
 		} else {
 			// Success!
 
-			$this->api_model->update_key_description($this->input->post('api_key'), $this->input->post('api_desc'));
+			$this->api_model->update_key_description($this->input->post('api_key', true), $this->input->post('api_desc', true));
 
-			$this->session->set_flashdata('notice', sprintf(__("API Key %s description has been updated."), "<b>".$this->input->post('api_key')."</b>"));
+			$this->session->set_flashdata('notice', sprintf(__("API Key %s description has been updated."), "<b>" . htmlspecialchars($this->input->post('api_key', true), ENT_QUOTES, 'UTF-8') . "</b>"));
 
 			redirect('api');
 		}
 
 	}
 
-	function generate($rights) {
+	function generate() {
+		// CSRF mitigation: reject non-POST requests
+		if ($this->input->method() !== 'post') {
+			$this->session->set_flashdata('error', __("Invalid request method"));
+			redirect('api');
+			return;
+		}
+
 		$this->load->model('user_model');
 		if(!$this->user_model->authorize(3)) { $this->session->set_flashdata('error', __("You're not allowed to do that!")); redirect('dashboard'); }
+
+		$rights = $this->input->post('rights', TRUE);
 
 		if ($rights !== "r" && $rights !== "rw") {
 			$this->session->set_flashdata('error', __("Invalid API rights"));
 			redirect('api');
-			exit;
+			return;
 		}
 
 		$this->load->model('api_model');
@@ -109,16 +118,29 @@ class API extends CI_Controller {
 		redirect('api');
 	}
 
-	function delete($key) {
+	function delete() {
+		// CSRF mitigation: reject non-POST requests
+		if ($this->input->method() !== 'post') {
+			$this->session->set_flashdata('error', __("Invalid request method"));
+			redirect('api');
+			return;
+		}
+
 		$this->load->model('user_model');
 		if(!$this->user_model->authorize(3)) { $this->session->set_flashdata('error', __("You're not allowed to do that!")); redirect('dashboard'); }
 
+		$key = $this->input->post('key', TRUE);
+		if (empty($key)) {
+			$this->session->set_flashdata('error', __("Invalid API Key"));
+			redirect('api');
+			return;
+		}
 
 		$this->load->model('api_model');
 
 		$this->api_model->delete_key($key);
 
-		$this->session->set_flashdata('notice', sprintf(__("API Key %s has been deleted"), "<b>".$key."</b>" ));
+		$this->session->set_flashdata('notice', sprintf(__("API Key %s has been deleted"), "<b>" . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . "</b>" ));
 
 		redirect('api');
 	}
@@ -458,6 +480,72 @@ class API extends CI_Controller {
 			$limit = $obj['limit'];
 		}
 
+		// output_format (optional, default: adif)
+		$output_format = 'adif';
+		if (isset($obj['output_format'])) {
+			if (!in_array($obj['output_format'], ['adif', 'json'], true)) {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => 'Invalid output_format. Use "adif" or "json"']);
+				return;
+			}
+			$output_format = $obj['output_format'];
+		}
+
+		$fields = null;
+		if (isset($obj['fields'])) {
+			if ($output_format !== 'json') {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => '"fields" is only valid when output_format is "json"']);
+				return;
+			}
+			if (!is_array($obj['fields']) || empty($obj['fields'])) {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => '"fields" must be a non-empty array']);
+				return;
+			}
+			$requested_fields = array_map('strtoupper', $obj['fields']);
+			$valid_adif_fields = ['ADDRESS','AGE','A_INDEX','ANT_AZ','ANT_EL','ANT_PATH','ARRL_SECT','AWARD_GRANTED','AWARD_SUBMITTED','BAND','BAND_RX','BIOGRAPHY','CALL','CHECK','CLASS','CLUBLOG_QSO_UPLOAD_STATUS','CNTY','COMMENT','CONT','CONTACTED_OP','CONTEST_ID','COUNTRY','CQZ','CREDIT_GRANTED','CREDIT_SUBMITTED','DARC_DOK','DISTANCE','DXCC','EMAIL','EQ_CALL','EQSL_QSL_RCVD','EQSL_QSL_SENT','EQSL_STATUS','EQSL_AG','FISTS','FISTS_CC','FORCE_INIT','GRIDSQUARE','HEADING','IOTA','ITUZ','K_INDEX','LAT','LON','LOTW_QSL_RCVD','LOTW_QSL_SENT','LOTW_STATUS','MAX_BURSTS','MODE','MS_SHOWER','NAME','NOTES','NR_BURSTS','NR_PINGS','OPERATOR','OWNER_CALLSIGN','PFX','PRECEDENCE','PROP_MODE','PUBLIC_KEY','HRDLOG_QSO_UPLOAD_STATUS','QRZCOM_QSO_UPLOAD_STATUS','QSLMSG','QSL_RCVD','QSL_RCVD_VIA','QSL_SENT','QSL_SENT_VIA','QSL_VIA','QSO_COMPLETE','QSO_RANDOM','QTH','REGION','RIG','RST_RCVD','RST_SENT','RX_PWR','SAT_MODE','SAT_NAME','SFI','SILENT_KEY','SKCC','SOTA_REF','WWFF_REF','POTA_REF','SRX','SRX_STRING','STATE','STX','STX_STRING','SUBMODE','SWL','TEN_TEN','TX_PWR','UKSMG','USACA_COUNTIES','VUCC_GRIDS','WEB','CNTY_ALT','MY_CNTY_ALT','MY_DARC_DOK','MORSE_KEY_INFO','MORSE_KEY_TYPE','QSLMSG_RCVD','DCL_QSL_RCVD','DCL_QSL_SENT','EQSL_QSLRDATE','EQSL_QSLSDATE','LOTW_QSLRDATE','LOTW_QSLSDATE','QSLRDATE','QSLSDATE','CLUBLOG_QSO_UPLOAD_DATE','HRDLOG_QSO_UPLOAD_DATE','QRZCOM_QSO_UPLOAD_DATE','DCL_QSLRDATE','DCL_QSLSDATE','FREQ','FREQ_RX','QSO_DATE','TIME_ON','QSO_DATE_OFF','TIME_OFF','STATION_CALLSIGN','MY_CITY','MY_COUNTRY','MY_DXCC','MY_GRIDSQUARE','MY_VUCC_GRIDS','MY_IOTA','MY_SOTA_REF','MY_WWFF_REF','MY_POTA_REF','MY_CQ_ZONE','MY_ITU_ZONE','MY_STATE','MY_CNTY','MY_SIG','MY_SIG_INFO','SIG','SIG_INFO'];
+			$invalid_fields = array_diff($requested_fields, $valid_adif_fields);
+			if (!empty($invalid_fields)) {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => 'Unknown fields: ' . implode(', ', $invalid_fields)]);
+				return;
+			}
+			$fields = $requested_fields;
+		}
+
+		$qsl_filter = null;
+		if (isset($obj['qsl_filter'])) {
+			$allowed_qsl = ['lotw', 'qsl', 'eqsl', 'clublog'];
+			if (!is_array($obj['qsl_filter']) || empty($obj['qsl_filter'])) {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => '"qsl_filter" must be a non-empty array']);
+				return;
+			}
+			$qsl_filter_input = array_map('strtolower', $obj['qsl_filter']);
+			$invalid_qsl = array_diff($qsl_filter_input, $allowed_qsl);
+			if (!empty($invalid_qsl)) {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => 'Invalid qsl_filter values: ' . implode(', ', $invalid_qsl)]);
+				return;
+			}
+			$qsl_filter = $qsl_filter_input;
+		}
+
+		// band (optional)
+		$band = null;
+		if (isset($obj['band'])) {
+			$valid_bands = ['160m','80m','60m','40m','30m','20m','17m','15m','12m','10m','6m','4m','2m','1.25m','70cm','33cm','23cm','13cm','9cm','6cm','3cm','1.25cm','sat'];
+			$band_input = strtolower(trim($obj['band']));
+			if (!in_array($band_input, $valid_bands, true)) {
+				http_response_code(400);
+				echo json_encode(['status' => 'failed', 'reason' => 'Invalid band value']);
+				return;
+			}
+			// Normalize: SAT uppercase (matches COL_PROP_MODE stored value), others lowercase (matches COL_BAND)
+			$band = ($band_input === 'sat') ? 'SAT' : $band_input;
+		}
+
 		//check if goalpost is numeric as an additional layer of SQL injection prevention
 		if(!is_numeric($fetchfromid))
 		{
@@ -503,21 +591,38 @@ class API extends CI_Controller {
 		$remaining_limit = $limit;
 		$offset = 0;
 
-		// Start building ADIF content
-		$adif_content = $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'));
+		$adif_content = ($output_format === 'adif') ? $this->adifhelper->getAdifHeader($this->config->item('app_name'), $this->optionslib->get_option('version'), $this->optionslib->get_option('adif_version')) : '';
+		$qso_rows = [];
+
+			$seen_keys = [];
 
 		do {
 			// Calculate chunk size for this iteration
 			$current_chunk_size = min($chunk_size, $remaining_limit);
 
 			// Fetch chunk
-			$qsos = $this->adif_data->export_past_id_chunked($station_id, $fetchfromid, $current_chunk_size, null, $offset, $current_chunk_size);
+			$qsos = $this->adif_data->export_past_id_chunked($station_id, $fetchfromid, $current_chunk_size, null, $offset, $current_chunk_size, $qsl_filter, $band);
 
 			if ($qsos && $qsos->num_rows() > 0) {
 				// Process chunk
 				foreach ($qsos->result() as $row) {
-					// Build ADIF content directly
-					$adif_content .= $this->adifhelper->getAdifLine($row);
+					if ($output_format === 'json') {
+						$qso_data = $this->_build_qso_array($row, $fields);
+						if ($fields !== null) {
+							$unique_key = '';
+							foreach ($fields as $field) {
+								$unique_key .= (isset($qso_data[$field]) ? $qso_data[$field] : '') . '|';
+							}
+							if (!isset($seen_keys[$unique_key])) {
+								$seen_keys[$unique_key] = true;
+								$qso_rows[] = $qso_data;
+							}
+						} else {
+							$qso_rows[] = $qso_data;
+						}
+					} else {
+						$adif_content .= $this->adifhelper->getAdifLine($row);
+					}
 
 					// Track data for response
 					$all_qso_ids[] = $row->COL_PRIMARY_KEY;
@@ -541,14 +646,90 @@ class API extends CI_Controller {
 			// Continue if we got a full chunk and haven't hit the limit
 		} while ($qsos && $qsos->num_rows() > 0 && $total_fetched < $limit);
 
-		// Return response (same format as original)
-		if($total_fetched <= 0) {
-			http_response_code(200);
-			echo json_encode(['status' => 'successfull', 'message' => 'No new QSOs available.', 'lastfetchedid' => $fetchfromid, 'exported_qsos' => 0, 'adif' => null]);
+		// Return response
+		http_response_code(200);
+		if ($total_fetched <= 0) {
+			echo json_encode(['status' => 'successful', 'message' => 'No new QSOs available.', 'lastfetchedid' => $fetchfromid, 'exported_qsos' => 0, 'adif' => null]);
+		} elseif ($output_format === 'json') {
+			echo json_encode(['status' => 'successful', 'message' => 'Export successful', 'lastfetchedid' => $lastfetchedid, 'exported_records' => count($qso_rows), 'qsos' => $qso_rows]);
 		} else {
-			http_response_code(200);
-			echo json_encode(['status' => 'successfull', 'message' => 'Export successfull', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => $total_fetched, 'adif' => $adif_content]);
+			echo json_encode(['status' => 'successful', 'message' => 'Export successful', 'lastfetchedid' => $lastfetchedid, 'exported_qsos' => $total_fetched, 'adif' => $adif_content]);
 		}
+	}
+
+
+	private function _build_qso_array($qso, $fields = null) {
+		$result = [];
+
+		$normalFields = ['ADDRESS','AGE','A_INDEX','ANT_AZ','ANT_EL','ANT_PATH','ARRL_SECT','AWARD_GRANTED','AWARD_SUBMITTED','BAND','BAND_RX','BIOGRAPHY','CALL','CHECK','CLASS','CLUBLOG_QSO_UPLOAD_STATUS','CNTY','COMMENT','CONT','CONTACTED_OP','CONTEST_ID','COUNTRY','CQZ','CREDIT_GRANTED','CREDIT_SUBMITTED','DARC_DOK','DISTANCE','DXCC','EMAIL','EQ_CALL','EQSL_QSL_RCVD','EQSL_QSL_SENT','EQSL_STATUS','EQSL_AG','FISTS','FISTS_CC','FORCE_INIT','GRIDSQUARE','HEADING','IOTA','ITUZ','K_INDEX','LAT','LON','LOTW_QSL_RCVD','LOTW_QSL_SENT','LOTW_STATUS','MAX_BURSTS','MODE','MS_SHOWER','NAME','NOTES','NR_BURSTS','NR_PINGS','OPERATOR','OWNER_CALLSIGN','PFX','PRECEDENCE','PROP_MODE','PUBLIC_KEY','HRDLOG_QSO_UPLOAD_STATUS','QRZCOM_QSO_UPLOAD_STATUS','QSLMSG','QSL_RCVD','QSL_RCVD_VIA','QSL_SENT','QSL_SENT_VIA','QSL_VIA','QSO_COMPLETE','QSO_RANDOM','QTH','REGION','RIG','RST_RCVD','RST_SENT','RX_PWR','SAT_MODE','SAT_NAME','SFI','SILENT_KEY','SKCC','SOTA_REF','WWFF_REF','POTA_REF','SRX','SRX_STRING','STATE','STX','STX_STRING','SUBMODE','SWL','TEN_TEN','TX_PWR','UKSMG','USACA_COUNTIES','VUCC_GRIDS','WEB','CNTY_ALT','MY_CNTY_ALT','MY_DARC_DOK','MORSE_KEY_INFO','MORSE_KEY_TYPE','QSLMSG_RCVD','DCL_QSL_RCVD','DCL_QSL_SENT'];
+		$dateFields   = ['EQSL_QSLRDATE','EQSL_QSLSDATE','LOTW_QSLRDATE','LOTW_QSLSDATE','QSLRDATE','QSLSDATE','CLUBLOG_QSO_UPLOAD_DATE','HRDLOG_QSO_UPLOAD_DATE','QRZCOM_QSO_UPLOAD_DATE','DCL_QSLRDATE','DCL_QSLSDATE'];
+
+		foreach ($normalFields as $f) {
+			$result[$f] = $qso->{'COL_' . $f};
+		}
+
+		foreach ($dateFields as $f) {
+			$val = $qso->{'COL_' . $f};
+			$result[$f] = $val ? date('Ymd', strtotime($val)) : null;
+		}
+
+		$result['FREQ']    = $qso->COL_FREQ    ? $qso->COL_FREQ    / 1000000 : null;
+		$result['FREQ_RX'] = $qso->COL_FREQ_RX ? $qso->COL_FREQ_RX / 1000000 : null;
+
+		if (isset($qso->COL_TIME_ON) && date('YmdHis', strtotime($qso->COL_TIME_ON)) !== '-00011130000000') {
+			$result['QSO_DATE'] = date('Ymd', strtotime($qso->COL_TIME_ON));
+			$result['TIME_ON']  = date('His', strtotime($qso->COL_TIME_ON));
+		} else {
+			$result['QSO_DATE'] = '19700101';
+			$result['TIME_ON']  = '000000';
+		}
+		if (isset($qso->COL_TIME_OFF) && date('YmdHis', strtotime($qso->COL_TIME_OFF)) !== '-00011130000000') {
+			$result['QSO_DATE_OFF'] = date('Ymd', strtotime($qso->COL_TIME_OFF));
+			$result['TIME_OFF']     = date('His', strtotime($qso->COL_TIME_OFF));
+		} else {
+			$result['QSO_DATE_OFF'] = '19700101';
+			$result['TIME_OFF']     = '000000';
+		}
+
+		$result['STATION_CALLSIGN'] = $qso->station_callsign;
+		$result['MY_CITY']          = $qso->station_city;
+		$result['MY_COUNTRY']       = $qso->station_country;
+		$result['MY_DXCC']          = $qso->station_dxcc;
+		if (strpos($qso->station_gridsquare, ',') !== false) {
+			$result['MY_VUCC_GRIDS'] = $qso->station_gridsquare;
+			$result['MY_GRIDSQUARE'] = null;
+		} else {
+			$result['MY_GRIDSQUARE'] = $qso->station_gridsquare;
+			$result['MY_VUCC_GRIDS'] = null;
+		}
+		$result['MY_IOTA']     = $qso->station_iota;
+		$result['MY_SOTA_REF'] = $qso->station_sota;
+		$result['MY_WWFF_REF'] = $qso->station_wwff;
+		$result['MY_POTA_REF'] = $qso->station_pota;
+		$result['MY_CQ_ZONE']  = $qso->station_cq;
+		$result['MY_ITU_ZONE'] = $qso->station_itu;
+		$result['MY_STATE']    = $qso->state;
+		if ($qso->station_cnty) {
+			switch ($qso->station_dxcc) {
+				case '6': case '110': case '291':
+					$result['MY_CNTY'] = trim($qso->state) . ',' . trim($qso->station_cnty);
+					break;
+				default:
+					$result['MY_CNTY'] = trim($qso->station_cnty);
+			}
+		} else {
+			$result['MY_CNTY'] = null;
+		}
+		$result['MY_SIG']      = $qso->station_sig;
+		$result['MY_SIG_INFO'] = $qso->station_sig_info;
+		$result['SIG']         = $qso->{'COL_SIG'};
+		$result['SIG_INFO']    = $qso->{'COL_SIG_INFO'};
+
+		if ($fields !== null) {
+			$result = array_intersect_key($result, array_flip($fields));
+		}
+
+		return $result;
 	}
 
 
@@ -598,7 +779,7 @@ class API extends CI_Controller {
 					// Get associated station locations for mysql queries
 					$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
 
-					if (!$logbooks_locations_array) {
+					if ($logbooks_locations_array[0] === -1) {
 						// Logbook not found
 						http_response_code(404);
 						echo json_encode(['status' => 'failed', 'reason' => "Empty Logbook"]);
@@ -684,7 +865,7 @@ class API extends CI_Controller {
 					// Get associated station locations for mysql queries
 					$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
 
-					if (!$logbooks_locations_array) {
+					if ($logbooks_locations_array[0] === -1) {
 						// Logbook not found
 						http_response_code(404);
 						echo json_encode(['status' => 'failed', 'reason' => "Empty Logbook"]);
@@ -728,7 +909,7 @@ class API extends CI_Controller {
 
 	}
 
-	// API function to check if a grid is in the logbook already
+	// API function to get all worked grids for a band and confirmation method
 	function logbook_get_worked_grids() {
 		$arr = array();
 		header('Content-type: application/json');
@@ -748,13 +929,13 @@ class API extends CI_Controller {
 		   die();
 		}
 		$api_user_id = $this->api_model->key_userid($obj['key']);
-		if(!isset($obj['logbook_public_slug'])) {
+		if(!isset($obj['logbook_id'])) {
 		   http_response_code(400);
 		   echo json_encode(['status' => 'failed', 'reason' => "missing fields"]);
 			return;
 		}
-		if($obj['logbook_public_slug'] != "") {
-			$logbook_slug = $obj['logbook_public_slug'];
+		if($obj['logbook_id'] != "") {
+			$logbook_id = $obj['logbook_id'];
 			if(isset($obj['band'])) {
 				$band = $obj['band'];
 			} else {
@@ -766,38 +947,23 @@ class API extends CI_Controller {
 				$cnfm = null;
 			}
 			$this->load->model('logbooks_model');
-			if(!$this->logbooks_model->public_slug_belongs_to_user($logbook_slug, $api_user_id)) {
+			if(!$this->logbooks_model->logbook_id_belongs_to_user($logbook_id, $api_user_id)) {
 				http_response_code(403);
-				echo json_encode(['status' => 'failed', 'reason' => "logbook does not belong to this api key"]);
+				echo json_encode(['status' => 'failed', 'reason' => "logbook does not belong to this API key or logbook ID not found"]);
 				die();
 			}
-			if($this->logbooks_model->public_slug_exists($logbook_slug)) {
-				$logbook_id = $this->logbooks_model->public_slug_exists_logbook_id($logbook_slug);
-				if($logbook_id != false)
-				{
-					$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
-					if (!$logbooks_locations_array) {
-						http_response_code(404);
-						echo json_encode(['status' => 'failed', 'reason' => "Empty Logbook"]);
-						die();
-					}
-				} else {
+			if ($this->logbooks_model->exists_logbook_id($logbook_id) != false) {
+				$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
+				if ($logbooks_locations_array[0] === -1) {
 					http_response_code(404);
-					echo json_encode(['status' => 'failed', 'reason' => $logbook_slug." has no associated station locations"]);
+					echo json_encode(['status' => 'failed', 'reason' => "logbook with ID ".$logbook_id." has no associated station locations"]);
 					die();
+				} else {
+					$arr = $this->api_model->get_grids_worked_in_logbook($logbooks_locations_array, $band, $cnfm);
+					http_response_code(201);
+					echo json_encode($arr);
 				}
-				$this->load->model('logbook_model');
-
-				$arr = $this->api_model->get_grids_worked_in_logbook($logbooks_locations_array, $band, $cnfm);
-				http_response_code(201);
-				echo json_encode($arr);
-
-			} else {
-				http_response_code(404);
-				echo json_encode(['status' => 'failed', 'reason' => "logbook not found"]);
-				die();
 			}
-
 		}
 
 	}

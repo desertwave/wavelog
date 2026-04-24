@@ -72,7 +72,7 @@ class Visitor extends CI_Controller {
                     // Get associated station locations for mysql queries
                     $logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
 
-					if (!$logbooks_locations_array) {
+					if ($logbooks_locations_array[0] === -1) {
 						show_404(__("Empty Logbook"));
 					}
 
@@ -167,7 +167,7 @@ class Visitor extends CI_Controller {
             // Get associated station locations for mysql queries
             $logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
 
-			if (!$logbooks_locations_array) {
+			if ($logbooks_locations_array[0] === -1) {
 				show_404(__("Empty Logbook"));
 			}
         } else {
@@ -202,7 +202,7 @@ class Visitor extends CI_Controller {
 				// Get associated station locations for mysql queries
 				$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($logbook_id);
 
-				if (!$logbooks_locations_array) {
+				if ($logbooks_locations_array[0] === -1) {
 					show_404(__("Empty Logbook"));
 				}
 			} else {
@@ -307,7 +307,7 @@ class Visitor extends CI_Controller {
 
 		$query_vucc = $this->gridmap_model->get_band_worked_vucc_squares('SAT', 'All', 'false', 'true', 'false', 'false', 'All', 'All', 'All', null, null, $logbooks_locations_array);
 
-		if ($query && $query_vucc->num_rows() > 0)
+		if ($query_vucc && $query_vucc->num_rows() > 0)
 		{
 			foreach ($query_vucc->result() as $row)
 			{
@@ -334,7 +334,7 @@ class Visitor extends CI_Controller {
 		// Confirmed Squares
 		$query_vucc = $this->gridmap_model->get_band_confirmed_vucc_squares('SAT', 'All', 'false', 'true', 'false', 'false', 'All', 'All', 'All', null, null, $logbooks_locations_array);
 
-		if ($query && $query_vucc->num_rows() > 0)
+		if ($query_vucc && $query_vucc->num_rows() > 0)
 		{
 			foreach ($query_vucc->result() as $row)
 			{
@@ -470,7 +470,7 @@ class Visitor extends CI_Controller {
             // Get associated station locations for mysql queries
             $logbooks_locations_array = $this->stationsetup_model->get_container_relations($logbook_id);
 
-			if (!$logbooks_locations_array) {
+			if ($logbooks_locations_array[0] === -1) {
 				show_404(__("Empty Logbook"));
 			}
         } else {

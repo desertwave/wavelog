@@ -56,12 +56,20 @@ var PlatformDetection = {
 
 function setRst(mode) {
 	if(mode == 'JT65' || mode == 'JT65B' || mode == 'JT6C' || mode == 'JTMS' || mode == 'ISCAT' || mode == 'MSK144' || mode == 'JTMSK' || mode == 'QRA64' || mode == 'FT8' || mode == 'FT4' || mode == 'JS8' || mode == 'JT9' || mode == 'JT9-1' || mode == 'ROS'){
-		$('#rst_sent').val('-5');
-		$('#rst_rcvd').val('-5');
+		$('#rst_sent').val('-05');
+		$('#rst_rcvd').val('-05');
 	} else if (mode == 'FSK441' || mode == 'JT6M') {
 		$('#rst_sent').val('26');
 		$('#rst_rcvd').val('26');
-	} else if (mode == 'CW' || mode == 'RTTY' || mode == 'PSK31' || mode == 'PSK63') {
+	} else if (mode == 'CW') {
+		if ($('#selectPropagation :selected').val() == 'AUR') {
+			$('#rst_sent').val('59A');
+			$('#rst_rcvd').val('59A');
+		} else {
+			$('#rst_sent').val('599');
+			$('#rst_rcvd').val('599');
+		}
+	} else if (mode == 'RTTY' || mode == 'PSK31' || mode == 'PSK63') {
 		$('#rst_sent').val('599');
 		$('#rst_rcvd').val('599');
 	} else if (mode == 'SSTV' || mode == 'ATV') {
@@ -190,9 +198,14 @@ function displayQso(id) {
                     var qsoid = $("#qsoid").text();
                     $(".editButton").html('<a class="btn btn-primary" id="edit_qso" href="javascript:qso_edit('+qsoid+')"><i class="fas fa-edit"></i>'+lang_general_edit_qso+'</a>');
                     var lat = $("#lat").text();
-                    var long = $("#long").text();
+                    var lng = $("#lng").text();
+                    var dxcc = $("#dxcc").text();
                     var callsign = $("#callsign").text();
-                    var mymap = L.map('mapqso').setView([lat,long], 5);
+                    var zoom = 5;
+                    if (dxcc == 0) {
+                        zoom = 1;
+                    }
+                    var mymap = L.map('mapqso').setView([lat,lng], zoom);
 
                     var tiles = L.tileLayer(option_map_tile_server, {
                         maxZoom: 18,
@@ -208,13 +221,15 @@ function displayQso(id) {
                         hideControlContainer: true
                     }).addTo(mymap);
 
-                    var redIcon = L.icon({
-                        iconUrl: icon_dot_url,
-                        iconSize:     [18, 18], // size of the icon
-                    });
+                    if (dxcc != 0) {
+                        var redIcon = L.icon({
+                            iconUrl: icon_dot_url,
+                            iconSize:     [18, 18], // size of the icon
+                        });
 
-                    L.marker([lat,long], {icon: redIcon}).addTo(mymap)
-                        .bindPopup(callsign);
+                        L.marker([lat,lng], {icon: redIcon}).addTo(mymap)
+                            .bindPopup(callsign);
+                    }
 
                 },
             });
@@ -643,8 +658,8 @@ function qso_edit(id) {
 }
 
 function qso_save() {
-    var myform = $("#qsoform")[0];
-    var fd = new FormData(myform);
+    let myform = $("#qsoform")[0];
+    let fd = new FormData(myform);
     $.ajax({
         url: base_url + 'index.php/qso/qso_save_ajax',
         data: fd,
@@ -658,6 +673,10 @@ function qso_save() {
 			$(".qso-dialog").modal('hide');
 			if (reload_after_qso_safe == true) {
 				location.reload();
+			}
+			if (reload_qso_line == true) {
+				let qsoId = document.querySelector('input[name="id"]').value;
+				getQsos(qsoId);
 			}
 		} else {
 			$("#error-messages-qso-edit").html('<div class="alert alert-danger alert-dismissible fade show" role="alert">'+dataofconfirm.detail+'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');

@@ -103,7 +103,7 @@ class adif extends CI_Controller {
 		header('Content-Disposition: attachment; filename="'.$filename.'"');
 
 		// Output ADIF header // No chance to use exportall-view any longer, because of chunking logic
-		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'));
+		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'), $this->optionslib->get_option('adif_version'));
 
 		// Stream QSOs in 5K chunks
 		$offset = 0;
@@ -201,7 +201,7 @@ class adif extends CI_Controller {
 		header('Content-Type: text/plain; charset=utf-8');
 		header('Content-Disposition: attachment; filename="'.$filename.'"');
 
-		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'));
+		echo $this->adifhelper->getAdifHeader($this->config->item('app_name'),$this->optionslib->get_option('version'), $this->optionslib->get_option('adif_version'));
 
 		// Collect QSO IDs for LoTW marking (since we can't access all at once)
 		$qso_ids_for_lotw = [];
@@ -422,7 +422,7 @@ class adif extends CI_Controller {
 						} else {
 							$skipDups=true;		// Box not ticked? Means: Skip Dupes, don't import them
 						}
-						$custom_errors = $this->logbook_model->import_bulk($alladif, $this->input->post('station_profile', TRUE), $skipDups, $this->input->post('markClublog'),$this->input->post('markLotw'), $this->input->post('dxccAdif'), $this->input->post('markQrz'), $this->input->post('markEqsl'), $this->input->post('markHrd'), $this->input->post('markDcl'), true, $this->input->post('operatorName') ?? false, false, $this->input->post('skipStationCheck'));
+						$custom_errors = $this->logbook_model->import_bulk($alladif, $this->input->post('station_profile', TRUE), $skipDups, $this->input->post('markClublog'),$this->input->post('markLotw'), $this->input->post('dxccAdif'), $this->input->post('markQrz'), $this->input->post('markEqsl'), $this->input->post('markHrd'), $this->input->post('markDcl'), true, $this->input->post('operatorName') ?? false, false, $this->input->post('skipStationCheck'), $this->input->post('skipGridCheck'));
 					} catch (Exception $e) {
 						log_message('error', 'Import error: '.$e->getMessage());
 						$data['page_title'] = __("ADIF Import failed!");
@@ -444,6 +444,7 @@ class adif extends CI_Controller {
 
 			log_message("Error","ADIF End");
 			$data['adif_errors'] = $custom_errors['errormessage'];
+			$data['structured_errors'] = $custom_errors['structured_errors'] ?? [];
 			$data['qsocount'] = $custom_errors['qsocount'] ?? 0;
 			$data['skip_dupes'] = $this->input->post('skipDuplicate');
 			$data['imported_contests'] = $contest_qso_infos;

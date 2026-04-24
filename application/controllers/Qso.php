@@ -224,6 +224,14 @@ class QSO extends CI_Controller {
 	 * Returns JSON
 	 */
 	public function saveqso() {
+		// CSRF mitigation: this endpoint is AJAX-only; reject plain form submissions
+		if ($this->input->server('HTTP_X_REQUESTED_WITH') !== 'XMLHttpRequest') {
+			$this->output->set_status_header(403)
+			             ->set_content_type('application/json')
+			             ->set_output(json_encode(['error' => 'Forbidden']));
+			return;
+		}
+
 		$this->load->model('logbook_model');
 
 		$qso_data = [
@@ -232,7 +240,7 @@ class QSO extends CI_Controller {
 			'start_time' => $this->input->post('start_time', TRUE),
 			'end_time' => $this->input->post('end_time', TRUE),
 			'callsign' => $this->input->post('callsign', TRUE),
-			'prop_mode' => $this->input->post('prop_mode', TRUE) ?? NULL,
+			'prop_mode' => $this->input->post('prop_mode', TRUE) ?? '',
 			'email' => $this->input->post('email', TRUE) ?? NULL,
 			'region' => $this->input->post('region', TRUE) ?? NULL,
 			'sat_name' => $this->input->post('sat_name', TRUE) ?? NULL,
@@ -570,7 +578,20 @@ class QSO extends CI_Controller {
 	}
 
 	/* Delete QSO */
-	function delete($id) {
+	function delete() {
+		// CSRF mitigation: reject non-POST requests
+		if ($this->input->method() !== 'post') {
+			$this->session->set_flashdata('error', __("Invalid request method"));
+			redirect('dashboard');
+			return;
+		}
+
+		$id = $this->input->post('id', TRUE);
+		if (empty($id)) {
+			redirect('dashboard');
+			return;
+		}
+
 		$this->load->model('logbook_model');
 
 		if ($this->logbook_model->check_qso_is_accessible($id)) {
@@ -579,11 +600,6 @@ class QSO extends CI_Controller {
 			$data['message_title'] = "Deleted";
 			$data['message_contents'] = "QSO Deleted Successfully";
 			$this->load->view('messages/message', $data);
-		}
-
-		// If deletes from /logbook dropdown redirect
-		if (strpos($_SERVER['HTTP_REFERER'], '/logbook') !== false) {
-			redirect($_SERVER['HTTP_REFERER']);
 		}
 	}
 
