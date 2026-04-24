@@ -87,6 +87,14 @@
                             <?php } ?>
                         </div>
                     </div>
+					<div class="row">
+						<div class="col text-start">
+							<small><a class="" href="<?= base_url(); ?>signup.php">Request an Account</a></small>
+						</div>
+						<div class="col text-end">
+							<small><a class="" href="mailto:helpdesk@desertwave.net">Help Desk</a></small>
+						</div>
+					</div>
                 </div>
                 <button class="w-100 btn btn-primary mb-2" type="submit"><?= __("Login"); ?> →</button>
                 <?php } ?>

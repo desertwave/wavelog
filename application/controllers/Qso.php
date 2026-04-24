@@ -99,6 +99,13 @@ class QSO extends CI_Controller {
 			$data['user_station_to_qso_tab'] = 0;
 		}
 
+		$qkey_opt=$this->user_options_model->get_options('qso_tab',array('option_name'=>'state','option_key'=>'show'))->result();
+		if (count($qkey_opt)>0) {
+			$data['user_state_to_qso_tab'] = $qkey_opt[0]->option_value;
+		} else {
+			$data['user_state_to_qso_tab'] = 0;
+		}
+
 		$qkey_opt = $this->user_options_model->get_options('qso_tab', array('option_name' => 'map', 'option_key' => 'show'))->result();
 		if (count($qkey_opt) > 0) {
 			$data['user_qso_show_map'] = $qkey_opt[0]->option_value;
