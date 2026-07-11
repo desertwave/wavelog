@@ -595,8 +595,8 @@
 
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item" href="javascript:displayVersionDialog();" title="Version Information"><i class="fas fa-star"></i> <?= __("Version Info"); ?></a></li>
-								<li><a class="dropdown-item" target="_blank" href="https://docs.wavelog.org/" title="Help"><i class="fas fa-question"></i> <?= __("Help"); ?></a></li>
-								<li><a class="dropdown-item" target="_blank" href="https://github.com/wavelog/wavelog/discussions" title="Forum"><i class="far fa-comment-dots"></i> <?= __("Forum"); ?></a></li>
+								<li><a class="dropdown-item" target="_blank" href="https://docs.wavelog.org/user-guide/logbook/dashboard/" title="User Guide"><i class="fas fa-book"></i> <?= __("User Guide"); ?></a></li>
+								<li><a class="dropdown-item" target="_blank" href="mailto:helpdesk@desertwave.net?subject=Logger%20Question" title="Help Desk"><i class="fas fa-question"></i> <?= __("Help Desk"); ?></a></li>
 								<li><hr class="dropdown-divider"></li>
 								<?php if ($this->session->userdata('impersonate') == 1) { ?>
 									<li>
