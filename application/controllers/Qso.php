@@ -44,6 +44,27 @@ class QSO extends CI_Controller {
 		$data['radios'] = $this->cat->radios(true);
 		$data['radio_last_updated'] = $this->cat->last_updated()->row();
 		$data['query'] = $this->logbook_model->last_custom($this->session->userdata('qso_page_last_qso_count'));
+
+		$this->load->is_loaded('worker') ?: $this->load->library('worker');
+		$data['worker_enabled'] = $this->worker->is_enabled(); // without this line the worker.js is not loaded!
+		$data['past_contacts_worker'] = null;
+		$user_id = $this->session->userdata('user_id') ?? null;
+		if ($this->worker->is_enabled() && $user_id) {
+			// qso past contacts (last 5) component
+			$topic = 'qso.' . $user_id;
+			$this->worker->register_topic($topic);
+			$data['past_contacts_worker'] = ['topic' => $topic, 'token' => $this->worker->create_token($topic)];
+
+			// radio polling: keyed by radio id so cat.js can look up the selected radio
+			$radio_worker_topics = [];
+			foreach ($data['radios']->result() as $radio) {
+				$topic = 'radio.' . $radio->id;
+				$this->worker->register_topic($topic);
+				$radio_worker_topics[$radio->id] = ['topic' => $topic, 'token' => $this->worker->create_token($topic)];
+			}
+			$data['radio_worker_topics'] = $radio_worker_topics;
+		}
+
 		$data['dxcc'] = $this->logbook_model->fetchDxcc();
 		$data['iota'] = $this->logbook_model->fetchIota();
 		$data['modes'] = $this->usermodes->active();
@@ -239,7 +260,6 @@ class QSO extends CI_Controller {
 			'prop_mode' => $this->input->post('prop_mode', TRUE) ?? '',
 			'email' => $this->input->post('email', TRUE) ?? NULL,
 			'region' => $this->input->post('region', TRUE) ?? NULL,
-			'sat_name' => $this->input->post('sat_name', TRUE) ?? NULL,
 			'exchangetype' => $this->input->post('exchangetype', TRUE) ?? NULL,
 			'exch_rcvd' => $this->input->post('exch_rcvd', TRUE) ?? NULL,
 			'exch_sent' => $this->input->post('exch_sent', TRUE) ?? NULL,

@@ -28,6 +28,19 @@ class Logbook_model extends CI_Model {
 		return array_map(fn($v) => is_string($v) ? mb_convert_encoding($v, 'UTF-8', 'UTF-8') : $v, $data);
 	}
 
+	/**
+	 * Worker-ready: notify about new qsos for a user
+	 */
+	private function notify_qso_change($user_id) {
+		if (!$user_id) {
+			return;
+		}
+		$this->load->is_loaded('worker') ?: $this->load->library('worker');
+		if ($this->worker->is_enabled()) {
+			$this->worker->publish('qso.' . $user_id, ['type' => 'qso_changed']);
+		}
+	}
+
 	/* Add QSO to Logbook */
 	function create_qso($qso_data, $use_custom_date_format = true) {
 		// Get user-preferred date format
@@ -418,6 +431,7 @@ class Logbook_model extends CI_Model {
 		}
 
 		$this->load->is_loaded('AdifHelper') ?: $this->load->library('AdifHelper');
+		$this->notify_qso_change($station['user_id'] ?? $this->session->userdata('user_id'));
 		return [
 			'qso_id' => $qso_id,
 			'adif' => $this->adifhelper->getAdifLine($qso[0])
@@ -1800,6 +1814,7 @@ class Logbook_model extends CI_Model {
 		try {
 			$this->db->update($this->config->item('table_name'), $data);
 			$retvals['success']=true;
+			$this->notify_qso_change($station_profile->user_id);
 
 			// Invalidate DXCluster cache for this callsign
 			$this->dxclustercache->invalidate_for_callsign($data['COL_CALL']);
@@ -4551,6 +4566,9 @@ class Logbook_model extends CI_Model {
 			$this->db->where('qsoid', $id);
 			$this->db->delete("oqrs");
 
+			// qso was accessible so notify qso_changed for the current user_id (can also be a clubstation)
+			$this->notify_qso_change($this->session->userdata('user_id'));
+
 			// Invalidate DXCluster cache for this callsign
 			$this->dxclustercache->invalidate_for_callsign($callsign);
 		} else {
@@ -4899,6 +4917,7 @@ class Logbook_model extends CI_Model {
 		$custom_errors['qsocount'] = count($a_qsos);
 		if ($custom_errors['qsocount'] > 0) {
 			$this->db->insert_batch($this->config->item('table_name'), $a_qsos);
+			$this->notify_qso_change($station_profile->user_id);
 		}
 		foreach ($amsat_qsos as $amsat_qso) {
 			$this->upload_amsat_status($data);
@@ -5555,8 +5574,6 @@ class Logbook_model extends CI_Model {
 				'COL_FREQ_RX' => (!empty($record['freq_rx'])) ? $freqRX : null,
 				'COL_GRIDSQUARE' => $input_gridsquare,
 				'COL_HEADING' => (!empty($record['heading'])) ? $record['heading'] : null,
-				'COL_HRDLOG_QSO_UPLOAD_DATE' => (!empty($record['hrdlog_qso_upload_date'])) ? $record['hrdlog_qso_upload_date'] : null,
-				'COL_HRDLOG_QSO_UPLOAD_STATUS' => (!empty($record['hrdlog_qso_upload_status'])) ? $record['hrdlog_qso_upload_status'] : '',
 				'COL_IOTA' => (!empty($record['iota'])) ? $record['iota'] : '',
 				'COL_ITUZ' => (!empty($record['ituz'])) ? $record['ituz'] : null,
 				'COL_K_INDEX' => (isset($record['k_index']) && is_numeric($record['k_index'])) ? $record['k_index'] : null,
@@ -6306,30 +6323,7 @@ class Logbook_model extends CI_Model {
 					$xbearing = $this->qra->get_bearing($this->session->userdata('user_locator'),$row->COL_GRIDSQUARE);
 				}
 			} elseif ($row->COL_VUCC_GRIDS != null) {
-				$coords = array();
-				$grids = explode(",", $row->COL_VUCC_GRIDS);
-				if (count($grids) == 2) {
-					$grid1 = $this->qra->qra2latlong(trim($grids[0]));
-					$grid2 = $this->qra->qra2latlong(trim($grids[1]));
-
-					$coords[] = array('lat' => $grid1[0], 'lng' => $grid1[1]);
-					$coords[] = array('lat' => $grid2[0], 'lng' => $grid2[1]);
-
-					$stn_loc = $this->qra->get_midpoint($coords);
-				}
-				if (count($grids) == 4) {
-					$grid1 = $this->qra->qra2latlong(trim($grids[0]));
-					$grid2 = $this->qra->qra2latlong(trim($grids[1]));
-					$grid3 = $this->qra->qra2latlong(trim($grids[2]));
-					$grid4 = $this->qra->qra2latlong(trim($grids[3]));
-
-					$coords[] = array('lat' => $grid1[0], 'lng' => $grid1[1]);
-					$coords[] = array('lat' => $grid2[0], 'lng' => $grid2[1]);
-					$coords[] = array('lat' => $grid3[0], 'lng' => $grid3[1]);
-					$coords[] = array('lat' => $grid4[0], 'lng' => $grid4[1]);
-
-					$stn_loc = $this->qra->get_midpoint($coords);
-				}
+				$stn_loc = $this->qra->qra2latlong($row->COL_VUCC_GRIDS);
 				if (($this->session->userdata('user_locator') ?? '') != '') {
 					$xbearing = $this->qra->get_bearing($this->session->userdata('user_locator'),$row->COL_VUCC_GRIDS);
 				}
