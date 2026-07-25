@@ -67,6 +67,10 @@ class Logbook_model extends CI_Model {
 		$end_time   = $qso_data['end_time'];   // e.g., "00:05:00" (optional)
 
 		$callsign = trim(str_replace('Ø', '0', $qso_data['callsign']));
+
+		if (!$this->is_valid_callsign($callsign)) {
+			return __("Invalid callsign");
+		}
 		// Parse datetime using createFromFormat
 		$datetime_obj = DateTime::createFromFormat("$date_format $time_format", "$start_date $start_time");
 
@@ -848,37 +852,6 @@ class Logbook_model extends CI_Model {
 		return $this->db->query($sql, $binding);
 	}
 
-	public function activator_details($call, $band, $leogeo) {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		$this->db->join('station_profile', 'station_profile.station_id = ' . $this->config->item('table_name') . '.station_id');
-		$this->db->join('dxcc_entities', 'dxcc_entities.adif = ' . $this->config->item('table_name') . '.COL_DXCC', 'left outer');
-		$this->db->join('lotw_users', 'lotw_users.callsign = ' . $this->config->item('table_name') . '.col_call', 'left outer');
-		$this->db->where('COL_CALL', $call);
-		if ($band != 'All') {
-			if ($band == 'SAT') {
-				$this->db->where('col_prop_mode', $band);
-				switch ($leogeo) {
-					case 'leo':
-						$this->db->where('COL_SAT_NAME !=', 'QO-100');
-						break;
-					case 'geo':
-						$this->db->where('COL_SAT_NAME', 'QO-100');
-						break;
-				}
-			} else {
-				$this->db->where("(COL_PROP_MODE != 'SAT' OR COL_PROP_MODE IS NULL)");
-				$this->db->where('col_band', $band);
-			}
-		}
-
-		$this->db->where_in('station_profile.station_id', $logbooks_locations_array);
-		$this->db->order_by('COL_TIME_ON', 'DESC');
-
-		return $this->db->get($this->config->item('table_name'));
-	}
-
 	public function get_callsigns($callsign) {
 		$this->load->model('logbooks_model');
 		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
@@ -1045,24 +1018,6 @@ class Logbook_model extends CI_Model {
 			return false;
 		}
 	}
-
-	/*
-   * Function checks if a Clublog Credebtials exists in the table with the given station id
-  */
-	function exists_clublog_credentials($station_id) {
-		$sql = 'select auth.user_clublog_name ucn, auth.user_clublog_password ucp, prof.clublogrealtime from ' . $this->config->item('auth_table') . ' auth inner join station_profile prof on (auth.user_id=prof.user_id) where prof.station_id = ? and prof.clublogrealtime=1';
-
-		$query = $this->db->query($sql, $station_id);
-
-		$result = $query->row();
-
-		if ($result) {
-			return $result;
-		} else {
-			return false;
-		}
-	}
-
 
 	/*
    * Function checks if a QRZ API Key exists in the table with the given station id
@@ -1437,6 +1392,11 @@ class Logbook_model extends CI_Model {
 
 		if (trim($this->input->post('callsign')) == '') {
 			$retvals['detail']=__('No Call given');
+			return $retvals;
+		}
+
+		if (!$this->is_valid_callsign($this->input->post('callsign'))) {
+			$retvals['detail']=__('Invalid callsign');
 			return $retvals;
 		}
 
@@ -1826,16 +1786,16 @@ class Logbook_model extends CI_Model {
 		}
 	}
 
-	/* QSL received */
-	function qsl_rcvd() {
-
-		$data = array(
-			'COL_QSLRDATE' => date('Y-m-d H:i:s'),
-			'COL_QSL_RCVD' => "Y"
-		);
-
-		$this->db->where('COL_PRIMARY_KEY', $this->input->post('id'));
-		$this->db->update($this->config->item('table_name'), $data);
+	/*
+	 * Whether $call is a syntactically valid amateur radio callsign.
+	 * This is rather a soft check to catch malicious input, not a full validation of the callsign. 
+	 * (e.g. dashes are allowed, even though they are not valid, but they are used by the people and
+	 * we simply don't want too many support tickets).
+	 * 
+	 * Make sure matches assets/js/sections/callsign_validation.js
+	 */
+	function is_valid_callsign($call) {
+		return (bool) preg_match('/^[A-Z0-9\/\-]{1,30}$/', strtoupper(trim((string) $call)));
 	}
 
 	/* Show custom number of qsos */
@@ -1918,7 +1878,7 @@ class Logbook_model extends CI_Model {
 			$times_worked = $data->TWKED;
 		}
 
-		return $times_worked;
+		return $times_worked ?? 0;
 	}
 
 
@@ -2561,33 +2521,6 @@ class Logbook_model extends CI_Model {
 		$query = $this->db->get($this->config->item('table_name'));
 
 		return $query->num_rows();
-	}
-
-	function last_worked_callsign_in_logbook($callsign, $StationLocationsArray = null, $band = null) {
-
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		$this->db->select('COL_TIME_ON as LAST_QSO,COL_MODE as LAST_MODE');
-		$this->db->where_in('station_id', $logbooks_locations_array);
-		$this->db->where('COL_CALL', $callsign);
-
-		$band = ($band == 'All') ? null : $band;
-		if ($band != null && $band != 'SAT') {
-			$this->db->where('COL_BAND', $band);
-		} else if ($band == 'SAT') {
-			// Where col_sat_name is not empty
-			$this->db->where('COL_SAT_NAME !=', '');
-		}
-		$this->db->order_by('COL_TIME_ON desc');
-		$this->db->limit('1');
-		$query = $this->db->get($this->config->item('table_name'));
-
-		return $query->result();
 	}
 
 	function check_if_callsign_worked_in_logbook($callsign, $StationLocationsArray = null, $band = null, $mode = null) {
@@ -3495,206 +3428,6 @@ class Logbook_model extends CI_Model {
 		}
 	}
 
-	/* Return number of QSOs had today */
-	function todays_qsos($StationLocationsArray = null, $api_key = null) {
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			if ($api_key != null) {
-				$this->load->model('api_model');
-				if (strpos($this->api_model->access($api_key), 'r') !== false) {
-					$this->api_model->update_last_used($api_key);
-					$user_id = $this->api_model->key_userid($api_key);
-					$active_station_logbook = $this->logbooks_model->find_active_station_logbook_from_userid($user_id);
-					$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($active_station_logbook);
-				} else {
-					$logbooks_locations_array = [];
-				}
-			} else {
-				$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-			}
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		if ($logbooks_locations_array) {
-			$morning = date('Y-m-d 00:00:00');
-			$night = date('Y-m-d 23:59:59');
-
-			$this->db->select('COUNT( * ) as count', FALSE);
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_TIME_ON >=', $morning);
-			$this->db->where('COL_TIME_ON <=', $night);
-			$query = $this->db->get($this->config->item('table_name'));
-
-			if ($query->num_rows() > 0) {
-				foreach ($query->result() as $row) {
-					return $row->count;
-				}
-			}
-		} else {
-			return null;
-		}
-	}
-
-	/* Return QSOs over a period of days */
-	function map_week_qsos($start, $end) {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		$this->db->where("COL_TIME_ON >= ", $start);
-		$this->db->where("COL_TIME_ON <= ", $end);
-		$this->db->where_in('station_id', $logbooks_locations_array);
-		$this->db->order_by("COL_TIME_ON", "ASC");
-		$query = $this->db->get($this->config->item('table_name'));
-
-		return $query;
-	}
-
-	/* used to return custom qsos requires start, end date plus a band */
-	function map_custom_qsos($start, $end, $band, $mode, $propagation) {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if ($logbooks_locations_array[0] === -1) {
-			return null;
-		}
-
-		$this->db->join('dxcc_entities', $this->config->item('table_name') . '.col_dxcc = dxcc_entities.adif', 'left');
-		$this->db->where("COL_TIME_ON >=", $start . " 00:00:00");
-		$this->db->where("COL_TIME_ON <=", $end . " 23:59:59'");
-		$this->db->where_in("station_id", $logbooks_locations_array);
-
-		if ($band != "All" && $band != "SAT") {
-			$this->db->where("COL_BAND", $band);
-		}
-
-		if ($band == "SAT") {
-			$this->db->where("COL_PROP_MODE", "SAT");
-		}
-
-		if ($mode != 'All') {
-			$this->db->group_start();
-			$this->db->where("COL_MODE", $mode);
-			$this->db->or_where("COL_SUBMODE", $mode);
-			$this->db->group_end();
-		}
-
-		if ($propagation != 'All') {
-			$this->db->where("COL_PROP_MODE", $propagation);
-		}
-
-		$this->db->order_by("COL_TIME_ON", "ASC");
-		$query = $this->db->get($this->config->item('table_name'));
-
-		return $query;
-	}
-
-	/* Returns QSOs for the date sent eg 2011-09-30 */
-	function map_day($date) {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		$start = $date . " 00:00:00";
-		$end = $date . " 23:59:59";
-
-		$this->db->where("COL_TIME_ON >= ", $start);
-		$this->db->where("COL_TIME_ON <= ", $end);
-		$this->db->where_in('station_id', $logbooks_locations_array);
-		$this->db->order_by("COL_TIME_ON", "ASC");
-		$query = $this->db->get($this->config->item('table_name'));
-
-		return $query;
-	}
-
-	// Return QSOs made during the current month
-	function month_qsos($StationLocationsArray = null, $api_key = null) {
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			if ($api_key != null) {
-				$this->load->model('api_model');
-				if (strpos($this->api_model->access($api_key), 'r') !== false) {
-					$this->api_model->update_last_used($api_key);
-					$user_id = $this->api_model->key_userid($api_key);
-					$active_station_logbook = $this->logbooks_model->find_active_station_logbook_from_userid($user_id);
-					$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($active_station_logbook);
-				} else {
-					$logbooks_locations_array = [];
-				}
-			} else {
-				$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-			}
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		if ($logbooks_locations_array) {
-
-			$morning = date('Y-m-01 00:00:00');
-
-			$date = new DateTime('now');
-			$date->modify('last day of this month');
-
-			$night = $date->format('Y-m-d') . " 23:59:59";
-
-			$this->db->select('COUNT( * ) as count', FALSE);
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_TIME_ON >=', $morning);
-			$this->db->where('COL_TIME_ON <=', $night);
-			$query = $this->db->get($this->config->item('table_name'));
-
-			if ($query->num_rows() > 0) {
-				foreach ($query->result() as $row) {
-					return $row->count;
-				}
-			}
-		} else {
-			return null;
-		}
-	}
-
-	/* Return QSOs made during the current Year */
-	function year_qsos($StationLocationsArray = null, $api_key = null) {
-
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			if ($api_key != null) {
-				$this->load->model('api_model');
-				if (strpos($this->api_model->access($api_key), 'r') !== false) {
-					$this->api_model->update_last_used($api_key);
-					$user_id = $this->api_model->key_userid($api_key);
-					$active_station_logbook = $this->logbooks_model->find_active_station_logbook_from_userid($user_id);
-					$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($active_station_logbook);
-				} else {
-					$logbooks_locations_array = [];
-				}
-			} else {
-				$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-			}
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		if ($logbooks_locations_array) {
-
-			$morning = date('Y-01-01 00:00:00');
-			$night = date('Y-12-31 23:59:59');
-
-			$this->db->select('COUNT( * ) as count', FALSE);
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_TIME_ON >=', $morning);
-			$this->db->where('COL_TIME_ON <=', $night);
-			$query = $this->db->get($this->config->item('table_name'));
-
-			if ($query->num_rows() > 0) {
-				foreach ($query->result() as $row) {
-					return $row->count;
-				}
-			}
-		} else {
-			return null;
-		}
-	}
-
 	/*
 	 * Combined function to get all QSO counts (today, month, year, total) in a single query
 	 * This reduces 4 separate queries to 1, improving performance
@@ -4006,368 +3739,6 @@ class Logbook_model extends CI_Model {
 		return $query;
 	}
 
-	function get_QSLStats($StationLocationsArray = null) {
-
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		$location_list = "'" . implode("','", $logbooks_locations_array) . "'";
-
-		if (!empty($logbooks_locations_array)) {
-			$todayStart = date('Y-m-d 00:00:00');
-			$tomorrowStart = date('Y-m-d 00:00:00', strtotime('+1 day'));
-			$todayStartSql = $this->db->escape($todayStart);
-			$tomorrowStartSql = $this->db->escape($tomorrowStart);
-			$sql = 'SELECT
-				SUM(CASE WHEN COL_QSL_SENT="Y" THEN 1 ELSE 0 END) as QSL_Sent,
-				SUM(CASE WHEN COL_QSL_RCVD="Y" THEN 1 ELSE 0 END) as QSL_Received,
-				SUM(CASE WHEN COL_QSL_SENT IN("Q", "R") THEN 1 ELSE 0 END) as QSL_Requested,
-				SUM(CASE WHEN COL_EQSL_QSL_SENT="Y" THEN 1 ELSE 0 END) as eQSL_Sent,
-				SUM(CASE WHEN COL_EQSL_QSL_RCVD="Y" THEN 1 ELSE 0 END) as eQSL_Received,
-				SUM(CASE WHEN COL_LOTW_QSL_SENT="Y" THEN 1 ELSE 0 END) as LoTW_Sent,
-				SUM(CASE WHEN COL_LOTW_QSL_RCVD="Y" THEN 1 ELSE 0 END) as LoTW_Received,
-				SUM(CASE WHEN COL_QRZCOM_QSO_UPLOAD_STATUS="Y" THEN 1 ELSE 0 END) as QRZ_Sent,
-				SUM(CASE WHEN COL_QRZCOM_QSO_DOWNLOAD_STATUS="Y" THEN 1 ELSE 0 END) as QRZ_Received,
-				SUM(CASE WHEN COL_QSL_SENT="Y" AND COL_QSLSDATE >= ' . $todayStartSql . ' AND COL_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QSL_Sent_today,
-				SUM(CASE WHEN COL_QSL_RCVD="Y" AND COL_QSLRDATE >= ' . $todayStartSql . ' AND COL_QSLRDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QSL_Received_today,
-				SUM(CASE WHEN COL_QSL_SENT IN("Q", "R") AND COL_QSLSDATE >= ' . $todayStartSql . ' AND COL_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QSL_Requested_today,
-				SUM(CASE WHEN COL_EQSL_QSL_SENT="Y" AND COL_EQSL_QSLSDATE >= ' . $todayStartSql . ' AND COL_EQSL_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as eQSL_Sent_today,
-				SUM(CASE WHEN COL_EQSL_QSL_RCVD="Y" AND COL_EQSL_QSLRDATE >= ' . $todayStartSql . ' AND COL_EQSL_QSLRDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as eQSL_Received_today,
-				SUM(CASE WHEN COL_LOTW_QSL_SENT="Y" AND COL_LOTW_QSLSDATE >= ' . $todayStartSql . ' AND COL_LOTW_QSLSDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as LoTW_Sent_today,
-				SUM(CASE WHEN COL_LOTW_QSL_RCVD="Y" AND COL_LOTW_QSLRDATE >= ' . $todayStartSql . ' AND COL_LOTW_QSLRDATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as LoTW_Received_today,
-				SUM(CASE WHEN COL_QRZCOM_QSO_UPLOAD_STATUS="Y" AND COL_QRZCOM_QSO_UPLOAD_DATE >= ' . $todayStartSql . ' AND COL_QRZCOM_QSO_UPLOAD_DATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QRZ_Sent_today,
-				SUM(CASE WHEN COL_QRZCOM_QSO_DOWNLOAD_STATUS="Y" AND COL_QRZCOM_QSO_DOWNLOAD_DATE >= ' . $todayStartSql . ' AND COL_QRZCOM_QSO_DOWNLOAD_DATE < ' . $tomorrowStartSql . ' THEN 1 ELSE 0 END) as QRZ_Received_today
-				FROM ' . $this->config->item('table_name') . '
-				WHERE station_id IN (' . $location_list . ')';
-
-			if ($query = $this->db->query($sql)) {
-				$this->db->last_query();
-				foreach ($query->result() as $row) {
-					$QSLBreakdown['QSL_Sent'] = $row->QSL_Sent;
-					$QSLBreakdown['QSL_Received'] =  $row->QSL_Received;
-					$QSLBreakdown['QSL_Requested'] =  $row->QSL_Requested;
-					$QSLBreakdown['eQSL_Sent'] =  $row->eQSL_Sent;
-					$QSLBreakdown['eQSL_Received'] =  $row->eQSL_Received;
-					$QSLBreakdown['LoTW_Sent'] =  $row->LoTW_Sent;
-					$QSLBreakdown['LoTW_Received'] =  $row->LoTW_Received;
-					$QSLBreakdown['QRZ_Sent'] =  $row->QRZ_Sent;
-					$QSLBreakdown['QRZ_Received'] =  $row->QRZ_Received;
-					$QSLBreakdown['QSL_Sent_today'] = $row->QSL_Sent_today;
-					$QSLBreakdown['QSL_Received_today'] =  $row->QSL_Received_today;
-					$QSLBreakdown['QSL_Requested_today'] =  $row->QSL_Requested_today;
-					$QSLBreakdown['eQSL_Sent_today'] =  $row->eQSL_Sent_today;
-					$QSLBreakdown['eQSL_Received_today'] =  $row->eQSL_Received_today;
-					$QSLBreakdown['LoTW_Sent_today'] =  $row->LoTW_Sent_today;
-					$QSLBreakdown['LoTW_Received_today'] =  $row->LoTW_Received_today;
-					$QSLBreakdown['QRZ_Sent_today'] =  $row->QRZ_Sent_today;
-					$QSLBreakdown['QRZ_Received_today'] =  $row->QRZ_Received_today;
-				}
-
-				return $QSLBreakdown;
-			} else {
-				$QSLBreakdown['QSL_Sent'] = 0;
-				$QSLBreakdown['QSL_Received'] =  0;
-				$QSLBreakdown['QSL_Requested'] =  0;
-				$QSLBreakdown['eQSL_Sent'] =  0;
-				$QSLBreakdown['eQSL_Received'] =  0;
-				$QSLBreakdown['LoTW_Sent'] =  0;
-				$QSLBreakdown['LoTW_Received'] = 0;
-				$QSLBreakdown['QRZ_Sent'] = 0;
-				$QSLBreakdown['QRZ_Received'] = 0;
-				$QSLBreakdown['QSL_Sent_today'] = 0;
-				$QSLBreakdown['QSL_Received_today'] =  0;
-				$QSLBreakdown['QSL_Requested_today'] =  0;
-				$QSLBreakdown['eQSL_Sent_today'] =  0;
-				$QSLBreakdown['eQSL_Received_today'] =  0;
-				$QSLBreakdown['LoTW_Sent_today'] =  0;
-				$QSLBreakdown['LoTW_Received_today'] = 0;
-				$QSLBreakdown['QRZ_Sent_today'] = 0;
-				$QSLBreakdown['QRZ_Received_today'] = 0;
-
-				return $QSLBreakdown;
-			}
-		} else {
-			$QSLBreakdown['QSL_Sent'] = 0;
-			$QSLBreakdown['QSL_Received'] =  0;
-			$QSLBreakdown['QSL_Requested'] =  0;
-			$QSLBreakdown['eQSL_Sent'] =  0;
-			$QSLBreakdown['eQSL_Received'] =  0;
-			$QSLBreakdown['LoTW_Sent'] =  0;
-			$QSLBreakdown['LoTW_Received'] = 0;
-			$QSLBreakdown['QRZ_Sent'] = 0;
-			$QSLBreakdown['QRZ_Received'] = 0;
-			$QSLBreakdown['QSL_Sent_today'] = 0;
-			$QSLBreakdown['QSL_Received_today'] =  0;
-			$QSLBreakdown['QSL_Requested_today'] =  0;
-			$QSLBreakdown['eQSL_Sent_today'] =  0;
-			$QSLBreakdown['eQSL_Received_today'] =  0;
-			$QSLBreakdown['LoTW_Sent_today'] =  0;
-			$QSLBreakdown['LoTW_Received_today'] = 0;
-			$QSLBreakdown['QRZ_Sent_today'] = 0;
-			$QSLBreakdown['QRZ_Received_today'] = 0;
-
-			return $QSLBreakdown;
-		}
-	}
-
-	/* Return total number of QSL Cards sent */
-	function total_qsl_sent() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('count(COL_QSL_SENT) AS count');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_QSL_SENT =', 'Y');
-
-			$query = $this->db->get($this->config->item('table_name'));
-
-			$row = $query->row();
-
-			if ($row == null) {
-				return 0;
-			} else {
-				return $row->count;
-			}
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of QSL Cards requested for printing - that means "requested" or "queued" */
-	function total_qsl_requested() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('count(COL_QSL_SENT) AS count');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where_in('COL_QSL_SENT', array('Q', 'R'));
-
-			$query = $this->db->get($this->config->item('table_name'));
-
-			$row = $query->row();
-
-			if ($row == null) {
-				return 0;
-			} else {
-				return $row->count;
-			}
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of QSL Cards received */
-	function total_qsl_rcvd() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('count(COL_QSL_RCVD) AS count');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_QSL_RCVD =', 'Y');
-
-			$query = $this->db->get($this->config->item('table_name'));
-
-			$row = $query->row();
-
-			if ($row == null) {
-				return 0;
-			} else {
-				return $row->count;
-			}
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of eQSL Cards sent */
-	function total_eqsl_sent() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('count(COL_EQSL_QSL_SENT) AS count');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_EQSL_QSL_SENT =', 'Y');
-
-			$query = $this->db->get($this->config->item('table_name'));
-
-			$row = $query->row();
-
-			if ($row == null) {
-				return 0;
-			} else {
-				return $row->count;
-			}
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of eQSL Cards received */
-	function total_eqsl_rcvd() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('count(COL_EQSL_QSL_RCVD) AS count');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_EQSL_QSL_RCVD =', 'Y');
-
-			$query = $this->db->get($this->config->item('table_name'));
-
-			$row = $query->row();
-
-			if ($row == null) {
-				return 0;
-			} else {
-				return $row->count;
-			}
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of LoTW sent */
-	function total_lotw_sent() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('count(COL_LOTW_QSL_SENT) AS count');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_LOTW_QSL_SENT =', 'Y');
-
-			$query = $this->db->get($this->config->item('table_name'));
-
-			$row = $query->row();
-
-			if ($row == null) {
-				return 0;
-			} else {
-				return $row->count;
-			}
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of LoTW received */
-	function total_lotw_rcvd() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('count(COL_LOTW_QSL_RCVD) AS count');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_LOTW_QSL_RCVD =', 'Y');
-
-			$query = $this->db->get($this->config->item('table_name'));
-
-			$row = $query->row();
-
-			if ($row == null) {
-				return 0;
-			} else {
-				return $row->count;
-			}
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of countries worked */
-	function total_countries() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('DISTINCT (COL_COUNTRY)');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_COUNTRY !=', 'Invalid');
-			$this->db->where('COL_DXCC >', '0');
-			$query = $this->db->get($this->config->item('table_name'));
-
-			return $query->num_rows();
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of countries worked */
-	function total_countries_current($StationLocationsArray = null) {
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('DISTINCT (' . $this->config->item('table_name') . '.COL_COUNTRY)');
-			$this->db->join('dxcc_entities', 'dxcc_entities.adif = ' . $this->config->item('table_name') . '.col_dxcc');
-			$this->db->where_in($this->config->item('table_name') . '.station_id', $logbooks_locations_array);
-			$this->db->where($this->config->item('table_name') . '.COL_COUNTRY !=', 'Invalid');
-			$this->db->where('dxcc_entities.end is null');
-			$this->db->where('dxcc_entities.adif != 0');
-			$query = $this->db->get($this->config->item('table_name'));
-
-			return $query->num_rows();
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of countries confirmed with along with qsl types confirmed */
-	function total_countries_confirmed($StationLocationsArray = null) {
-
-		if ($StationLocationsArray == null) {
-			$this->load->model('logbooks_model');
-			$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-		} else {
-			$logbooks_locations_array = $StationLocationsArray;
-		}
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('COUNT(DISTINCT COL_DXCC) as Countries_Worked,
-            COUNT(DISTINCT IF(COL_QSL_RCVD = "Y", COL_DXCC, NULL)) as Countries_Worked_QSL,
-            COUNT(DISTINCT IF(COL_EQSL_QSL_RCVD = "Y", COL_DXCC, NULL)) as Countries_Worked_EQSL,
-            COUNT(DISTINCT IF(COL_LOTW_QSL_RCVD = "Y", COL_DXCC, NULL)) as Countries_Worked_LOTW');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_COUNTRY !=', 'Invalid');
-			$this->db->where('COL_DXCC >', '0');
-
-			if ($query = $this->db->get($this->config->item('table_name'))) {
-				foreach ($query->result() as $row) {
-					$CountriesBreakdown['Countries_Worked'] = $row->Countries_Worked;
-					$CountriesBreakdown['Countries_Worked_QSL'] =  $row->Countries_Worked_QSL;
-					$CountriesBreakdown['Countries_Worked_EQSL'] =  $row->Countries_Worked_EQSL;
-					$CountriesBreakdown['Countries_Worked_LOTW'] =  $row->Countries_Worked_LOTW;
-				}
-
-				return $CountriesBreakdown;
-			} else {
-				$CountriesBreakdown['Countries_Worked'] = 0;
-				$CountriesBreakdown['Countries_Worked_QSL'] = 0;
-				$CountriesBreakdown['Countries_Worked_EQSL'] = 0;
-				$CountriesBreakdown['Countries_Worked_LOTW'] = 0;
-				return $CountriesBreakdown;
-			}
-		} else {
-			$CountriesBreakdown['Countries_Worked'] = 0;
-			$CountriesBreakdown['Countries_Worked_QSL'] = 0;
-			$CountriesBreakdown['Countries_Worked_EQSL'] = 0;
-			$CountriesBreakdown['Countries_Worked_LOTW'] = 0;
-			return $CountriesBreakdown;
-		}
-	}
-
 	/* Return combined countries breakdown + QSL stats in one query */
 	function dashboard_stats_batch($StationLocationsArray = null) {
 		if ($StationLocationsArray == null) {
@@ -4488,63 +3859,6 @@ class Logbook_model extends CI_Model {
 			'QRZ_Sent_today' => 0,
 			'QRZ_Received_today' => 0
 		];
-	}
-
-	/* Return total number of countries confirmed with paper QSL */
-	function total_countries_confirmed_paper() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('DISTINCT (COL_COUNTRY)');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_COUNTRY !=', 'Invalid');
-			$this->db->where('COL_DXCC >', '0');
-			$this->db->where('COL_QSL_RCVD =', 'Y');
-			$query = $this->db->get($this->config->item('table_name'));
-
-			return $query->num_rows();
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of countries confirmed with eQSL */
-	function total_countries_confirmed_eqsl() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('DISTINCT (COL_COUNTRY)');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_COUNTRY !=', 'Invalid');
-			$this->db->where('COL_DXCC >', '0');
-			$this->db->where('COL_EQSL_QSL_RCVD =', 'Y');
-			$query = $this->db->get($this->config->item('table_name'));
-
-			return $query->num_rows();
-		} else {
-			return 0;
-		}
-	}
-
-	/* Return total number of countries confirmed with LoTW */
-	function total_countries_confirmed_lotw() {
-		$this->load->model('logbooks_model');
-		$logbooks_locations_array = $this->logbooks_model->list_logbook_relationships($this->session->userdata('active_station_logbook'));
-
-		if (!empty($logbooks_locations_array)) {
-			$this->db->select('DISTINCT (COL_COUNTRY)');
-			$this->db->where_in('station_id', $logbooks_locations_array);
-			$this->db->where('COL_COUNTRY !=', 'Invalid');
-			$this->db->where('COL_DXCC >', '0');
-			$this->db->where('COL_LOTW_QSL_RCVD =', 'Y');
-			$query = $this->db->get($this->config->item('table_name'));
-
-			return $query->num_rows();
-		} else {
-			return 0;
-		}
 	}
 
 	/* Delete QSO based on the QSO ID */
@@ -4782,7 +4096,7 @@ class Logbook_model extends CI_Model {
 	/**
 	 * Get grid value from one ADIF record
 	 * According to ADIF standard, my_gridsquare, my_gridsquare_ext and my_vucc_grids are used.
-	 * 
+	 *
 	 * @param array $record ADIF record as associative array
 	 * @return string|null Grid value to be used for this record, or null if no
 	 */
@@ -4802,7 +4116,7 @@ class Logbook_model extends CI_Model {
 
 	/**
 	 * Check whether the ADIF grid is consistent with station's
-	 * 
+	 *
 	 * @param string|null $adif_grid Grid value from ADIF record
 	 * @param string|null $station_grid Grid value from station profile
 	 * @return bool True if ADIF grid is consistent with station's grid, false otherwise
@@ -4842,8 +4156,8 @@ class Logbook_model extends CI_Model {
 		} else {
 			// Both are normal grids
 			return str_starts_with($adif_grid, $station_grid) || str_starts_with($station_grid, $adif_grid);
-		} 
-		
+		}
+
 		return false;
 	}
 
@@ -4854,6 +4168,7 @@ class Logbook_model extends CI_Model {
 		$duplicate_errors = [];
 		$a_qsos = [];
 		$amsat_qsos = [];
+		$data = [];
 		$today = time();
 		if (!$this->stations->check_station_is_accessible($station_id) && $apicall == false) {
 			$custom_errors['errormessage'] = 'Station not accessible<br>';
@@ -4979,8 +4294,8 @@ class Logbook_model extends CI_Model {
 			$band = $record['band'] ?? '';
 			log_message("Error", "Trying to import QSO with invalid date: " . $qso_date. " for station_id " . $station_id . ". Call: " . $call . " Mode: " . $mode . " Band: " . $band);
 			$returner['error']=__("You tried to import a QSO without valid date. This QSO wasn't imported. It's invalid") . ". Call: " . $call . ", Mode: " . $mode . ", Band: " . $band . "<br>";
-			return($returner);
 			$returner['error_category'] = 'validation';
+			return($returner);
 		}
 
 		// Join date+time
@@ -4988,9 +4303,16 @@ class Logbook_model extends CI_Model {
 
 		if (($record['call'] ?? '') == '') {
 			log_message("Error", "Trying to import QSO without Call for station_id " . $station_id . ". QSO Date/Time: " . $time_on . " Mode: " . ($record['mode'] ?? '') . " Band: " . ($record['band'] ?? ''));
-			$returner['error']=__("QSO on")." ".$time_on.": ".__("You tried to import a QSO without any given CALL. This QSO wasn't imported. It's invalid") . "<br>";
-			return($returner);
+			$returner['error'] = sprintf(__("QSO on %s: You tried to import a QSO without any given CALL. This QSO wasn't imported. It's invalid.")."<br>", $time_on);
 			$returner['error_category'] = 'validation';
+			return($returner);
+		}
+
+		if (!$this->is_valid_callsign($record['call'])) {
+			log_message("error", "Trying to import QSO with invalid Call \"" . $record['call'] . "\" for station_id " . $station_id . ". QSO Date/Time: " . $time_on);
+			$returner['error'] = sprintf(__("QSO on %s: You tried to import a QSO with an invalid CALL. This QSO wasn't imported. The invalid input is '%s'.")."<br>", $time_on, htmlentities($record['call']));
+			$returner['error_category'] = 'validation';
+			return($returner);
 		}
 
 		if (isset($record['time_off'])) {
@@ -5011,18 +4333,37 @@ class Logbook_model extends CI_Model {
 
 		// Store Freq
 		// Check if 'freq' is defined in the import?
+		$band_conversion_failed = false;
 		if (isset($record['freq'])) { // record[freq] in MHz
 			$freq = floatval($record['freq']) * 1E6; // store in Hz
 		} else {
 			$freq = 0;
+			// Derive from band if possible (mirrors QSO form JS: qso/band_to_freq)
+			if (isset($record['band'])) {
+				$mode_raw = isset($record['mode']) ? strtoupper(trim($record['mode'])) : 'SSB';
+				$derived  = $this->frequency->convert_band(strtolower($record['band']), $mode_raw);
+				if ($derived !== null && $derived !== '' && $derived !== false) {
+					$freq = (int)$derived;
+				} else {
+					$band_conversion_failed = true; // unknown band -> reject below
+				}
+			}
 		}
 
 		// Check for RX Freq
-		// Check if 'freq' is defined in the import?
-		if (isset($record['freq_rx'])) { // record[freq] in MHz
+		// Derive freq_rx from band_rx ONLY if band_rx exists and freq_rx is missing
+		if (isset($record['freq_rx'])) { // record[freq_rx] in MHz
 			$freqRX = floatval($record['freq_rx']) * 1E6; // store in Hz
 		} else {
 			$freqRX = NULL;
+			if (isset($record['band_rx'])) {
+				$mode_raw = isset($record['mode']) ? strtoupper(trim($record['mode'])) : 'SSB';
+				$derived  = $this->frequency->convert_band(strtolower($record['band_rx']), $mode_raw);
+				if ($derived !== null && $derived !== '' && $derived !== false) {
+					$freqRX = (int)$derived;
+				}
+				// unknown band_rx -> silent NULL (RX is optional)
+			}
 		}
 
 		// Store Band
@@ -5036,12 +4377,20 @@ class Logbook_model extends CI_Model {
 			}
 		}
 
+		// Reject QSO with unknown (unconfigured) TX band
+		if ($band_conversion_failed) {
+			log_message("Error", "Unknown band '" . ($record['band'] ?? '') . "' on import for station_id " . $station_id . ". QSO Date/Time: " . $time_on . " Mode: " . ($record['mode'] ?? '') . " Call: " . ($record['call'] ?? ''));
+			$returner['error']=sprintf(__("QSO on %s: Band '%s' is not in the band configuration. This QSO wasn't imported."), $time_on, ($record['band'] ?? '')) . '<br>';
+			$returner['error_category'] = 'validation';
+			return($returner);
+		}
+
 		if (($band ?? '') == '') {
 			log_message("Error", "Trying to import QSO without Band for station_id " . $station_id . ". QSO Date/Time: " . $time_on . " at ".($record['freq'] ?? 'N/A')." Mode: " . ($record['mode'] ?? '') . " Call: " . ($record['call'] ?? ''));
 			$returner['error']=sprintf(__("QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't imported. It's invalid"), $time_on) . '<br>';
 
-			return($returner);
 			$returner['error_category'] = 'validation';
+			return($returner);
 		}
 
 		if (isset($record['band_rx'])) {
@@ -5509,6 +4858,9 @@ class Logbook_model extends CI_Model {
 				$input_qrzcom_qso_upload_status = (!empty($record['qrzcom_qso_upload_status'])) ? $record['qrzcom_qso_upload_status'] : '';
 			}
 
+			$input_qrzcom_qso_download_date = (!empty($record['qrzcom_qso_download_date'])) ? $record['qrzcom_qso_download_date'] : null;
+			$input_qrzcom_qso_download_status = (!empty($record['qrzcom_qso_download_status'])) ? $record['qrzcom_qso_download_status'] : '';
+
 			if ($markDcl != null) {
 				$input_dcl_qso_upload_status = 'Y';
 				$input_dcl_qso_upload_date = date("Y-m-d H:i:s", strtotime("now"));
@@ -5639,6 +4991,8 @@ class Logbook_model extends CI_Model {
 				'COL_HRDLOG_QSO_UPLOAD_STATUS' => $input_hrdlog_qso_upload_status,
 				'COL_QRZCOM_QSO_UPLOAD_DATE' => $input_qrzcom_qso_upload_date,
 				'COL_QRZCOM_QSO_UPLOAD_STATUS' => $input_qrzcom_qso_upload_status,
+				'COL_QRZCOM_QSO_DOWNLOAD_DATE' => $input_qrzcom_qso_download_date,
+				'COL_QRZCOM_QSO_DOWNLOAD_STATUS' => $input_qrzcom_qso_download_status,
 				'COL_DCL_QSLSDATE' => $input_dcl_qso_upload_date,
 				'COL_DCL_QSL_SENT' => $input_dcl_qso_upload_status,
 				'COL_DCL_QSLRDATE' => (!empty($record['dcl_qslrdate'])) ? $record['dcl_qslrdate'] : null,
@@ -5787,10 +5141,10 @@ class Logbook_model extends CI_Model {
 		if (isset($record['band'])) {
 			$band = strtolower($record['band']);
 		} else {
-			if (isset($record['freq'])) {
-				if ($record['freq'] != "0") {
-					$band = $this->frequency->GetBand($record['freq']);
-				}
+			if (isset($record['freq']) && !empty($record['freq'])) {
+				$band = $this->frequency->GetBand($record['freq']);
+			} else {
+				$band = '';
 			}
 		}
 

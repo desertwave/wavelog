@@ -160,6 +160,10 @@ class Frequency {
 
 		$result = $db->get()->row();
 
+		if ($result === null) {
+			return null;
+		}
+
 		$mode = strtolower($mode);
 
 		return $result->$mode;
@@ -290,6 +294,7 @@ class Frequency {
 		}
 	
 		// Convert the frequency to the target unit
+		$decimals = 0; // fallback for unknown units
 		switch ($target_unit) {
 			case 'Hz':
 				$decimals = $CI->config->item('qrg_hz_dec') ?? 0;

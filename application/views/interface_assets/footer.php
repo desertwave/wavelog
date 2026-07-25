@@ -33,6 +33,7 @@
     var lang_general_share_qso = "<?= __("Share QSO"); ?>";
     var lang_general_word_danger = "<?= __("DANGER"); ?>";
     var lang_general_word_error = "<?= __("ERROR"); ?>";
+    var lang_general_word_query_failed_unkown = "<?= __("The query failed for a unknown reason"); ?>";
     var lang_general_word_attention = "<?= __("Attention"); ?>";
     var lang_general_word_warning = "<?= __("Warning"); ?>";
     var lang_general_word_success = "<?= __("Success"); ?>";
@@ -1070,6 +1071,7 @@ $($('#callsign')).on('keypress',function(e) {
 
 <?php if ($this->uri->segment(1) == "qso") { ?>
 
+<script src="<?php echo $this->paths->cache_buster('/assets/js/sections/callsign_validation.js'); ?>"></script>
 <script src="<?php echo $this->paths->cache_buster('/assets/js/sections/qso.js'); ?>"></script>
 <script src="<?php echo $this->paths->cache_buster('/assets/js/sections/satellite_functions.js'); ?>"></script>
 <script src="<?php echo $this->paths->cache_buster('/assets/js/bootstrap-multiselect.js'); ?>"></script>
