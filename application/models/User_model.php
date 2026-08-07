@@ -541,6 +541,7 @@ class User_Model extends CI_Model {
 			// Delete QSOs from $this->config->item('table_name')
 			$this->db->query("DELETE FROM bandxuser WHERE userid = ?",$user_id);
 			$this->db->query("DELETE FROM api WHERE user_id = ? OR created_by = ?", [$user_id, $user_id]);
+			$this->db->query("DELETE FROM api_token WHERE user_id = ? OR created_by = ?", [$user_id, $user_id]);
 			$this->db->query("DELETE FROM club_permissions WHERE user_id = ? OR club_id = ?", [$user_id, $user_id]);
 			$this->db->query("DELETE FROM cat WHERE user_id = ?",$user_id);
 			$this->db->query("DELETE FROM lotw_certs WHERE user_id = ?",$user_id);
@@ -864,8 +865,6 @@ class User_Model extends CI_Model {
 		$this->db->update('users', $data);
 	}
 
-	// FUNCTION: bool authorize($level)
-	// Checks a user's level of access against the given $level
 	// FUNCTION: bool set_user_stylesheet($user_id, $foldername)
 	// Quickly switch the active theme (stylesheet foldername) for a single user.
 	// Used by the header theme switcher so users can change skin without opening
@@ -875,6 +874,22 @@ class User_Model extends CI_Model {
 		return $this->db->update('users', array('user_stylesheet' => xss_clean($foldername)));
 	}
 
+	/**
+	 * Whether a user is a Wavelog administrator (user_type 99)
+	 *
+	 * @param int $user_id
+	 * @return boolean
+	 */
+	function is_admin($user_id) {
+		$u = $this->get_by_id($user_id);
+		if ($u->num_rows() == 0) {
+			return false;
+		}
+		return $u->row()->user_type == 99;
+	}
+
+	// FUNCTION: bool authorize($level)
+	// Checks a user's level of access against the given $level
 	function authorize($level) {
 		$u = $this->get_by_id($this->session->userdata('user_id'));
 		$l = $this->config->item('auth_mode');
@@ -1159,6 +1174,12 @@ class User_Model extends CI_Model {
 			$this->db->trans_rollback();
 			return false;
 		}
+
+		$this->load->model('api_v2_model');
+		$this->api_v2_model->revoke_club_tokens($user_id);
+
+		$this->db->query("DELETE FROM api WHERE user_id = ? AND created_by != ?", [$user_id, $user_id]);
+		$this->db->query("DELETE FROM cat WHERE user_id = ? AND operator != ?", [$user_id, $user_id]);
 
 		$this->db->trans_complete();
 
