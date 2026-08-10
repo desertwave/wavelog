@@ -1,6 +1,6 @@
 
 <script>
-	window.gridlookupConfig = {
+	window.activationplannerConfig = {
 		tileUrl:     <?php echo json_encode($layer); ?>,
 		tileAttr:    <?php echo json_encode($attribution); ?>,
 		overlays:    <?php echo json_encode(isset($overlays) ? $overlays : array()); ?>,
@@ -8,11 +8,15 @@
 		invalidMsg:  <?php echo json_encode(__("Invalid gridsquare — use 2, 4, 6, 8 or 10 characters (e.g. FN, FN31, FN31pr).")); ?>,
 		bearingLbl:  <?php echo json_encode(__("Bearing")); ?>,
 		measurementBase: <?php echo json_encode($measurement_base); ?>,
-		stateUrl:   <?php echo json_encode(site_url('gridlookup/state_for_point')); ?>,
-		wwffUrl:    <?php echo json_encode(site_url('gridlookup/wwff_directory')); ?>,
-		potaUrl:    <?php echo json_encode(site_url('gridlookup/pota_directory')); ?>,
-		sotaUrl:    <?php echo json_encode(site_url('gridlookup/sota_directory')); ?>,
+		stateUrl:   <?php echo json_encode(site_url('activationplanner/state_for_point')); ?>,
+		wwffUrl:    <?php echo json_encode(site_url('activationplanner/wwff_directory')); ?>,
+		potaUrl:    <?php echo json_encode(site_url('activationplanner/pota_directory')); ?>,
+		sotaUrl:    <?php echo json_encode(site_url('activationplanner/sota_directory')); ?>,
+		dxccGridUrl: <?php echo json_encode(site_url('activationplanner/dxcc_for_grid')); ?>,
+		satPassUrl: <?php echo json_encode(site_url('satellite/pass')); ?>,
+		satPassLbl: <?php echo json_encode(__("Satellite passes")); ?>,
 		bordersLbl:    <?php echo json_encode(__("Gridsquare borders")); ?>,
+		gridLbl:       <?php echo json_encode(__("Gridsquare")); ?>,
 		closeLbl:      <?php echo json_encode(__("Close")); ?>,
 		errorLbl:      <?php echo json_encode(__("Error")); ?>,
 		trackingLbl:   <?php echo json_encode(__("Tracking")); ?>,
@@ -22,7 +26,14 @@
 		locatingMsg:    <?php echo json_encode(__("Locating…")); ?>,
 		geoDenied:      <?php echo json_encode(__("Location access denied.")); ?>,
 		geoUnavailable: <?php echo json_encode(__("Location unavailable.")); ?>,
-		geoTimeout:     <?php echo json_encode(__("Location request timed out.")); ?>
+		geoTimeout:     <?php echo json_encode(__("Location request timed out.")); ?>,
+		createStationUrl:    <?php echo json_encode(site_url('station/create')); ?>,
+		newStationLocLbl:    <?php echo json_encode(__("Create station location")); ?>,
+		refsTitleLbl:        <?php echo json_encode(__("References in this grid")); ?>,
+		userDxcc:            <?php echo json_encode(isset($user_dxcc) ? $user_dxcc : null); ?>,
+		shareLbl:            <?php echo json_encode(__("Share")); ?>,
+		shareActivationTitleLbl: <?php echo json_encode(__("Share activation")); ?>,
+		planningActivationLbl:   <?php echo json_encode(__("📻 Planning an activation from %s")); ?>
 	};
 </script>
 
@@ -52,10 +63,10 @@
 						<div class="gl-refs gl-secondary dropdown">
 							<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><?= __("Refs"); ?></button>
 							<ul class="dropdown-menu p-2" style="max-height:60vh; overflow-y:auto;">
-								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glGridOverlay" checked> <?= __("Gridsquare"); ?></label></li>
-								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glWwffDir"> <?= __("WWFF"); ?></label></li>
-								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glPotaDir"> <?= __("POTA"); ?></label></li>
-								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glSotaDir"> <?= __("SOTA"); ?></label></li>
+								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glGridOverlay" checked><?= __("Gridsquare"); ?></label></li>
+								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glWwffDir"><?= __("WWFF"); ?><span class="ref-menu-dot ms-auto" style="background:#2b8cbe">W</span></label></li>
+								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glPotaDir"><?= __("POTA"); ?><span class="ref-menu-dot ms-auto" style="background:#238b45">P</span></label></li>
+								<li><label class="dropdown-item d-flex align-items-center"><input type="checkbox" class="form-check-input me-2" id="glSotaDir"><?= __("SOTA"); ?><span class="ref-menu-dot ms-auto" style="background:#d95f0e">S</span></label></li>
 							</ul>
 						</div>
 						<div id="glOverlaysHost" class="gl-secondary"></div>

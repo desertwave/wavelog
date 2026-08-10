@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-08-06 13:58+0000\n"
+"POT-Creation-Date: 2026-08-09 10:10+0000\n"
 "PO-Revision-Date: 2026-06-09 21:07+0000\n"
 "Last-Translator: Anton Tomanič <s57xz.toni@gmail.com>\n"
 "Language-Team: Slovenian <https://translate.wavelog.org/projects/wavelog/"
@@ -122,6 +122,7 @@ msgstr "Tropospheric ducting"
 
 #: application/controllers/Accumulated.php:11
 #: application/controllers/Activated_gridmap.php:8
+#: application/controllers/Activationplanner.php:18
 #: application/controllers/Activators.php:12
 #: application/controllers/Activatorsmap.php:12
 #: application/controllers/Adif.php:22
@@ -171,7 +172,6 @@ msgstr "Tropospheric ducting"
 #: application/controllers/Eqsl.php:589 application/controllers/Eqsl.php:604
 #: application/controllers/Eqsl.php:662
 #: application/controllers/Generic_qsl.php:11
-#: application/controllers/Gridlookup.php:18
 #: application/controllers/Gridmap.php:8 application/controllers/Hamsat.php:12
 #: application/controllers/Hrdlog.php:40
 #: application/controllers/Kmlexport.php:17
@@ -211,8 +211,8 @@ msgstr "Tropospheric ducting"
 #: application/controllers/Satellite.php:117
 #: application/controllers/Satellite.php:131
 #: application/controllers/Satellite.php:149
-#: application/controllers/Satellite.php:550
-#: application/controllers/Satellite.php:559
+#: application/controllers/Satellite.php:556
+#: application/controllers/Satellite.php:565
 #: application/controllers/Sattimers.php:8 application/controllers/Search.php:9
 #: application/controllers/Simplefle.php:7
 #: application/controllers/Station.php:16
@@ -223,11 +223,11 @@ msgstr "Tropospheric ducting"
 #: application/controllers/Update.php:28 application/controllers/User.php:15
 #: application/controllers/User.php:61 application/controllers/User.php:108
 #: application/controllers/User.php:125 application/controllers/User.php:148
-#: application/controllers/User.php:406 application/controllers/User.php:407
-#: application/controllers/User.php:1160 application/controllers/User.php:1178
-#: application/controllers/User.php:1224 application/controllers/User.php:1476
-#: application/controllers/User.php:1614 application/controllers/User.php:1834
-#: application/controllers/User.php:1850 application/controllers/User.php:1874
+#: application/controllers/User.php:407 application/controllers/User.php:408
+#: application/controllers/User.php:1163 application/controllers/User.php:1181
+#: application/controllers/User.php:1227 application/controllers/User.php:1479
+#: application/controllers/User.php:1617 application/controllers/User.php:1837
+#: application/controllers/User.php:1853 application/controllers/User.php:1877
 #: application/controllers/User_options.php:8
 #: application/controllers/Usermode.php:14
 #: application/controllers/Webadif.php:10
@@ -250,8 +250,8 @@ msgid "Activated Gridsquare Map"
 msgstr "Zemljevid aktiviranih lokatorjev"
 
 #: application/controllers/Activated_gridmap.php:33
-#: application/controllers/Awards.php:1242
-#: application/controllers/Awards.php:1278
+#: application/controllers/Awards.php:1421
+#: application/controllers/Awards.php:1457
 #: application/controllers/Gridmap.php:34
 #: application/controllers/Visitor.php:533
 #: application/views/activators/index.php:107
@@ -302,6 +302,32 @@ msgstr "Nepotrjena polja"
 #: application/controllers/Visitor.php:541
 msgid "Total fields worked"
 msgstr "Skupno število delanih polj"
+
+#: application/controllers/Activationplanner.php:32
+msgid "CQ Zones"
+msgstr ""
+
+#: application/controllers/Activationplanner.php:32
+#: application/controllers/Activationplanner.php:33
+#: application/views/station_profile/create.php:125
+#: application/views/station_profile/edit.php:150
+msgid "Zones"
+msgstr ""
+
+#: application/controllers/Activationplanner.php:33
+#: application/controllers/Awards.php:2561
+#: application/views/awards/itu/index.php:27
+msgid "ITU Zones"
+msgstr "ITU Zone"
+
+#: application/controllers/Activationplanner.php:66
+msgid "States / Provinces"
+msgstr ""
+
+#: application/controllers/Activationplanner.php:75
+#: application/views/interface_assets/header.php:332
+msgid "Activation Planner"
+msgstr ""
 
 #: application/controllers/Activators.php:19
 #: application/views/activators/index.php:6
@@ -377,8 +403,8 @@ msgid ""
 msgstr ""
 
 #: application/controllers/Amsatstatus.php:37
-#: application/controllers/Amsatstatus.php:194
-#: application/views/amsatstatus/index.php:8
+#: application/controllers/Amsatstatus.php:195
+#: application/views/amsatstatus/index.php:10
 #: application/views/interface_assets/header.php:326
 msgid "AMSAT Satellite Status"
 msgstr ""
@@ -464,29 +490,29 @@ msgid "Awards"
 msgstr "Diplome"
 
 #: application/controllers/Awards.php:100
-#: application/controllers/Awards.php:206
-#: application/controllers/Awards.php:536
-#: application/controllers/Awards.php:586
-#: application/controllers/Awards.php:704
-#: application/controllers/Awards.php:726
-#: application/controllers/Awards.php:820
-#: application/controllers/Awards.php:902
-#: application/controllers/Awards.php:964
-#: application/controllers/Awards.php:1026
-#: application/controllers/Awards.php:1088
-#: application/controllers/Awards.php:1173
-#: application/controllers/Awards.php:1185
-#: application/controllers/Awards.php:1263
-#: application/controllers/Awards.php:1469
-#: application/controllers/Awards.php:1620
-#: application/controllers/Awards.php:1671
-#: application/controllers/Awards.php:2232
-#: application/controllers/Awards.php:2381
-#: application/controllers/Awards.php:2511
-#: application/controllers/Awards.php:2585
-#: application/controllers/Awards.php:2598
-#: application/controllers/Awards.php:2673
-#: application/controllers/Awards.php:2815
+#: application/controllers/Awards.php:209
+#: application/controllers/Awards.php:541
+#: application/controllers/Awards.php:591
+#: application/controllers/Awards.php:713
+#: application/controllers/Awards.php:811
+#: application/controllers/Awards.php:911
+#: application/controllers/Awards.php:1081
+#: application/controllers/Awards.php:1143
+#: application/controllers/Awards.php:1205
+#: application/controllers/Awards.php:1267
+#: application/controllers/Awards.php:1352
+#: application/controllers/Awards.php:1364
+#: application/controllers/Awards.php:1442
+#: application/controllers/Awards.php:1648
+#: application/controllers/Awards.php:1799
+#: application/controllers/Awards.php:1850
+#: application/controllers/Awards.php:2412
+#: application/controllers/Awards.php:2561
+#: application/controllers/Awards.php:2691
+#: application/controllers/Awards.php:2765
+#: application/controllers/Awards.php:2778
+#: application/controllers/Awards.php:2853
+#: application/controllers/Awards.php:2995
 #, php-format
 msgid "Awards - %s"
 msgstr "Diplome - %s"
@@ -507,7 +533,7 @@ msgstr "Diplome - %s"
 msgid "DOK"
 msgstr "DOK"
 
-#: application/controllers/Awards.php:206 application/views/awards/index.php:7
+#: application/controllers/Awards.php:209 application/views/awards/index.php:7
 #: application/views/bandmap/list.php:102 application/views/bands/index.php:50
 #: application/views/calltester/call_info.php:29
 #: application/views/calltester/call_info.php:61
@@ -538,29 +564,29 @@ msgstr "DOK"
 msgid "DXCC"
 msgstr "DXCC"
 
-#: application/controllers/Awards.php:386
+#: application/controllers/Awards.php:391
 msgid "Awards - WAPC"
 msgstr "Diplome - WAPC"
 
-#: application/controllers/Awards.php:466
+#: application/controllers/Awards.php:471
 msgid "Awards - WAJA"
 msgstr "Diplome - WAJA"
 
-#: application/controllers/Awards.php:536 application/views/bands/index.php:53
+#: application/controllers/Awards.php:541 application/views/bands/index.php:53
 #: application/views/interface_assets/header.php:269
 msgid "JCC"
 msgstr "JCC"
 
-#: application/controllers/Awards.php:586 application/views/bands/index.php:59
+#: application/controllers/Awards.php:591 application/views/bands/index.php:59
 #: application/views/interface_assets/header.php:204
 msgid "VUCC"
 msgstr "VUCC"
 
-#: application/controllers/Awards.php:617
+#: application/controllers/Awards.php:622
 msgid "Log View - VUCC"
 msgstr "Pogled dnevnika - VUCC"
 
-#: application/controllers/Awards.php:668
+#: application/controllers/Awards.php:673
 #: application/controllers/Callstats.php:101
 #: application/controllers/Distancerecords.php:87
 #: application/controllers/Statistics.php:373
@@ -573,16 +599,20 @@ msgstr "Pogled dnevnika - VUCC"
 msgid "Log View"
 msgstr "Pogled dnevnika"
 
-#: application/controllers/Awards.php:669
+#: application/controllers/Awards.php:674
 msgid "and"
 msgstr "in"
 
-#: application/controllers/Awards.php:670
+#: application/controllers/Awards.php:675
 #: application/views/awards/cq/index.php:140
 #: application/views/awards/dxcc/index.php:25
 #: application/views/awards/dxcc/index.php:183
 #: application/views/awards/iota/index.php:149
 #: application/views/awards/itu/index.php:142
+#: application/views/awards/pota/index.php:3
+#: application/views/awards/pota/index.php:212
+#: application/views/awards/sota/index.php:3
+#: application/views/awards/sota/index.php:122
 #: application/views/awards/wac/index.php:56
 #: application/views/awards/wae/index.php:130
 #: application/views/awards/wpx/index.php:85
@@ -591,39 +621,39 @@ msgstr "in"
 msgid "Every band (w/o SAT)"
 msgstr "Vsi bandi (brez SAT)"
 
-#: application/controllers/Awards.php:670
+#: application/controllers/Awards.php:675
 msgid "band"
 msgstr "band"
 
-#: application/controllers/Awards.php:673
+#: application/controllers/Awards.php:678
 msgid " and satellite "
 msgstr " in satelit "
 
-#: application/controllers/Awards.php:676
+#: application/controllers/Awards.php:681
 #: application/controllers/Callstats.php:108
 msgid " and orbit type "
 msgstr " in tip orbite "
 
-#: application/controllers/Awards.php:680
+#: application/controllers/Awards.php:685
 #: application/controllers/Callstats.php:112
 msgid " and propagation "
 msgstr " in pogoji "
 
-#: application/controllers/Awards.php:683
+#: application/controllers/Awards.php:688
 #: application/controllers/Callstats.php:115
 msgid " and mode "
 msgstr " in vrsta dela "
 
-#: application/controllers/Awards.php:686
+#: application/controllers/Awards.php:691
 msgid " and "
 msgstr " in "
 
-#: application/controllers/Awards.php:704
+#: application/controllers/Awards.php:713
 #: application/controllers/Logbook.php:1452
+#: application/views/activationplanner/index.php:69
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:335
 #: application/views/bands/index.php:57
 #: application/views/dashboard/index.php:10
-#: application/views/gridlookup/index.php:58
 #: application/views/interface_assets/header.php:225
 #: application/views/logbookadvanced/edit.php:37
 #: application/views/logbookadvanced/index.php:490
@@ -649,11 +679,11 @@ msgstr " in "
 msgid "SOTA"
 msgstr "SOTA"
 
-#: application/controllers/Awards.php:726
+#: application/controllers/Awards.php:811
 #: application/controllers/Logbook.php:1453
+#: application/views/activationplanner/index.php:67
 #: application/views/bandmap/list.php:337 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:11
-#: application/views/gridlookup/index.php:56
 #: application/views/logbookadvanced/edit.php:40
 #: application/views/logbookadvanced/index.php:512
 #: application/views/logbookadvanced/useroptions.php:244
@@ -672,12 +702,12 @@ msgstr "SOTA"
 msgid "WWFF"
 msgstr "WWFF"
 
-#: application/controllers/Awards.php:820
+#: application/controllers/Awards.php:911
 #: application/controllers/Logbook.php:1454
+#: application/views/activationplanner/index.php:68
 #: application/views/adif/import.php:65 application/views/bandmap/list.php:336
 #: application/views/bands/index.php:54
 #: application/views/dashboard/index.php:12
-#: application/views/gridlookup/index.php:57
 #: application/views/interface_assets/header.php:229
 #: application/views/logbookadvanced/edit.php:35
 #: application/views/logbookadvanced/index.php:494
@@ -697,67 +727,67 @@ msgstr "WWFF"
 msgid "POTA"
 msgstr "POTA"
 
-#: application/controllers/Awards.php:902
+#: application/controllers/Awards.php:1081
 msgid "CQ WAZ (Worked All Zones)"
 msgstr "CQ WAZ (Worked All Zones)"
 
-#: application/controllers/Awards.php:964
+#: application/controllers/Awards.php:1143
 #: application/views/accumulate/index.php:60
 #: application/views/timeline/index.php:51
 msgid "Worked All States (WAS)"
 msgstr "Worked All States (WAS)"
 
-#: application/controllers/Awards.php:1026 application/views/bands/index.php:55
+#: application/controllers/Awards.php:1205 application/views/bands/index.php:55
 #: application/views/interface_assets/header.php:235
 msgid "RAC"
 msgstr "RAC"
 
-#: application/controllers/Awards.php:1088 application/views/bands/index.php:51
+#: application/controllers/Awards.php:1267 application/views/bands/index.php:51
 msgid "H26"
 msgstr "H26"
 
-#: application/controllers/Awards.php:1173
+#: application/controllers/Awards.php:1352
 msgid "IOTA (Island On The Air)"
 msgstr "IOTA (Island On The Air)"
 
-#: application/controllers/Awards.php:1185
+#: application/controllers/Awards.php:1364
 #: application/views/interface_assets/header.php:301
 msgid "US Counties"
 msgstr "US Counties"
 
-#: application/controllers/Awards.php:1209
+#: application/controllers/Awards.php:1388
 msgid "Log View - Counties"
 msgstr "Pogled dnevnika - Counties"
 
-#: application/controllers/Awards.php:1224
+#: application/controllers/Awards.php:1403
 msgid "Awards - "
 msgstr "Diplome - "
 
-#: application/controllers/Awards.php:1243
-#: application/controllers/Awards.php:1279
+#: application/controllers/Awards.php:1422
+#: application/controllers/Awards.php:1458
 msgid "Gridsquares worked"
 msgstr "delani lokatorji"
 
-#: application/controllers/Awards.php:1244
-#: application/controllers/Awards.php:1280
+#: application/controllers/Awards.php:1423
+#: application/controllers/Awards.php:1459
 msgid "Gridsquares confirmed on LoTW"
 msgstr "Potrjena UL polja v LoTW"
 
-#: application/controllers/Awards.php:1245
-#: application/controllers/Awards.php:1281
+#: application/controllers/Awards.php:1424
+#: application/controllers/Awards.php:1460
 msgid "Gridsquares confirmed by paper QSL"
 msgstr "UL polja potrjena preko papirnatih QSL"
 
-#: application/controllers/Awards.php:1246
-#: application/controllers/Awards.php:1282
+#: application/controllers/Awards.php:1425
+#: application/controllers/Awards.php:1461
 msgid "Total Gridsquares worked"
 msgstr "Skupno število delanih UL polj"
 
-#: application/controllers/Awards.php:1263
+#: application/controllers/Awards.php:1442
 msgid "Fred Fish Memorial Award (FFMA)"
 msgstr "Fred Fish Memorial Award (FFMA)"
 
-#: application/controllers/Awards.php:1469
+#: application/controllers/Awards.php:1648
 #: application/views/interface_assets/header.php:202
 #: application/views/logbookadvanced/edit.php:256
 #: application/views/logbookadvanced/useroptions.php:250
@@ -769,52 +799,46 @@ msgstr "Fred Fish Memorial Award (FFMA)"
 msgid "SIG"
 msgstr "SIG"
 
-#: application/controllers/Awards.php:1488
+#: application/controllers/Awards.php:1667
 msgid "Awards - SIG - "
 msgstr "Diplome - SIG - "
 
-#: application/controllers/Awards.php:1620 application/views/bands/index.php:60
+#: application/controllers/Awards.php:1799 application/views/bands/index.php:60
 msgid "WAP"
 msgstr "WAP"
 
-#: application/controllers/Awards.php:1671
+#: application/controllers/Awards.php:1850
 #: application/views/interface_assets/header.php:261
 msgid "WAIP"
 msgstr "WAIP"
 
-#: application/controllers/Awards.php:2381
-#: application/controllers/Gridlookup.php:33
-#: application/views/awards/itu/index.php:27
-msgid "ITU Zones"
-msgstr "ITU Zone"
-
-#: application/controllers/Awards.php:2511
+#: application/controllers/Awards.php:2691
 #: application/views/awards/wac/index.php:7
 #: application/views/interface_assets/header.php:208
 msgid "Worked All Continents (WAC)"
 msgstr "Worked All Continents (WAC)"
 
-#: application/controllers/Awards.php:2585
+#: application/controllers/Awards.php:2765
 msgid "WAE"
 msgstr "WAE"
 
-#: application/controllers/Awards.php:2598
+#: application/controllers/Awards.php:2778
 #: application/views/interface_assets/header.php:218
 msgid "73 on 73"
 msgstr "73 on 73"
 
-#: application/controllers/Awards.php:2673
+#: application/controllers/Awards.php:2853
 #: application/views/awards/wpx/wpx_details.php:19
 msgid "WPX"
 msgstr "WPX"
 
-#: application/controllers/Awards.php:2815
+#: application/controllers/Awards.php:2995
 #: application/views/awards/pl_polska/index.php:41
 #: application/views/interface_assets/header.php:283
 msgid "\"Polska\" Award"
 msgstr "\"Polska\" Award"
 
-#: application/controllers/Awards.php:2859
+#: application/controllers/Awards.php:3039
 msgid "Awards - AMSAT Rover"
 msgstr "Diplome - AMSAT Rover"
 
@@ -1017,6 +1041,8 @@ msgstr "Noben od uporabnikov nima konfiguriranega Clublog-a."
 #: application/views/awards/itu/index.php:133
 #: application/views/awards/jcc/index.php:96
 #: application/views/awards/pl_polska/index.php:112
+#: application/views/awards/pota/index.php:203
+#: application/views/awards/sota/index.php:113
 #: application/views/awards/wab/index.php:106
 #: application/views/awards/wac/index.php:47
 #: application/views/awards/wae/index.php:121
@@ -1156,7 +1182,7 @@ msgid "Access denied"
 msgstr ""
 
 #: application/controllers/Contesting.php:1052
-#: application/controllers/User.php:1432
+#: application/controllers/User.php:1435
 msgid "Incorrect username or password!"
 msgstr "Napačno uporabniško ime ali geslo!"
 
@@ -1556,26 +1582,6 @@ msgstr "Nihče ne oddaja na tej frekvenci."
 msgid "Confirmations"
 msgstr "Potrditve"
 
-#: application/controllers/Gridlookup.php:32
-msgid "CQ Zones"
-msgstr ""
-
-#: application/controllers/Gridlookup.php:32
-#: application/controllers/Gridlookup.php:33
-#: application/views/station_profile/create.php:125
-#: application/views/station_profile/edit.php:150
-msgid "Zones"
-msgstr ""
-
-#: application/controllers/Gridlookup.php:66
-msgid "States / Provinces"
-msgstr ""
-
-#: application/controllers/Gridlookup.php:75
-#: application/views/interface_assets/header.php:332
-msgid "Gridsquare Lookup"
-msgstr ""
-
 #: application/controllers/Gridmap.php:12
 #: application/views/interface_assets/header.php:166
 msgid "Gridsquare Map"
@@ -1607,7 +1613,7 @@ msgid "User not found."
 msgstr "Uporabnik ni bil najden."
 
 #: application/controllers/Header_auth.php:110
-#: application/controllers/User.php:1422
+#: application/controllers/User.php:1425
 msgid ""
 "You can't login to a clubstation directly. Use your personal account instead."
 msgstr ""
@@ -1621,12 +1627,12 @@ msgstr ""
 "Žal je. Ta instanca je trenutno v vzdrževalnem načinu. Trenutno se lahko "
 "prijavijo samo skrbniki."
 
-#: application/controllers/Header_auth.php:354
-#: application/controllers/Header_auth.php:358
+#: application/controllers/Header_auth.php:355
+#: application/controllers/Header_auth.php:359
 msgid "Something went terribly wrong. Check the error log."
 msgstr "Nekaj je šlo hudo narobe. Preverite dnevnik napak."
 
-#: application/controllers/Header_auth.php:434
+#: application/controllers/Header_auth.php:435
 msgid "SSO Config Error. Check error log."
 msgstr "Napaka konfiguracije SSO. Preverite dnevnik napak."
 
@@ -1826,7 +1832,9 @@ msgstr "Dnevnik"
 #: application/views/awards/helvetia/index.php:84
 #: application/views/awards/jcc/index.php:80
 #: application/views/awards/pl_polska/index.php:96
+#: application/views/awards/pota/index.php:187
 #: application/views/awards/rac/index.php:77
+#: application/views/awards/sota/index.php:97
 #: application/views/awards/vucc/band.php:20
 #: application/views/awards/wab/index.php:74
 #: application/views/awards/wae/index.php:105
@@ -1863,7 +1871,9 @@ msgstr "QSL"
 #: application/views/awards/itu/index.php:121
 #: application/views/awards/jcc/index.php:84
 #: application/views/awards/pl_polska/index.php:100
+#: application/views/awards/pota/index.php:191
 #: application/views/awards/rac/index.php:81
+#: application/views/awards/sota/index.php:101
 #: application/views/awards/vucc/band.php:21
 #: application/views/awards/wab/index.php:82
 #: application/views/awards/wac/index.php:35
@@ -1908,7 +1918,9 @@ msgstr "LoTW"
 #: application/views/awards/itu/index.php:125
 #: application/views/awards/jcc/index.php:88
 #: application/views/awards/pl_polska/index.php:104
+#: application/views/awards/pota/index.php:195
 #: application/views/awards/rac/index.php:85
+#: application/views/awards/sota/index.php:105
 #: application/views/awards/wab/index.php:90
 #: application/views/awards/wac/index.php:39
 #: application/views/awards/wae/index.php:113
@@ -1957,8 +1969,10 @@ msgstr "Vsa iskanja v Callbooku so bila neuspešna ali niso dala rezultatov."
 #: application/views/awards/iota/index.php:160
 #: application/views/awards/itu/index.php:152
 #: application/views/awards/jcc/index.php:126
+#: application/views/awards/pota/index.php:221
 #: application/views/awards/rac/index.php:109
 #: application/views/awards/sig/qso_list.php:16
+#: application/views/awards/sota/index.php:131
 #: application/views/awards/wab/index.php:55
 #: application/views/awards/wac/index.php:100
 #: application/views/awards/wae/index.php:172
@@ -2048,7 +2062,8 @@ msgstr "Vrsta dela"
 
 #: application/controllers/Logbook.php:1448
 #: application/views/awards/73on73/index.php:43
-#: application/views/awards/pota/index.php:42
+#: application/views/awards/pota/index.php:258
+#: application/views/awards/sota/index.php:168
 #: application/views/awards/wwff/index.php:168
 #: application/views/logbookadvanced/edit.php:21
 #: application/views/logbookadvanced/index.php:951
@@ -2074,7 +2089,8 @@ msgstr "RST (S)"
 
 #: application/controllers/Logbook.php:1449
 #: application/views/awards/73on73/index.php:42
-#: application/views/awards/pota/index.php:43
+#: application/views/awards/pota/index.php:259
+#: application/views/awards/sota/index.php:169
 #: application/views/awards/wwff/index.php:169
 #: application/views/logbookadvanced/edit.php:20
 #: application/views/logbookadvanced/index.php:954
@@ -2185,6 +2201,10 @@ msgstr "Država (state)"
 
 #: application/controllers/Logbook.php:1456
 #: application/views/activated_gridmap/index.php:107
+#: application/views/activationplanner/index.php:19
+#: application/views/activationplanner/index.php:51
+#: application/views/activationplanner/index.php:66
+#: application/views/activationplanner/index.php:90
 #: application/views/awards/ffma/index.php:38
 #: application/views/awards/gridmaster/index.php:53
 #: application/views/awards/vucc/band.php:17
@@ -2194,9 +2214,6 @@ msgstr "Država (state)"
 #: application/views/calltester/result.php:54
 #: application/views/contesting/logger/components/map.php:80
 #: application/views/dashboard/index.php:14
-#: application/views/gridlookup/index.php:40
-#: application/views/gridlookup/index.php:55
-#: application/views/gridlookup/index.php:79
 #: application/views/gridmap/index.php:226
 #: application/views/labels/index.php:126
 #: application/views/logbookadvanced/checkresult.php:166
@@ -2281,15 +2298,17 @@ msgstr "Razdalja"
 #: application/views/awards/cq/index.php:137
 #: application/views/awards/dok/index.php:108
 #: application/views/awards/dxcc/index.php:180
-#: application/views/awards/dxcc/index.php:284
+#: application/views/awards/dxcc/index.php:297
 #: application/views/awards/helvetia/index.php:102
 #: application/views/awards/iota/index.php:146
 #: application/views/awards/itu/index.php:139
 #: application/views/awards/jcc/index.php:112
-#: application/views/awards/pota/index.php:41
+#: application/views/awards/pota/index.php:209
+#: application/views/awards/pota/index.php:257
 #: application/views/awards/rac/index.php:95
 #: application/views/awards/sig/qso_list.php:17
-#: application/views/awards/sota/index.php:40
+#: application/views/awards/sota/index.php:119
+#: application/views/awards/sota/index.php:167
 #: application/views/awards/vucc/index.php:26
 #: application/views/awards/wab/index.php:24
 #: application/views/awards/wac/index.php:53
@@ -2438,11 +2457,11 @@ msgstr "Operator"
 #: application/controllers/Logbook.php:1481
 #: application/controllers/Stationsetup.php:423
 #: application/views/awards/dxcc/index.php:91
-#: application/views/awards/dxcc/index.php:458
+#: application/views/awards/dxcc/index.php:471
 #: application/views/awards/wae/index.php:231
 #: application/views/csv/index.php:65 application/views/dashboard/index.php:30
 #: application/views/dxatlas/index.php:65
-#: application/views/interface_assets/footer.php:834
+#: application/views/interface_assets/footer.php:844
 #: application/views/kml/index.php:54
 #: application/views/logbookadvanced/index.php:388
 #: application/views/lookup/index.php:47
@@ -2611,7 +2630,7 @@ msgid "Note"
 msgstr "Opomba"
 
 #: application/controllers/Notes.php:127 application/views/notes/edit.php:20
-#: application/views/notes/view.php:47 application/views/qso/index.php:790
+#: application/views/notes/view.php:47 application/views/qso/index.php:789
 msgid "Edit Note"
 msgstr "Uredi opombo"
 
@@ -2678,7 +2697,7 @@ msgstr ""
 
 #: application/controllers/Operator.php:30
 #: application/models/Logbook_model.php:97
-#: application/models/Logbook_model.php:1424
+#: application/models/Logbook_model.php:1437
 #: application/views/contesting/logger/components/qso-form.php:43
 #: application/views/qso/index.php:40
 msgid "Invalid callsign"
@@ -3083,7 +3102,7 @@ msgstr "Možnosti"
 #: application/controllers/Radio.php:60
 #: application/views/contesting/logger/components/winkeyer.php:52
 #: application/views/contesting/logger/index.php:128
-#: application/views/debug/index.php:404 application/views/qso/index.php:832
+#: application/views/debug/index.php:404 application/views/qso/index.php:831
 #: application/views/satellite/pass.php:116
 msgid "Settings"
 msgstr "Nastavitve"
@@ -3117,8 +3136,8 @@ msgstr "nazadnje posodobljeno"
 #: application/views/contesting/logger/components/qso-form.php:38
 #: application/views/contesting/manager/index.php:72
 #: application/views/cron/index.php:80
-#: application/views/interface_assets/footer.php:694
-#: application/views/interface_assets/footer.php:703
+#: application/views/interface_assets/footer.php:704
+#: application/views/interface_assets/footer.php:713
 #: application/views/labels/index.php:48 application/views/labels/index.php:84
 #: application/views/logbookadvanced/index.php:891
 #: application/views/mode/index.php:64 application/views/satellite/edit.php:56
@@ -3142,10 +3161,10 @@ msgstr "Uredi"
 #: application/views/contesting/logger/components/qso-form.php:39
 #: application/views/contesting/manager/index.php:79
 #: application/views/interface_assets/footer.php:69
-#: application/views/interface_assets/footer.php:2658
-#: application/views/interface_assets/footer.php:2676
-#: application/views/interface_assets/footer.php:2695
-#: application/views/interface_assets/footer.php:2713
+#: application/views/interface_assets/footer.php:2670
+#: application/views/interface_assets/footer.php:2688
+#: application/views/interface_assets/footer.php:2707
+#: application/views/interface_assets/footer.php:2725
 #: application/views/labels/index.php:49 application/views/labels/index.php:85
 #: application/views/logbookadvanced/index.php:912
 #: application/views/lotw_views/index.php:143
@@ -3193,6 +3212,7 @@ msgid "Radio removed successfully"
 msgstr "Radijska postaja je bila uspešno odstranjena"
 
 #: application/controllers/Satellite.php:40 application/models/Note.php:10
+#: application/views/amsatstatus/index.php:74
 #: application/views/interface_assets/header.php:349
 #: application/views/satellite/index.php:40
 #: application/views/statistics/index.php:90
@@ -3213,35 +3233,35 @@ msgstr "Uredi satelit"
 msgid "Satellite Flightpath"
 msgstr "Pot satelita"
 
-#: application/controllers/Satellite.php:265
+#: application/controllers/Satellite.php:271
 msgid "Satellite pass"
 msgstr "Prehod satelita"
 
-#: application/controllers/Satellite.php:322
+#: application/controllers/Satellite.php:328
 msgid "Failed to save pass settings!"
 msgstr "Shranjevanje nastavitev prehoda ni uspelo!"
 
-#: application/controllers/Satellite.php:325
+#: application/controllers/Satellite.php:331
 msgid "Pass settings saved!"
 msgstr "Nastavitve prehoda so shranjene!"
 
-#: application/controllers/Satellite.php:338
+#: application/controllers/Satellite.php:344
 msgid "No settings found!"
 msgstr "Ne najdem nastavitev!"
 
-#: application/controllers/Satellite.php:352
+#: application/controllers/Satellite.php:358
 msgid "Failed to delete pass settings!"
 msgstr "Nastavitev prehoda ni bilo mogoče izbrisati!"
 
-#: application/controllers/Satellite.php:354
+#: application/controllers/Satellite.php:360
 msgid "Pass settings deleted!"
 msgstr "Nastavitve prehoda so izbrisane!"
 
-#: application/controllers/Satellite.php:364
+#: application/controllers/Satellite.php:370
 msgid "Saved Pass Settings"
 msgstr "Shranjene nastavitve prehoda"
 
-#: application/controllers/Satellite.php:381
+#: application/controllers/Satellite.php:387
 msgid "No presets available"
 msgstr "Ni prednastavitev"
 
@@ -3325,7 +3345,7 @@ msgstr "Ustvari lokacijo postaje"
 
 #: application/controllers/Station.php:74
 #: application/controllers/Station.php:99 application/controllers/User.php:269
-#: application/controllers/User.php:1017 application/controllers/User.php:1196
+#: application/controllers/User.php:1019 application/controllers/User.php:1199
 msgid "Invalid security token"
 msgstr "Neveljaven varnostni žeton"
 
@@ -3358,7 +3378,7 @@ msgid "Duplicate Station Location:"
 msgstr "Podvojena lokacija postaje:"
 
 #: application/controllers/Station.php:233
-#: application/controllers/User.php:1497 application/controllers/User.php:1750
+#: application/controllers/User.php:1500 application/controllers/User.php:1753
 #, php-format
 msgid "Please check value for grid locator (%s)"
 msgstr "Preverite vrednost UL lokatorja (%s)"
@@ -3384,14 +3404,14 @@ msgstr "Ni dovoljeno"
 #: application/controllers/Stationsetup.php:156
 #: application/controllers/Stationsetup.php:177
 #: application/controllers/Stationsetup.php:478
+#: application/views/activationplanner/index.php:21
 #: application/views/contesting/logger/components/qso-form.php:31
 #: application/views/contesting/logger/components/qso-form.php:34
 #: application/views/contesting/manager/index.php:152
-#: application/views/gridlookup/index.php:17
 #: application/views/qslpostcard/designer.php:47
-#: application/views/qso/index.php:765 application/views/simplefle/index.php:39
-#: application/views/widgets/on_air.php:181
-#: application/views/widgets/on_air.php:243
+#: application/views/qso/index.php:764 application/views/simplefle/index.php:39
+#: application/views/widgets/on_air.php:190
+#: application/views/widgets/on_air.php:249
 msgid "Error"
 msgstr "Napaka"
 
@@ -3767,87 +3787,87 @@ msgstr "Neveljaven parameter!"
 msgid "Add User"
 msgstr "Dodaj uporabnika"
 
-#: application/controllers/User.php:341
+#: application/controllers/User.php:342
 #, php-format
 msgid "Username %s already in use!"
 msgstr "Uporabniško ime %s je že v uporabi!"
 
-#: application/controllers/User.php:344
+#: application/controllers/User.php:345
 #, php-format
 msgid "E-mail %s already in use!"
 msgstr "E-pošta %s je že v uporabi!"
 
-#: application/controllers/User.php:347
+#: application/controllers/User.php:348
 msgid "Invalid Password!"
 msgstr "Neveljavno geslo!"
 
-#: application/controllers/User.php:351
+#: application/controllers/User.php:352
 #, php-format
 msgid "User %s added!"
 msgstr "Uporabnik %s je bil dodan!"
 
-#: application/controllers/User.php:355
+#: application/controllers/User.php:356
 msgid "Users"
 msgstr "Uporabniki"
 
-#: application/controllers/User.php:464
+#: application/controllers/User.php:465
 msgid "Can't be changed. Manage this through your Identity Provider."
 msgstr "Ni mogoče spremeniti. To lahko uredite prek ponudnika identitete."
 
-#: application/controllers/User.php:467
+#: application/controllers/User.php:468
 #: application/views/club/permissions.php:318
 msgid "Edit User"
 msgstr "Uredi uporabnika"
 
-#: application/controllers/User.php:1092 application/controllers/User.php:1095
+#: application/controllers/User.php:1094 application/controllers/User.php:1097
 #, php-format
 msgid "User %s edited"
 msgstr "Uporabnik %s je urejen"
 
-#: application/controllers/User.php:1163
+#: application/controllers/User.php:1166
 msgid "Profile"
 msgstr "Profil"
 
-#: application/controllers/User.php:1186
+#: application/controllers/User.php:1189
 #: application/views/club/permissions.php:375
 msgid "Delete User"
 msgstr "Izbriši uporabnika"
 
-#: application/controllers/User.php:1202
+#: application/controllers/User.php:1205
 msgid "User deleted"
 msgstr "Uporabnik izbrisan"
 
-#: application/controllers/User.php:1205
+#: application/controllers/User.php:1208
 msgid "Could not delete user!"
 msgstr "Uporabnika ni bilo mogoče izbrisati!"
 
-#: application/controllers/User.php:1205
+#: application/controllers/User.php:1208
 msgid "Database error:"
 msgstr "Napaka v zbirki podatkov:"
 
-#: application/controllers/User.php:1279
+#: application/controllers/User.php:1282
 msgid ""
 "Congrats! Wavelog was successfully installed. You can now login for the "
 "first time."
 msgstr ""
 "Čestitamo! Wavelog je bil uspešno nameščen. Zdaj se lahko prvič prijavite."
 
-#: application/controllers/User.php:1317
+#: application/controllers/User.php:1320
 msgid "This is not allowed!"
 msgstr "To ni dovoljeno!"
 
-#: application/controllers/User.php:1354 application/controllers/User.php:1367
+#: application/controllers/User.php:1357 application/controllers/User.php:1370
 msgid "Login failed. Try again."
 msgstr "Prijava ni uspela. Poskusite znova."
 
-#: application/controllers/User.php:1375
+#: application/controllers/User.php:1378
 #: application/views/interface_assets/header.php:429
 #: application/views/user/login.php:80
 #: application/views/visitor/layout/header.php:87
 msgid "Login"
 msgstr "Prijava"
 
-#: application/controllers/User.php:1425
+#: application/controllers/User.php:1428
 msgid ""
 "Your account is locked, due to too many failed login-attempts. Please reset "
 "your password."
@@ -3855,7 +3875,7 @@ msgstr ""
 "Vaš račun je zaklenjen zaradi preveč neuspelih poskusov prijave. Prosimo, "
 "ponastavite geslo."
 
-#: application/controllers/User.php:1429
+#: application/controllers/User.php:1432
 msgid ""
 "Sorry. This instance is currently in maintenance mode. If this message "
 "appears unexpectedly or keeps showing up, please contact an administrator. "
@@ -3865,18 +3885,18 @@ msgstr ""
 "nepričakovano pojavi ali se nenehno pojavlja, se obrnite na skrbnika. "
 "Trenutno se lahko prijavijo samo skrbniki."
 
-#: application/controllers/User.php:1456
+#: application/controllers/User.php:1459
 #, php-format
 msgid "User %s logged out."
 msgstr "Uporabnik %s se je odjavil."
 
-#: application/controllers/User.php:1479
+#: application/controllers/User.php:1482
 #: application/views/oqrs/request_grouped.php:19
 #: application/views/user/modals/first_login_wizard.php:26
 msgid "Station Name"
 msgstr "Ime postaje"
 
-#: application/controllers/User.php:1480 application/views/debug/index.php:804
+#: application/controllers/User.php:1483 application/views/debug/index.php:804
 #: application/views/public_search/result.php:17
 #: application/views/station_profile/create.php:60
 #: application/views/station_profile/edit.php:77
@@ -3886,27 +3906,27 @@ msgstr "Ime postaje"
 msgid "Station Callsign"
 msgstr "Klicni znak postaje"
 
-#: application/controllers/User.php:1481
+#: application/controllers/User.php:1484
 #: application/views/station_profile/create.php:82
 #: application/views/station_profile/edit.php:99
 #: application/views/user/modals/first_login_wizard.php:42
 msgid "Station DXCC"
 msgstr "DXCC postaje"
 
-#: application/controllers/User.php:1482
+#: application/controllers/User.php:1485
 msgid "Station CQ Zone"
 msgstr "CQ zona postaje"
 
-#: application/controllers/User.php:1483
+#: application/controllers/User.php:1486
 msgid "Station ITU Zone"
 msgstr "ITU zona postaje"
 
-#: application/controllers/User.php:1484
+#: application/controllers/User.php:1487
 #: application/views/user/modals/first_login_wizard.php:93
 msgid "Station Locator"
 msgstr "Lokator postaje"
 
-#: application/controllers/User.php:1505
+#: application/controllers/User.php:1508
 #, php-format
 msgid ""
 "Station created successfully! Welcome to Wavelog! To complete your station "
@@ -3915,35 +3935,35 @@ msgstr ""
 "Postaja uspešno ustvarjena! Dobrodošli v Wavelogu! Za dokončanje nastavitve "
 "postaje kliknite %stukaj%s."
 
-#: application/controllers/User.php:1508
+#: application/controllers/User.php:1511
 msgid "Station setup failed! Please set up your station manually."
 msgstr "Nastavitev postaje ni uspela! Postajo nastavite ročno."
 
-#: application/controllers/User.php:1525
+#: application/controllers/User.php:1528
 msgid "Password Reset is disabled on the Demo!"
 msgstr "Ponastavitev gesla je v demo načinu onemogočena!"
 
-#: application/controllers/User.php:1539
+#: application/controllers/User.php:1542
 msgid "Forgot Password"
 msgstr "Pozabljeno geslo"
 
-#: application/controllers/User.php:1589
+#: application/controllers/User.php:1592
 #: application/views/user/modals/more_actions_modal.php:88
 msgid "Email settings are incorrect."
 msgstr "Nastavitve e-pošte so napačne."
 
-#: application/controllers/User.php:1593 application/controllers/User.php:1598
+#: application/controllers/User.php:1596 application/controllers/User.php:1601
 msgid "Password Reset Processed."
 msgstr "Ponastavitev gesla obdelana."
 
-#: application/controllers/User.php:1704
+#: application/controllers/User.php:1707
 #: application/views/user/forgot_password.php:51
 #: application/views/user/reset_password.php:8
 #: application/views/user/reset_password.php:35
 msgid "Reset Password"
 msgstr "Ponastavi geslo"
 
-#: application/controllers/User.php:1724
+#: application/controllers/User.php:1727
 #, php-format
 msgid ""
 "Couldn't set account to this username. Please try another one than \"%s\"."
@@ -3951,7 +3971,7 @@ msgstr ""
 "Računa ni bilo mogoče nastaviti za to uporabniško ime. Poskusite z drugim, "
 "ne z \"%s\"."
 
-#: application/controllers/User.php:1733
+#: application/controllers/User.php:1736
 #, php-format
 msgid ""
 "Couldn't set account to this email. Please try another address than \"%s\"."
@@ -3959,7 +3979,7 @@ msgstr ""
 "Računa ni bilo mogoče nastaviti za ta e-poštni naslov. Poskusite z drugim "
 "naslovom, ne z \"%s\"."
 
-#: application/controllers/User.php:1772
+#: application/controllers/User.php:1775
 #, php-format
 msgid ""
 "You currently can't impersonate another user. You need to set %s to %s in "
@@ -3968,7 +3988,7 @@ msgstr ""
 "Trenutno se ne morete izdajati za drugega uporabnika. V datoteki config.php "
 "morate nastaviti %s na %s!"
 
-#: application/controllers/User.php:1783
+#: application/controllers/User.php:1786
 #: application/views/user/modals/admin_impersonate_modal.php:36
 msgid ""
 "You currently can't impersonate another user. Please change the "
@@ -3977,15 +3997,15 @@ msgstr ""
 "Trenutno se ne morete izdajati za drugega uporabnika. Najprej spremenite "
 "šifrirni ključ v datoteki config.php!"
 
-#: application/controllers/User.php:1790
+#: application/controllers/User.php:1793
 msgid "Invalid Hash"
 msgstr "Neveljavna zgoščena vrednost"
 
-#: application/controllers/User.php:1803
+#: application/controllers/User.php:1806
 msgid "The impersonation hash is too old. Please try again."
 msgstr "Zgoščena vrednost za poosebljanje je prestara. Poskusite znova."
 
-#: application/controllers/User.php:1810
+#: application/controllers/User.php:1813
 msgid ""
 "You can't impersonate another user while you're not logged in as the source "
 "user"
@@ -3993,15 +4013,15 @@ msgstr ""
 "Ne morete se izdajati za drugega uporabnika, če niste prijavljeni kot "
 "izvorni uporabnik"
 
-#: application/controllers/User.php:1816
+#: application/controllers/User.php:1819
 msgid "There was a problem with your session. Please try again."
 msgstr "Prišlo je do težave z vašo sejo. Poskusite znova."
 
-#: application/controllers/User.php:1823
+#: application/controllers/User.php:1826
 msgid "The requested user to impersonate does not exist"
 msgstr "Zahtevani uporabnik za predstavljanje ne obstaja"
 
-#: application/controllers/User.php:1844
+#: application/controllers/User.php:1847
 msgid ""
 "Could not determine the correct permission level for the clubstation. Try "
 "again after re-login."
@@ -4009,13 +4029,13 @@ msgstr ""
 "Ni bilo mogoče določiti pravilne ravni dovoljenj za clubstation. Poskusite "
 "znova po ponovni prijavi."
 
-#: application/controllers/User.php:1885 application/controllers/User.php:1897
-#: application/controllers/User.php:1903 application/controllers/User.php:1912
-#: application/controllers/User.php:1920
+#: application/controllers/User.php:1888 application/controllers/User.php:1900
+#: application/controllers/User.php:1906 application/controllers/User.php:1915
+#: application/controllers/User.php:1923
 msgid "Ups.. Something went wrong. Try to log back in."
 msgstr "Ups ... Nekaj je šlo narobe. Poskusite se znova prijaviti."
 
-#: application/controllers/User.php:1926
+#: application/controllers/User.php:1929
 msgid ""
 "The ability to return quickly has been disabled after the security hash "
 "expired. Please log in again."
@@ -4023,7 +4043,7 @@ msgstr ""
 "Možnost hitre vrnitve je bila onemogočena po izteku varnostne zgoščene "
 "vrednosti. Prosimo, prijavite se znova."
 
-#: application/controllers/User.php:1942
+#: application/controllers/User.php:1945
 #, php-format
 msgid ""
 "You have been logged out of the account %s. Welcome back, %s, to your "
@@ -4073,7 +4093,7 @@ msgstr "Uporabniška končnica URL naslova ni določena"
 msgid "User has on-air widget disabled"
 msgstr "Uporabnik ima onemogočen pripomoček za predvajanje"
 
-#: application/controllers/Widgets.php:228
+#: application/controllers/Widgets.php:229
 msgid ""
 "No CAT interfaced radios found. You need to have at least one radio "
 "interface configured."
@@ -4081,11 +4101,11 @@ msgstr ""
 "Ni najdenih radijskih naprav z vmesnikom CAT. Konfiguriran mora biti vsaj en "
 "radijski vmesnik."
 
-#: application/controllers/Widgets.php:421
+#: application/controllers/Widgets.php:440
 msgid "User not found by slug"
 msgstr "Ne najdem uporabnika preko končnice URL"
 
-#: application/controllers/Widgets.php:424
+#: application/controllers/Widgets.php:443
 msgid "Multiple users found by slug"
 msgstr "Najdenih več uporabnikov preko končnice URL"
 
@@ -4392,26 +4412,26 @@ msgstr "HRDlog: Ni najdenih profilov postaj s poverilnicami HRDlog."
 msgid "Station not accessible"
 msgstr "Postaja ni dostopna"
 
-#: application/models/Logbook_model.php:1414
+#: application/models/Logbook_model.php:1427
 msgid "Station ID not allowed"
 msgstr "ID postaje ni dovoljen"
 
-#: application/models/Logbook_model.php:1419
+#: application/models/Logbook_model.php:1432
 msgid "No Call given"
 msgstr "Ni podanega pozivnega znaka"
 
-#: application/models/Logbook_model.php:1494
-#: application/models/Logbook_model.php:1698
+#: application/models/Logbook_model.php:1507
+#: application/models/Logbook_model.php:1711
 msgid "DXCC has to be Numeric"
 msgstr "DXCC mora biti numeričen"
 
-#: application/models/Logbook_model.php:4757
+#: application/models/Logbook_model.php:4770
 #, php-format
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr "Različen klicni znak postaje %s med uvozom QSO z %s za %s: PRESKOČENO"
 
-#: application/models/Logbook_model.php:4765
+#: application/models/Logbook_model.php:4778
 #, php-format
 msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
@@ -4419,7 +4439,7 @@ msgid ""
 msgstr ""
 "Različen lokator %s med uvozom QSO z %s za lokator postaje %s: PRESKOČENO"
 
-#: application/models/Logbook_model.php:4781
+#: application/models/Logbook_model.php:4794
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -4427,28 +4447,28 @@ msgstr ""
 "Poskušali ste uvoziti QSO brez veljavnega datuma. Ta QSO ni bila uvožena. Je "
 "neveljavna"
 
-#: application/models/Logbook_model.php:4791
+#: application/models/Logbook_model.php:4804
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given CALL. This QSO wasn't "
 "imported. It's invalid."
 msgstr ""
 
-#: application/models/Logbook_model.php:4798
+#: application/models/Logbook_model.php:4811
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO with an invalid CALL. This QSO wasn't "
 "imported. The invalid input is '%s'."
 msgstr ""
 
-#: application/models/Logbook_model.php:4868
+#: application/models/Logbook_model.php:4881
 #, php-format
 msgid ""
 "QSO on %s: Band '%s' is not in the band configuration. This QSO wasn't "
 "imported."
 msgstr ""
 
-#: application/models/Logbook_model.php:4875
+#: application/models/Logbook_model.php:4888
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -4457,69 +4477,69 @@ msgstr ""
 "Zveza na %s: Poskušali ste uvoziti QSO brez podanega banda. Ta QSO ni bila "
 "uvožena. Je neveljavna"
 
-#: application/models/Logbook_model.php:5149
+#: application/models/Logbook_model.php:5162
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate je napačen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5160
+#: application/models/Logbook_model.php:5173
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate je napačen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5221
+#: application/models/Logbook_model.php:5234
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date je napačen (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5597
+#: application/models/Logbook_model.php:5610
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Dvojnik za"
 
-#: application/models/Logbook_model.php:5664
-#: application/models/Logbook_model.php:5764
+#: application/models/Logbook_model.php:5677
+#: application/models/Logbook_model.php:5777
 msgid "QSO could not be matched"
 msgstr "QSO ni bilo mogoče najti"
 
-#: application/models/Logbook_model.php:5672
+#: application/models/Logbook_model.php:5685
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "potrjeno od LoTW/Clublog/eQSL/Contest"
 
-#: application/models/Logbook_model.php:5678
+#: application/models/Logbook_model.php:5691
 msgid "confirmed by award manager"
 msgstr "potrjeno od award managerja"
 
-#: application/models/Logbook_model.php:5682
+#: application/models/Logbook_model.php:5695
 msgid "confirmed by cross-check of DCL data"
 msgstr "potrjeno z navzkrižnim preverjanjem podatkov DCL"
 
-#: application/models/Logbook_model.php:5686
+#: application/models/Logbook_model.php:5699
 msgid "confirmation pending"
 msgstr "potrditev čaka na"
 
-#: application/models/Logbook_model.php:5689
+#: application/models/Logbook_model.php:5702
 msgid "unconfirmed"
 msgstr "nepotrjeno"
 
-#: application/models/Logbook_model.php:5692
+#: application/models/Logbook_model.php:5705
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 msgid "unknown"
 msgstr "neznano"
 
-#: application/models/Logbook_model.php:5767
+#: application/models/Logbook_model.php:5780
 msgid "POTA reference already in log"
 msgstr "Referenca POTA je že v dnevniku"
 
-#: application/models/Logbook_model.php:5770
+#: application/models/Logbook_model.php:5783
 msgid "QSO updated"
 msgstr "QSO posodobljena"
 
-#: application/models/Logbook_model.php:6176
+#: application/models/Logbook_model.php:6189
 #: application/views/activated_gridmap/index.php:109
+#: application/views/activationplanner/index.php:9
 #: application/views/awards/ffma/index.php:42
 #: application/views/awards/gridmaster/index.php:57
 #: application/views/contesting/logger/components/map.php:84
 #: application/views/dashboard/index.php:20
-#: application/views/gridlookup/index.php:9
 #: application/views/gridmap/index.php:228
 #: application/views/logbookadvanced/index.php:15
 #: application/views/map/qso_map.php:113 application/views/user/edit.php:310
@@ -4698,11 +4718,14 @@ msgstr "Razlika"
 #: application/views/awards/dxcc/index.php:197
 #: application/views/awards/dxcc/index.php:213
 #: application/views/awards/dxcc/index.php:228
+#: application/views/awards/dxcc/index.php:249
 #: application/views/awards/helvetia/index.php:119
 #: application/views/awards/iota/index.php:163
 #: application/views/awards/itu/index.php:155
 #: application/views/awards/jcc/index.php:129
+#: application/views/awards/pota/index.php:224
 #: application/views/awards/rac/index.php:112
+#: application/views/awards/sota/index.php:134
 #: application/views/awards/wab/index.php:26
 #: application/views/awards/wab/index.php:38
 #: application/views/awards/wab/index.php:48
@@ -4758,8 +4781,8 @@ msgstr "Razlika"
 #: application/views/gridmap/index.php:141
 #: application/views/gridmap/index.php:155
 #: application/views/interface_assets/footer.php:52
-#: application/views/interface_assets/footer.php:1536
-#: application/views/interface_assets/footer.php:1675
+#: application/views/interface_assets/footer.php:1546
+#: application/views/interface_assets/footer.php:1685
 #: application/views/kml/index.php:21 application/views/kml/index.php:33
 #: application/views/kml/index.php:49 application/views/kml/index.php:67
 #: application/views/kml/index.php:79
@@ -4846,6 +4869,7 @@ msgid "Period"
 msgstr "Obdobje"
 
 #: application/views/accumulate/index.php:86
+#: application/views/awards/dxcc/index.php:246
 #: application/views/callstats/index.php:70
 #: application/views/distances/index.php:57
 #: application/views/gridmap/index.php:91
@@ -4919,6 +4943,7 @@ msgid "Activated Gridsquares"
 msgstr "Aktivirana UL polja"
 
 #: application/views/activated_gridmap/index.php:27
+#: application/views/amsatstatus/index.php:116
 #: application/views/awards/amsat_rover/index.php:226
 #: application/views/awards/dxcc/index.php:194
 #: application/views/awards/wab/index.php:36
@@ -4988,7 +5013,9 @@ msgstr "Potrditev"
 #: application/views/awards/itu/index.php:129
 #: application/views/awards/jcc/index.php:92
 #: application/views/awards/pl_polska/index.php:108
+#: application/views/awards/pota/index.php:199
 #: application/views/awards/rac/index.php:89
+#: application/views/awards/sota/index.php:109
 #: application/views/awards/wab/index.php:98
 #: application/views/awards/wac/index.php:43
 #: application/views/awards/wae/index.php:117
@@ -5013,10 +5040,10 @@ msgid "Clear Markers"
 msgstr "Počisti oznake"
 
 #: application/views/activated_gridmap/index.php:105
+#: application/views/activationplanner/index.php:88
 #: application/views/awards/ffma/index.php:34
 #: application/views/awards/gridmaster/index.php:49
 #: application/views/contesting/logger/components/map.php:76
-#: application/views/gridlookup/index.php:77
 #: application/views/gridmap/index.php:224
 #: application/views/logbookadvanced/index.php:10
 #: application/views/map/qso_map.php:109
@@ -5024,15 +5051,219 @@ msgid "Latitude"
 msgstr "Zemljepisna širina"
 
 #: application/views/activated_gridmap/index.php:106
+#: application/views/activationplanner/index.php:89
 #: application/views/awards/ffma/index.php:36
 #: application/views/awards/gridmaster/index.php:51
 #: application/views/contesting/logger/components/map.php:78
-#: application/views/gridlookup/index.php:78
 #: application/views/gridmap/index.php:225
 #: application/views/logbookadvanced/index.php:11
 #: application/views/map/qso_map.php:110
 msgid "Longitude"
 msgstr "Zemljepisna dolžina"
+
+#: application/views/activationplanner/index.php:8
+msgid ""
+"Invalid gridsquare — use 2, 4, 6, 8 or 10 characters (e.g. FN, FN31, FN31pr)."
+msgstr ""
+
+#: application/views/activationplanner/index.php:17
+#: application/views/satellite/pass.php:21
+msgid "Satellite passes"
+msgstr ""
+
+#: application/views/activationplanner/index.php:18
+msgid "Gridsquare borders"
+msgstr ""
+
+#: application/views/activationplanner/index.php:20
+#: application/views/api/components/create_token_modal.php:6
+#: application/views/api/components/new_token_modal.php:7
+#: application/views/api/components/new_token_modal.php:23
+#: application/views/bands/index.php:160
+#: application/views/club/permissions.php:191
+#: application/views/contesting/logger/components/winkeyer.php:22
+#: application/views/contesting/logger/index.php:67
+#: application/views/contesting/logger/index.php:93
+#: application/views/contesting/manager/components/confirm_delete.php:6
+#: application/views/contesting/manager/components/session_modal.php:12
+#: application/views/contesting/manager/index.php:124
+#: application/views/interface_assets/footer.php:54
+#: application/views/logbookadvanced/index.php:55
+#: application/views/simplefle/index.php:21
+#: application/views/user/modals/more_actions_modal.php:51
+#: application/views/user/modals/more_actions_modal.php:80
+#: application/views/user/modals/more_actions_modal.php:117
+#: application/views/user/modals/more_actions_modal.php:166
+#: application/views/version_dialog/index.php:79
+msgid "Close"
+msgstr "Zapri"
+
+#: application/views/activationplanner/index.php:22
+msgid "Tracking"
+msgstr ""
+
+#: application/views/activationplanner/index.php:23
+#: application/views/logbookadvanced/mergedialog.php:71
+#: application/views/qslpostcard/designer.php:241
+msgid "Field"
+msgstr ""
+
+#: application/views/activationplanner/index.php:24
+msgid "Square"
+msgstr ""
+
+#: application/views/activationplanner/index.php:25
+msgid "Subsquare"
+msgstr ""
+
+#: application/views/activationplanner/index.php:26
+msgid "Locating…"
+msgstr ""
+
+#: application/views/activationplanner/index.php:27
+msgid "Location access denied."
+msgstr ""
+
+#: application/views/activationplanner/index.php:28
+msgid "Location unavailable."
+msgstr ""
+
+#: application/views/activationplanner/index.php:29
+msgid "Location request timed out."
+msgstr ""
+
+#: application/views/activationplanner/index.php:31
+msgid "Create station location"
+msgstr ""
+
+#: application/views/activationplanner/index.php:32
+msgid "References in this grid"
+msgstr ""
+
+#: application/views/activationplanner/index.php:34
+#: application/views/view_log/qso.php:615
+msgid "Share"
+msgstr ""
+
+#: application/views/activationplanner/index.php:35
+msgid "Share activation"
+msgstr ""
+
+#: application/views/activationplanner/index.php:36
+#, php-format
+msgid "📻 Planning an activation from %s"
+msgstr ""
+
+#: application/views/activationplanner/index.php:46
+msgid "Plan your activity here"
+msgstr ""
+
+#: application/views/activationplanner/index.php:54
+msgid "2, 4, 6, 8 or 10 character Maidenhead locator"
+msgstr ""
+
+#: application/views/activationplanner/index.php:54
+msgid "e.g. FN31pr"
+msgstr ""
+
+#: application/views/activationplanner/index.php:55
+msgid "to"
+msgstr ""
+
+#: application/views/activationplanner/index.php:58
+msgid "Optional second gridsquare for distance and bearing"
+msgstr ""
+
+#: application/views/activationplanner/index.php:58
+msgid "e.g. JN58qm"
+msgstr ""
+
+#: application/views/activationplanner/index.php:59
+msgid "Go"
+msgstr ""
+
+#: application/views/activationplanner/index.php:60
+#: application/views/awards/cq/index.php:70
+#: application/views/awards/dxcc/index.php:69
+#: application/views/awards/itu/index.php:72
+#: application/views/awards/pota/index.php:155
+#: application/views/awards/sota/index.php:65
+#: application/views/awards/wae/index.php:60
+#: application/views/awards/wwff/index.php:65
+#: application/views/gridmap/index.php:54
+#: application/views/interface_assets/footer.php:56
+#: application/views/logbookadvanced/index.php:357
+#: application/views/qso/index.php:757 application/views/user/edit.php:1341
+msgid "Clear"
+msgstr "Počisti"
+
+#: application/views/activationplanner/index.php:61
+msgid "Find my location and gridsquare"
+msgstr ""
+
+#: application/views/activationplanner/index.php:61
+msgid "Locate me"
+msgstr ""
+
+#: application/views/activationplanner/index.php:64
+#: application/views/simplefle/index.php:162
+msgid "Refs"
+msgstr ""
+
+#: application/views/activationplanner/index.php:76
+#: application/views/qso/index.php:758
+msgid "More options"
+msgstr ""
+
+#: application/views/activationplanner/index.php:77
+msgid "Hide options"
+msgstr ""
+
+#: application/views/activationplanner/index.php:91
+#: application/views/awards/cq/index.php:3
+#: application/views/awards/cq/index.php:205
+#: application/views/bandmap/list.php:569
+#: application/views/bandmap/list.php:607 application/views/csv/index.php:80
+#: application/views/dxatlas/index.php:80
+#: application/views/gridmap/index.php:229 application/views/kml/index.php:65
+#: application/views/logbookadvanced/checkresult.php:246
+#: application/views/logbookadvanced/edit.php:29
+#: application/views/logbookadvanced/index.php:22
+#: application/views/logbookadvanced/index.php:456
+#: application/views/logbookadvanced/index.php:1008
+#: application/views/logbookadvanced/qslcarousel.php:37
+#: application/views/logbookadvanced/useroptions.php:193
+#: application/views/lookup/index.php:3 application/views/map/qso_map.php:114
+#: application/views/qso/edit_ajax.php:293 application/views/qso/index.php:519
+#: application/views/station_profile/create.php:129
+#: application/views/station_profile/edit.php:154
+#: application/views/stationsetup/locationlist.php:21
+#: application/views/timeline/index.php:344
+#: application/views/timeplotter/index.php:39
+#: application/views/user/modals/first_login_wizard.php:75
+#: application/views/zonechecker/index.php:23
+msgid "CQ Zone"
+msgstr "CQ Zone"
+
+#: application/views/activationplanner/index.php:92
+#: application/views/awards/itu/index.php:3
+#: application/views/awards/itu/index.php:207
+#: application/views/gridmap/index.php:230
+#: application/views/logbookadvanced/checkresult.php:322
+#: application/views/logbookadvanced/edit.php:34
+#: application/views/logbookadvanced/index.php:21
+#: application/views/logbookadvanced/index.php:470
+#: application/views/logbookadvanced/index.php:1011
+#: application/views/logbookadvanced/useroptions.php:199
+#: application/views/lookup/index.php:8 application/views/map/qso_map.php:115
+#: application/views/qso/edit_ajax.php:302 application/views/qso/index.php:529
+#: application/views/station_profile/create.php:144
+#: application/views/station_profile/edit.php:169
+#: application/views/stationsetup/locationlist.php:22
+#: application/views/user/modals/first_login_wizard.php:86
+#: application/views/zonechecker/index.php:24
+msgid "ITU Zone"
+msgstr "ITU Zone"
 
 #: application/views/activators/index.php:33
 msgctxt "Orbiter LEO or GEO"
@@ -5056,11 +5287,11 @@ msgstr "Najmanjše število"
 #: application/views/awards/itu/index.php:275
 #: application/views/awards/jcc/index.php:248
 #: application/views/awards/pl_polska/index.php:380
-#: application/views/awards/pota/index.php:73
+#: application/views/awards/pota/index.php:286
 #: application/views/awards/rac/index.php:204
 #: application/views/awards/sig/index.php:42
 #: application/views/awards/sig/qso_list.php:38
-#: application/views/awards/sota/index.php:66
+#: application/views/awards/sota/index.php:193
 #: application/views/awards/vucc/band.php:45
 #: application/views/awards/vucc/index.php:43
 #: application/views/awards/wae/index.php:311
@@ -5081,9 +5312,9 @@ msgstr "Ničesar nisem našel!"
 #: application/views/adif/import.php:104 application/views/adif/import.php:278
 #: application/views/awards/73on73/index.php:40
 #: application/views/awards/amsat_rover/index.php:228
-#: application/views/awards/pota/index.php:40
+#: application/views/awards/pota/index.php:256
 #: application/views/awards/sig/qso_list.php:15
-#: application/views/awards/sota/index.php:39
+#: application/views/awards/sota/index.php:166
 #: application/views/awards/wpx/wpx_details.php:20
 #: application/views/awards/wwff/index.php:166
 #: application/views/bandmap/list.php:32 application/views/bandmap/list.php:171
@@ -5211,8 +5442,8 @@ msgstr ""
 #: application/views/adif/dcl_success.php:29
 #: application/views/adif/pota_success.php:29
 #: application/views/awards/73on73/index.php:38
-#: application/views/awards/pota/index.php:38
-#: application/views/awards/sota/index.php:37
+#: application/views/awards/pota/index.php:254
+#: application/views/awards/sota/index.php:164
 #: application/views/awards/wwff/index.php:164
 #: application/views/calltester/call_info.php:55
 #: application/views/contesting/logger/components/qso-form.php:145
@@ -5256,8 +5487,8 @@ msgstr "Datum"
 #: application/views/adif/dcl_success.php:30
 #: application/views/adif/pota_success.php:30
 #: application/views/awards/73on73/index.php:39
-#: application/views/awards/pota/index.php:39
-#: application/views/awards/sota/index.php:38
+#: application/views/awards/pota/index.php:255
+#: application/views/awards/sota/index.php:165
 #: application/views/awards/wwff/index.php:165
 #: application/views/bandmap/list.php:142
 #: application/views/calltester/call_info.php:56
@@ -5424,8 +5655,8 @@ msgstr "Če ni izbrano, bo Wavelog poskušal samodejno določiti podatke DXCC."
 
 #: application/views/adif/import.php:159 application/views/adif/import.php:166
 #: application/views/interface_assets/footer.php:34
-#: application/views/interface_assets/footer.php:654
-#: application/views/interface_assets/footer.php:2415
+#: application/views/interface_assets/footer.php:664
+#: application/views/interface_assets/footer.php:2425
 msgid "DANGER"
 msgstr "NEVARNO"
 
@@ -5852,47 +6083,57 @@ msgstr "POTA REF v ADIF"
 msgid "Status"
 msgstr "Status"
 
-#: application/views/amsatstatus/index.php:10
+#: application/views/amsatstatus/index.php:13
 #, php-format
 msgid ""
 "Last-heard status for the past 24 hours. Data source: %s (cached for 15 "
 "minutes)."
 msgstr ""
 
-#: application/views/amsatstatus/index.php:16
-msgid "AMSAT Satellite Status (Last 24h)"
-msgstr ""
-
-#: application/views/amsatstatus/index.php:20
+#: application/views/amsatstatus/index.php:21
 msgid "No status reports available."
 msgstr ""
 
-#: application/views/amsatstatus/index.php:23
-msgid "Heard"
+#: application/views/amsatstatus/index.php:78
+msgid "Active last hour"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:24
-msgid "Crew Active"
+#: application/views/amsatstatus/index.php:79
+msgid "heard or crew active"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:25
-msgid "Telemetry Only"
+#: application/views/amsatstatus/index.php:83
+msgid "Next pass"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:26
-msgid "Not Heard"
+#: application/views/amsatstatus/index.php:89
+msgid "no upcoming pass"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:27
-#: application/views/amsatstatus/index.php:137
+#: application/views/amsatstatus/index.php:96
+msgid "Status legend"
+msgstr ""
+
+#: application/views/amsatstatus/index.php:102
+#: application/views/amsatstatus/index.php:171
 msgid "No report"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:88
+#: application/views/amsatstatus/index.php:108
+msgid "AMSAT Satellite Status (Last 24h)"
+msgstr ""
+
+#: application/views/amsatstatus/index.php:113
+msgid ""
+"Satellite status by hour for the past 24 hours. Each cell is coloured by its "
+"winning status; hover for the report breakdown."
+msgstr ""
+
+#: application/views/amsatstatus/index.php:117
 msgid "Next AOS"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:93
+#: application/views/amsatstatus/index.php:121
 #, php-format
 msgid "%dh"
 msgid_plural "%dh"
@@ -5901,16 +6142,25 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: application/views/amsatstatus/index.php:93
+#: application/views/amsatstatus/index.php:121
 msgid "now"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:98
+#: application/views/amsatstatus/index.php:123
 #, php-format
 msgid "%d hours ago"
 msgstr ""
 
-#: application/views/amsatstatus/index.php:158
+#: application/views/amsatstatus/index.php:146
+#, php-format
+msgid "%d report in 24h"
+msgid_plural "%d reports in 24h"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: application/views/amsatstatus/index.php:192
 #, php-format
 msgid "%d report"
 msgid_plural "%d reports"
@@ -5919,7 +6169,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: application/views/amsatstatus/index.php:168
+#: application/views/amsatstatus/index.php:202
 #: application/views/qso/index.php:34
 msgid "more"
 msgstr ""
@@ -5928,29 +6178,6 @@ msgstr ""
 #: application/views/api/index.php:189
 msgid "Create a new API Token"
 msgstr ""
-
-#: application/views/api/components/create_token_modal.php:6
-#: application/views/api/components/new_token_modal.php:7
-#: application/views/api/components/new_token_modal.php:23
-#: application/views/bands/index.php:160
-#: application/views/club/permissions.php:191
-#: application/views/contesting/logger/components/winkeyer.php:22
-#: application/views/contesting/logger/index.php:67
-#: application/views/contesting/logger/index.php:93
-#: application/views/contesting/manager/components/confirm_delete.php:6
-#: application/views/contesting/manager/components/session_modal.php:12
-#: application/views/contesting/manager/index.php:124
-#: application/views/gridlookup/index.php:16
-#: application/views/interface_assets/footer.php:54
-#: application/views/logbookadvanced/index.php:55
-#: application/views/simplefle/index.php:21
-#: application/views/user/modals/more_actions_modal.php:51
-#: application/views/user/modals/more_actions_modal.php:80
-#: application/views/user/modals/more_actions_modal.php:117
-#: application/views/user/modals/more_actions_modal.php:166
-#: application/views/version_dialog/index.php:79
-msgid "Close"
-msgstr "Zapri"
 
 #: application/views/api/components/create_token_modal.php:10
 msgid ""
@@ -6089,7 +6316,7 @@ msgstr "Preprosto ime za opis, za kaj uporabljate ta API."
 #: application/views/contesting/logger/components/qso-form.php:37
 #: application/views/cron/edit.php:73
 #: application/views/interface_assets/footer.php:55
-#: application/views/interface_assets/footer.php:689
+#: application/views/interface_assets/footer.php:699
 #: application/views/logbookadvanced/index.php:56
 #: application/views/operator/index.php:32
 #: application/views/options/appearance.php:64
@@ -6372,12 +6599,12 @@ msgstr ""
 #: application/views/awards/jcc/index.php:28
 #: application/views/awards/pl_polska/index.php:40
 #: application/views/awards/pl_polska/index.php:48
-#: application/views/awards/pota/index.php:5
-#: application/views/awards/pota/index.php:13
+#: application/views/awards/pota/index.php:23
+#: application/views/awards/pota/index.php:31
 #: application/views/awards/sig/index.php:5
 #: application/views/awards/sig/index.php:12
-#: application/views/awards/sota/index.php:5
-#: application/views/awards/sota/index.php:13
+#: application/views/awards/sota/index.php:23
+#: application/views/awards/sota/index.php:31
 #: application/views/awards/vucc/index.php:5
 #: application/views/awards/vucc/index.php:13
 #: application/views/awards/wab/index.php:12
@@ -6416,7 +6643,7 @@ msgstr ""
 #: application/views/awards/73on73/index.php:8
 #: application/views/awards/helvetia/index.php:29
 #: application/views/awards/jcc/index.php:24
-#: application/views/awards/sota/index.php:9
+#: application/views/awards/sota/index.php:27
 #: application/views/awards/wab/index.php:16
 #: application/views/awards/waja/index.php:29
 #: application/views/awards/wwff/index.php:27
@@ -6489,7 +6716,9 @@ msgstr "Pojdi na profil postaje"
 #: application/views/awards/itu/index.php:52
 #: application/views/awards/jcc/index.php:46
 #: application/views/awards/pl_polska/index.php:82
+#: application/views/awards/pota/index.php:139
 #: application/views/awards/rac/index.php:44
+#: application/views/awards/sota/index.php:49
 #: application/views/awards/wae/index.php:43
 #: application/views/awards/waja/index.php:51
 #: application/views/awards/wap/index.php:49
@@ -6765,8 +6994,8 @@ msgstr ""
 
 #: application/views/awards/counties/index.php:77
 #: application/views/awards/cq/index.php:93
-#: application/views/awards/dxcc/index.php:285
-#: application/views/awards/dxcc/index.php:358
+#: application/views/awards/dxcc/index.php:298
+#: application/views/awards/dxcc/index.php:371
 #: application/views/awards/dxcc/progress.php:5
 #: application/views/awards/itu/index.php:95
 #: application/views/bandmap/list.php:91 application/views/bandmap/list.php:306
@@ -6781,8 +7010,8 @@ msgstr "Delano"
 
 #: application/views/awards/counties/index.php:78
 #: application/views/awards/cq/index.php:93
-#: application/views/awards/dxcc/index.php:286
-#: application/views/awards/dxcc/index.php:359
+#: application/views/awards/dxcc/index.php:299
+#: application/views/awards/dxcc/index.php:372
 #: application/views/awards/dxcc/progress.php:5
 #: application/views/awards/itu/index.php:95
 #: application/views/awards/wab/list.php:6
@@ -6805,15 +7034,15 @@ msgid "Remaining"
 msgstr ""
 
 #: application/views/awards/counties/index.php:81
-#: application/views/awards/dxcc/index.php:287
-#: application/views/awards/dxcc/index.php:360
+#: application/views/awards/dxcc/index.php:300
+#: application/views/awards/dxcc/index.php:373
 #: application/views/awards/dxcc/progress.php:5
 msgid "Worked Progress"
 msgstr "Napredek delane"
 
 #: application/views/awards/counties/index.php:82
-#: application/views/awards/dxcc/index.php:288
-#: application/views/awards/dxcc/index.php:361
+#: application/views/awards/dxcc/index.php:301
+#: application/views/awards/dxcc/index.php:374
 #: application/views/awards/dxcc/progress.php:5
 msgid "Confirmed Progress"
 msgstr "Napredek potrjene"
@@ -6860,32 +7089,6 @@ msgstr ""
 #: application/views/awards/counties/state_ajax.php:9
 msgid "QSOs Confirmed"
 msgstr ""
-
-#: application/views/awards/cq/index.php:3
-#: application/views/awards/cq/index.php:205
-#: application/views/bandmap/list.php:569
-#: application/views/bandmap/list.php:607 application/views/csv/index.php:80
-#: application/views/dxatlas/index.php:80
-#: application/views/gridlookup/index.php:80
-#: application/views/gridmap/index.php:229 application/views/kml/index.php:65
-#: application/views/logbookadvanced/checkresult.php:246
-#: application/views/logbookadvanced/edit.php:29
-#: application/views/logbookadvanced/index.php:22
-#: application/views/logbookadvanced/index.php:456
-#: application/views/logbookadvanced/index.php:1008
-#: application/views/logbookadvanced/qslcarousel.php:37
-#: application/views/logbookadvanced/useroptions.php:193
-#: application/views/lookup/index.php:3 application/views/map/qso_map.php:114
-#: application/views/qso/edit_ajax.php:293 application/views/qso/index.php:519
-#: application/views/station_profile/create.php:129
-#: application/views/station_profile/edit.php:154
-#: application/views/stationsetup/locationlist.php:21
-#: application/views/timeline/index.php:344
-#: application/views/timeplotter/index.php:39
-#: application/views/user/modals/first_login_wizard.php:75
-#: application/views/zonechecker/index.php:23
-msgid "CQ Zone"
-msgstr "CQ Zone"
 
 #: application/views/awards/cq/index.php:4
 #: application/views/awards/itu/index.php:4
@@ -6937,7 +7140,9 @@ msgstr "Diplome - CQ WAZ"
 #: application/views/awards/helvetia/index.php:40
 #: application/views/awards/iota/index.php:36
 #: application/views/awards/itu/index.php:41
+#: application/views/awards/pota/index.php:129
 #: application/views/awards/rac/index.php:33
+#: application/views/awards/sota/index.php:39
 #: application/views/awards/waja/index.php:40
 #: application/views/awards/wap/index.php:38
 #: application/views/awards/wapc/index.php:41
@@ -6954,7 +7159,9 @@ msgstr "Tabela"
 #: application/views/awards/itu/index.php:44
 #: application/views/awards/jcc/index.php:38
 #: application/views/awards/pl_polska/index.php:69
+#: application/views/awards/pota/index.php:132
 #: application/views/awards/rac/index.php:36
+#: application/views/awards/sota/index.php:42
 #: application/views/awards/wab/index.php:110
 #: application/views/awards/waja/index.php:43
 #: application/views/awards/wap/index.php:41
@@ -6978,6 +7185,8 @@ msgstr "Prikaži zemljevid CQ Zone"
 #: application/views/awards/cq/index.php:60
 #: application/views/awards/dxcc/index.php:59
 #: application/views/awards/itu/index.php:62
+#: application/views/awards/pota/index.php:145
+#: application/views/awards/sota/index.php:55
 #: application/views/awards/wae/index.php:50
 #: application/views/awards/wwff/index.php:55
 #: application/views/gridmap/index.php:44
@@ -6989,6 +7198,8 @@ msgstr "Prednastavitve datuma"
 #: application/views/awards/cq/index.php:62
 #: application/views/awards/dxcc/index.php:61
 #: application/views/awards/itu/index.php:64
+#: application/views/awards/pota/index.php:147
+#: application/views/awards/sota/index.php:57
 #: application/views/awards/wae/index.php:52
 #: application/views/awards/wwff/index.php:57
 #: application/views/contestcalendar/index.php:44
@@ -7006,6 +7217,8 @@ msgstr "Danes"
 #: application/views/awards/cq/index.php:63
 #: application/views/awards/dxcc/index.php:62
 #: application/views/awards/itu/index.php:65
+#: application/views/awards/pota/index.php:148
+#: application/views/awards/sota/index.php:58
 #: application/views/awards/wae/index.php:53
 #: application/views/awards/wwff/index.php:58
 #: application/views/gridmap/index.php:48
@@ -7017,6 +7230,8 @@ msgstr "Včeraj"
 #: application/views/awards/cq/index.php:64
 #: application/views/awards/dxcc/index.php:63
 #: application/views/awards/itu/index.php:66
+#: application/views/awards/pota/index.php:149
+#: application/views/awards/sota/index.php:59
 #: application/views/awards/wae/index.php:54
 #: application/views/awards/wwff/index.php:59
 #: application/views/gridmap/index.php:49
@@ -7028,6 +7243,8 @@ msgstr "Zadnjih 7 dni"
 #: application/views/awards/cq/index.php:65
 #: application/views/awards/dxcc/index.php:64
 #: application/views/awards/itu/index.php:67
+#: application/views/awards/pota/index.php:150
+#: application/views/awards/sota/index.php:60
 #: application/views/awards/wae/index.php:55
 #: application/views/awards/wwff/index.php:60
 #: application/views/gridmap/index.php:50
@@ -7039,6 +7256,8 @@ msgstr "Zadnjih 30 dni"
 #: application/views/awards/cq/index.php:66
 #: application/views/awards/dxcc/index.php:65
 #: application/views/awards/itu/index.php:68
+#: application/views/awards/pota/index.php:151
+#: application/views/awards/sota/index.php:61
 #: application/views/awards/wae/index.php:56
 #: application/views/awards/wwff/index.php:61
 #: application/views/gridmap/index.php:51
@@ -7050,6 +7269,8 @@ msgstr "Ta mesec"
 #: application/views/awards/cq/index.php:67
 #: application/views/awards/dxcc/index.php:66
 #: application/views/awards/itu/index.php:69
+#: application/views/awards/pota/index.php:152
+#: application/views/awards/sota/index.php:62
 #: application/views/awards/wae/index.php:57
 #: application/views/awards/wwff/index.php:62
 #: application/views/gridmap/index.php:52
@@ -7061,6 +7282,8 @@ msgstr "Prejšnji mesec"
 #: application/views/awards/cq/index.php:68
 #: application/views/awards/dxcc/index.php:67
 #: application/views/awards/itu/index.php:70
+#: application/views/awards/pota/index.php:153
+#: application/views/awards/sota/index.php:63
 #: application/views/awards/wae/index.php:58
 #: application/views/awards/wwff/index.php:63
 #: application/views/gridmap/index.php:53
@@ -7072,6 +7295,8 @@ msgstr "To leto"
 #: application/views/awards/cq/index.php:69
 #: application/views/awards/dxcc/index.php:68
 #: application/views/awards/itu/index.php:71
+#: application/views/awards/pota/index.php:154
+#: application/views/awards/sota/index.php:64
 #: application/views/awards/wae/index.php:59
 #: application/views/awards/wwff/index.php:64
 #: application/views/logbookadvanced/index.php:356
@@ -7079,22 +7304,11 @@ msgstr "To leto"
 msgid "Last Year"
 msgstr "Prejšnje leto"
 
-#: application/views/awards/cq/index.php:70
-#: application/views/awards/dxcc/index.php:69
-#: application/views/awards/itu/index.php:72
-#: application/views/awards/wae/index.php:60
-#: application/views/awards/wwff/index.php:65
-#: application/views/gridlookup/index.php:49
-#: application/views/gridmap/index.php:54
-#: application/views/interface_assets/footer.php:56
-#: application/views/logbookadvanced/index.php:357
-#: application/views/qso/index.php:758 application/views/user/edit.php:1330
-msgid "Clear"
-msgstr "Počisti"
-
 #: application/views/awards/cq/index.php:75
 #: application/views/awards/dxcc/index.php:74
 #: application/views/awards/itu/index.php:77
+#: application/views/awards/pota/index.php:160
+#: application/views/awards/sota/index.php:70
 #: application/views/awards/wae/index.php:65
 #: application/views/awards/wwff/index.php:70
 #: application/views/dxcalendar/index.php:14
@@ -7106,6 +7320,8 @@ msgstr "Datum od"
 #: application/views/awards/cq/index.php:83
 #: application/views/awards/dxcc/index.php:82
 #: application/views/awards/itu/index.php:85
+#: application/views/awards/pota/index.php:164
+#: application/views/awards/sota/index.php:74
 #: application/views/awards/wae/index.php:73
 #: application/views/awards/wwff/index.php:74
 #: application/views/dxcalendar/index.php:15
@@ -7121,7 +7337,9 @@ msgstr "Datum do"
 #: application/views/awards/iota/index.php:72
 #: application/views/awards/itu/index.php:99
 #: application/views/awards/jcc/index.php:62
+#: application/views/awards/pota/index.php:173
 #: application/views/awards/rac/index.php:59
+#: application/views/awards/sota/index.php:83
 #: application/views/awards/wae/index.php:87
 #: application/views/awards/waja/index.php:66
 #: application/views/awards/wap/index.php:64
@@ -7138,7 +7356,9 @@ msgstr "Prikaži delane"
 #: application/views/awards/iota/index.php:76
 #: application/views/awards/itu/index.php:103
 #: application/views/awards/jcc/index.php:66
+#: application/views/awards/pota/index.php:177
 #: application/views/awards/rac/index.php:63
+#: application/views/awards/sota/index.php:87
 #: application/views/awards/wae/index.php:91
 #: application/views/awards/waja/index.php:70
 #: application/views/awards/wap/index.php:68
@@ -7170,7 +7390,9 @@ msgstr "Prikaži ne delane"
 #: application/views/awards/iota/index.php:86
 #: application/views/awards/itu/index.php:113
 #: application/views/awards/jcc/index.php:76
+#: application/views/awards/pota/index.php:183
 #: application/views/awards/rac/index.php:73
+#: application/views/awards/sota/index.php:93
 #: application/views/awards/wac/index.php:27
 #: application/views/awards/wae/index.php:101
 #: application/views/awards/waja/index.php:80
@@ -7186,7 +7408,7 @@ msgstr "Prikaži QSO z vrsto QSL"
 #: application/views/awards/iota/index.php:90
 #: application/views/awards/itu/index.php:117
 #: application/views/awards/wac/index.php:31
-#: application/views/interface_assets/footer.php:2394
+#: application/views/interface_assets/footer.php:2404
 #: application/views/logbookadvanced/index.php:54
 #: application/views/qso/edit_ajax.php:405
 #: application/views/view_log/qso.php:25
@@ -7194,7 +7416,7 @@ msgid "QSL Card"
 msgstr "QSL kartica"
 
 #: application/views/awards/cq/index.php:193
-#: application/views/awards/dxcc/index.php:430
+#: application/views/awards/dxcc/index.php:443
 #: application/views/awards/itu/index.php:195
 #: application/views/awards/wac/index.php:134
 #: application/views/awards/wae/index.php:202
@@ -7202,7 +7424,7 @@ msgid "Legend:"
 msgstr "Legenda:"
 
 #: application/views/awards/cq/index.php:194
-#: application/views/awards/dxcc/index.php:431
+#: application/views/awards/dxcc/index.php:444
 #: application/views/awards/itu/index.php:196
 #: application/views/awards/wac/index.php:135
 #: application/views/awards/wae/index.php:203
@@ -7210,7 +7432,7 @@ msgid "(Q)SL-Paper-Card"
 msgstr "(Q)SL-Papirnata-Kartica"
 
 #: application/views/awards/cq/index.php:195
-#: application/views/awards/dxcc/index.php:432
+#: application/views/awards/dxcc/index.php:445
 #: application/views/awards/itu/index.php:197
 #: application/views/awards/wac/index.php:136
 #: application/views/awards/wae/index.php:204
@@ -7218,7 +7440,7 @@ msgid "(L)oTW"
 msgstr "(L)oTW"
 
 #: application/views/awards/cq/index.php:196
-#: application/views/awards/dxcc/index.php:433
+#: application/views/awards/dxcc/index.php:446
 #: application/views/awards/itu/index.php:198
 #: application/views/awards/wac/index.php:137
 #: application/views/awards/wae/index.php:205
@@ -7226,7 +7448,7 @@ msgid "(e)QSL"
 msgstr "(e)QSL"
 
 #: application/views/awards/cq/index.php:197
-#: application/views/awards/dxcc/index.php:434
+#: application/views/awards/dxcc/index.php:447
 #: application/views/awards/itu/index.php:199
 #: application/views/awards/wac/index.php:138
 #: application/views/awards/wae/index.php:206
@@ -7234,7 +7456,7 @@ msgid "QR(Z)-\"confirmation\""
 msgstr "QR(Z)-\"potrjene\""
 
 #: application/views/awards/cq/index.php:198
-#: application/views/awards/dxcc/index.php:435
+#: application/views/awards/dxcc/index.php:448
 #: application/views/awards/itu/index.php:200
 #: application/views/awards/wac/index.php:139
 #: application/views/awards/wae/index.php:207
@@ -7242,7 +7464,7 @@ msgid "(C)lublog"
 msgstr "(C)lublog"
 
 #: application/views/awards/cq/index.php:199
-#: application/views/awards/dxcc/index.php:436
+#: application/views/awards/dxcc/index.php:449
 #: application/views/awards/itu/index.php:201
 #: application/views/awards/wac/index.php:140
 #: application/views/awards/wae/index.php:208
@@ -7251,7 +7473,7 @@ msgstr "(W) Delano"
 
 #: application/views/awards/cq/index.php:225
 #: application/views/awards/dok/index.php:173
-#: application/views/awards/dxcc/index.php:468
+#: application/views/awards/dxcc/index.php:481
 #: application/views/awards/helvetia/index.php:174
 #: application/views/awards/iota/index.php:234
 #: application/views/awards/itu/index.php:227
@@ -7268,8 +7490,8 @@ msgid "Summary"
 msgstr "Povzetek"
 
 #: application/views/awards/cq/index.php:238
-#: application/views/awards/dxcc/index.php:336
-#: application/views/awards/dxcc/index.php:481
+#: application/views/awards/dxcc/index.php:349
+#: application/views/awards/dxcc/index.php:494
 #: application/views/awards/itu/index.php:240
 #: application/views/awards/wac/index.php:181
 #: application/views/awards/wae/index.php:255
@@ -7278,7 +7500,7 @@ msgstr "Skupaj (ex SAT)"
 
 #: application/views/awards/cq/index.php:244
 #: application/views/awards/dok/index.php:186
-#: application/views/awards/dxcc/index.php:491
+#: application/views/awards/dxcc/index.php:504
 #: application/views/awards/helvetia/index.php:187
 #: application/views/awards/iota/index.php:255
 #: application/views/awards/itu/index.php:246
@@ -7296,7 +7518,7 @@ msgstr "Skupaj delano"
 
 #: application/views/awards/cq/index.php:257
 #: application/views/awards/dok/index.php:193
-#: application/views/awards/dxcc/index.php:516
+#: application/views/awards/dxcc/index.php:529
 #: application/views/awards/helvetia/index.php:194
 #: application/views/awards/iota/index.php:281
 #: application/views/awards/itu/index.php:259
@@ -7389,7 +7611,9 @@ msgstr "DOK + SDOK"
 #: application/views/awards/helvetia/index.php:62
 #: application/views/awards/iota/index.php:68
 #: application/views/awards/jcc/index.php:58
+#: application/views/awards/pota/index.php:169
 #: application/views/awards/rac/index.php:55
+#: application/views/awards/sota/index.php:79
 #: application/views/awards/wae/index.php:83
 #: application/views/awards/waja/index.php:62
 #: application/views/awards/wap/index.php:60
@@ -7570,21 +7794,21 @@ msgstr "Južna Amerika"
 msgid "Oceania"
 msgstr "Oceanija"
 
-#: application/views/awards/dxcc/index.php:268
+#: application/views/awards/dxcc/index.php:281
 #: application/views/awards/waip/index.php:61
 #: application/views/awards/waip/index.php:98
 msgid "By Band"
 msgstr "Po bandu"
 
-#: application/views/awards/dxcc/index.php:271
+#: application/views/awards/dxcc/index.php:284
 msgid "By Continent"
 msgstr "Po celini"
 
-#: application/views/awards/dxcc/index.php:274
+#: application/views/awards/dxcc/index.php:287
 msgid "By Mode"
 msgstr "Po načinu dela"
 
-#: application/views/awards/dxcc/index.php:357
+#: application/views/awards/dxcc/index.php:370
 #: application/views/awards/wac/index.php:147
 #: application/views/bandmap/list.php:105
 #: application/views/bandmap/list.php:568
@@ -7600,25 +7824,25 @@ msgstr "Po načinu dela"
 msgid "Continent"
 msgstr "Celina"
 
-#: application/views/awards/dxcc/index.php:404
+#: application/views/awards/dxcc/index.php:417
 msgid "No continent data available."
 msgstr "Podatki o celini niso na voljo."
 
-#: application/views/awards/dxcc/index.php:413
+#: application/views/awards/dxcc/index.php:426
 #: application/views/contesting/logger/components/scp.php:52
 #: application/views/debug/index.php:169
 msgid "Loading..."
 msgstr "Nalagam..."
 
-#: application/views/awards/dxcc/index.php:415
+#: application/views/awards/dxcc/index.php:428
 msgid "Loading progress data..."
 msgstr "Nalaganje podatkov o napredku..."
 
-#: application/views/awards/dxcc/index.php:442
+#: application/views/awards/dxcc/index.php:455
 msgid "DXCC Name"
 msgstr "DXCC Ime"
 
-#: application/views/awards/dxcc/index.php:443
+#: application/views/awards/dxcc/index.php:456
 #: application/views/awards/iota/index.php:209
 #: application/views/awards/wae/index.php:216
 #: application/views/logbookadvanced/statecheckresult.php:10
@@ -7627,11 +7851,11 @@ msgstr "DXCC Ime"
 msgid "Prefix"
 msgstr "Prefiks"
 
-#: application/views/awards/dxcc/index.php:484
+#: application/views/awards/dxcc/index.php:497
 msgid "Slots"
 msgstr "Termini"
 
-#: application/views/awards/dxcc/index.php:547
+#: application/views/awards/dxcc/index.php:560
 msgid "No results found for your search criteria. Please try again."
 msgstr ""
 "Za vaše iskalne kriterije ni bilo najdenih rezultatov. Poskusite znova."
@@ -7898,26 +8122,6 @@ msgstr "Izbrisane IOTA"
 #: application/views/awards/iota/index.php:212
 msgid "Deleted"
 msgstr "Izbrisano"
-
-#: application/views/awards/itu/index.php:3
-#: application/views/awards/itu/index.php:207
-#: application/views/gridlookup/index.php:81
-#: application/views/gridmap/index.php:230
-#: application/views/logbookadvanced/checkresult.php:322
-#: application/views/logbookadvanced/edit.php:34
-#: application/views/logbookadvanced/index.php:21
-#: application/views/logbookadvanced/index.php:470
-#: application/views/logbookadvanced/index.php:1011
-#: application/views/logbookadvanced/useroptions.php:199
-#: application/views/lookup/index.php:8 application/views/map/qso_map.php:115
-#: application/views/qso/edit_ajax.php:302 application/views/qso/index.php:529
-#: application/views/station_profile/create.php:144
-#: application/views/station_profile/edit.php:169
-#: application/views/stationsetup/locationlist.php:22
-#: application/views/user/modals/first_login_wizard.php:86
-#: application/views/zonechecker/index.php:24
-msgid "ITU Zone"
-msgstr "ITU Zone"
 
 #: application/views/awards/itu/index.php:28
 msgid ""
@@ -8239,11 +8443,31 @@ msgstr "Uporabi"
 msgid "to auto-populate states from Maidenhead locators."
 msgstr "za samodejno izpolnjevanje state iz lokatorjev Maidenheada."
 
+#: application/views/awards/pota/index.php:4
+msgid "Error loading POTA map data"
+msgstr ""
+
+#: application/views/awards/pota/index.php:5
+msgid "No POTA references worked for these filters."
+msgstr ""
+
 #: application/views/awards/pota/index.php:6
+msgid ""
+"POTA directory not loaded - coordinates missing. Run the update_pota cron "
+"job."
+msgstr ""
+
+#: application/views/awards/pota/index.php:7
+#: application/views/awards/sota/index.php:7
+#: application/views/awards/wwff/index.php:7
+msgid "Not shown (No coordinates)"
+msgstr ""
+
+#: application/views/awards/pota/index.php:24
 msgid "POTA Awards"
 msgstr "Diplome POTA"
 
-#: application/views/awards/pota/index.php:7
+#: application/views/awards/pota/index.php:25
 msgid ""
 "Parks on the Air® (POTA) started in early 2017 when the ARRL's National "
 "Parks on the Air special event ended. A group of volunteers wanted to "
@@ -8253,7 +8477,7 @@ msgstr ""
 "posebni dogodek ARRL Nacionalni parki na prostem. Skupina prostovoljcev je "
 "želela nadaljevati zabavo tudi po enoletnem dogodku in tako se je rodil POTA."
 
-#: application/views/awards/pota/index.php:8
+#: application/views/awards/pota/index.php:26
 msgid ""
 "POTA works similarly to SOTA, with Activators and Hunters. For the awards, "
 "there are several categories based on the number of parks, geographic areas, "
@@ -8262,7 +8486,7 @@ msgstr ""
 "POTA deluje podobno kot SOTA, z Aktivatorji in Lovci. Za diplome obstaja več "
 "kategorij, ki temeljijo na številu parkov, geografskih območjih in drugem."
 
-#: application/views/awards/pota/index.php:9
+#: application/views/awards/pota/index.php:27
 #, php-format
 msgctxt "uses 'the website'"
 msgid ""
@@ -8271,16 +8495,57 @@ msgid ""
 msgstr ""
 "Za več informacij o razpoložljivih diplomah in kategorijah obiščite %s."
 
-#: application/views/awards/pota/index.php:10
+#: application/views/awards/pota/index.php:28
 msgid "Fields taken for this Award: POTA_REF (must contain Park-Reference)"
 msgstr ""
 "Polja, uporabljena za to diplomo: POTA_REF (mora vsebovati Park-Reference)"
 
-#: application/views/awards/pota/index.php:19
-msgid "POTA QSO List"
+#: application/views/awards/pota/index.php:69
+msgid "No award yet"
 msgstr ""
 
-#: application/views/awards/pota/index.php:37
+#: application/views/awards/pota/index.php:76
+#, php-format
+msgid "Progress to %s"
+msgstr ""
+
+#: application/views/awards/pota/index.php:82
+#, php-format
+msgid "%d more different park(s) for the next award"
+msgstr ""
+
+#: application/views/awards/pota/index.php:84
+msgid "You have reached the highest POTA award tier!"
+msgstr ""
+
+#: application/views/awards/pota/index.php:89
+msgid "Show all tiers"
+msgstr ""
+
+#: application/views/awards/pota/index.php:93
+msgid "Advanced Awards"
+msgstr ""
+
+#: application/views/awards/pota/index.php:93
+msgid "Standard Awards"
+msgstr ""
+
+#: application/views/awards/pota/index.php:118
+msgid "POTA Hunter progress"
+msgstr ""
+
+#: application/views/awards/pota/index.php:121
+msgid "different parks hunted"
+msgstr ""
+
+#: application/views/awards/pota/index.php:140
+#: application/views/awards/sota/index.php:50
+#: application/views/awards/wwff/index.php:50
+#: application/views/bandmap/list.php:422
+msgid "Apply Filters"
+msgstr "Uporabi filtre"
+
+#: application/views/awards/pota/index.php:253
 #: application/views/qso/index.php:337 application/views/qso/index.php:621
 #: application/views/station_profile/create.php:242
 #: application/views/station_profile/edit.php:267
@@ -8368,7 +8633,6 @@ msgid "QSO List"
 msgstr ""
 
 #: application/views/awards/sig/qso_list.php:13
-#: application/views/awards/sota/index.php:36
 msgid "Reference"
 msgstr "Referenca"
 
@@ -8387,12 +8651,10 @@ msgid "Date/Time"
 msgstr "Datum/Čas"
 
 #: application/views/awards/sig/qso_list.php:18
-#: application/views/awards/sota/index.php:41
 msgid "RST Sent"
 msgstr "Poslan RST"
 
 #: application/views/awards/sig/qso_list.php:19
-#: application/views/awards/sota/index.php:42
 msgid "RST Received"
 msgstr "Prejet RST"
 
@@ -8400,11 +8662,25 @@ msgstr "Prejet RST"
 msgid "Export QSOs to ADIF"
 msgstr "Izvozi QSO-je v ADIF"
 
+#: application/views/awards/sota/index.php:4
+msgid "Error loading SOTA map data"
+msgstr ""
+
+#: application/views/awards/sota/index.php:5
+msgid "No SOTA references worked for these filters."
+msgstr ""
+
 #: application/views/awards/sota/index.php:6
+msgid ""
+"SOTA directory not loaded - coordinates missing. Run the update_sota cron "
+"job."
+msgstr ""
+
+#: application/views/awards/sota/index.php:24
 msgid "SOTA Awards"
 msgstr "Diplome SOTA"
 
-#: application/views/awards/sota/index.php:7
+#: application/views/awards/sota/index.php:25
 msgid ""
 "SOTA (Summits On The Air) is an award scheme for radio amateurs that "
 "encourages portable operation in mountainous areas."
@@ -8412,7 +8688,7 @@ msgstr ""
 "SOTA (Summits On The Air) je shema diplom za radioamaterje, ki spodbuja "
 "portable delo v gorskih območjih."
 
-#: application/views/awards/sota/index.php:8
+#: application/views/awards/sota/index.php:26
 msgid ""
 "It is fully operational in nearly a hundred countries worldwide. Each "
 "country has its own Association that defines the recognized SOTA summits "
@@ -8429,12 +8705,17 @@ msgstr ""
 "'Mountain Goat' in 'Shack Sloth'. Častni seznam za aktivatorje in "
 "zasledovalce se vzdržuje v spletni bazi podatkov SOTA."
 
-#: application/views/awards/sota/index.php:10
+#: application/views/awards/sota/index.php:28
 msgid "Fields taken for this Award: SOTA Reference (ADIF: SOTA_REF)"
 msgstr ""
 
-#: application/views/awards/sota/index.php:19
-msgid "SOTA QSO List"
+#: application/views/awards/sota/index.php:163
+#: application/views/qso/index.php:313 application/views/qso/index.php:595
+#: application/views/station_profile/create.php:214
+#: application/views/station_profile/edit.php:239
+#: application/views/user/edit.php:859 application/views/view_log/qso.php:348
+#: application/views/view_log/qso.php:681
+msgid "SOTA Reference"
 msgstr ""
 
 #: application/views/awards/vucc/band.php:7
@@ -8913,10 +9194,6 @@ msgid ""
 "job."
 msgstr ""
 
-#: application/views/awards/wwff/index.php:7
-msgid "Not shown (No coordinates)"
-msgstr ""
-
 #: application/views/awards/wwff/index.php:24
 msgid "WWFF - World Wide Flora and Fauna Award"
 msgstr "WWFF - World Wide Flora and Fauna Award"
@@ -8944,11 +9221,6 @@ msgstr ""
 #: application/views/awards/wwff/index.php:28
 msgid "Fields taken for this Award: WWFF (ADIF: WWFF_REF)"
 msgstr "Polja, uporabljena za to diplomo: WWFF (ADIF: WWFF_REF)"
-
-#: application/views/awards/wwff/index.php:50
-#: application/views/bandmap/list.php:422
-msgid "Apply Filters"
-msgstr "Uporabi filtre"
 
 #: application/views/awards/wwff/index.php:163
 #: application/views/qso/index.php:325 application/views/qso/index.php:608
@@ -10295,7 +10567,7 @@ msgid "Callsign DXCC identification"
 msgstr "Identifikacija DXCC klicnega znaka"
 
 #: application/views/calltester/index.php:16
-#: application/views/interface_assets/footer.php:890
+#: application/views/interface_assets/footer.php:900
 #: application/views/logbookadvanced/index.php:875
 #: application/views/zonechecker/index.php:16
 msgid "Callsign: "
@@ -11236,7 +11508,7 @@ msgid "Time window"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:4
-#: application/views/user/edit.php:1273
+#: application/views/user/edit.php:1284
 msgid "Winkeyer"
 msgstr ""
 
@@ -11255,7 +11527,7 @@ msgid "S&P"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:51
-#: application/views/qso/index.php:830
+#: application/views/qso/index.php:829
 msgid "Connect"
 msgstr ""
 
@@ -11264,32 +11536,32 @@ msgid "Toggle Run / Search & Pounce for ESM"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:73
-#: application/views/qso/index.php:858
+#: application/views/qso/index.php:857
 msgid "CW Speed"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:75
-#: application/views/qso/index.php:860
+#: application/views/qso/index.php:859
 msgid "Stop"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:76
-#: application/views/qso/index.php:861
+#: application/views/qso/index.php:860
 msgid "Tune"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:77
-#: application/views/qso/index.php:862
+#: application/views/qso/index.php:861
 msgid "Stop Tune"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:82
-#: application/views/qso/index.php:867
+#: application/views/qso/index.php:866
 msgid "Enter text..."
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:83
-#: application/views/qso/index.php:868
+#: application/views/qso/index.php:867
 msgid "Send"
 msgstr ""
 
@@ -11931,7 +12203,7 @@ msgstr ""
 #: application/views/qso/edit_ajax.php:593
 #: application/views/qso/edit_ajax.php:605
 #: application/views/qso/edit_ajax.php:619
-#: application/views/qso/edit_ajax.php:631 application/views/qso/index.php:713
+#: application/views/qso/edit_ajax.php:631 application/views/qso/index.php:712
 #: application/views/satellite/create.php:75
 #: application/views/satellite/edit.php:31
 #: application/views/satellite/edit.php:34
@@ -11952,7 +12224,7 @@ msgstr ""
 #: application/views/station_profile/edit.php:447
 #: application/views/stationsetup/locationlist.php:49
 #: application/views/stationsetup/locationlist.php:59
-#: application/views/user/edit.php:1195
+#: application/views/user/edit.php:1206
 msgid "Yes"
 msgstr "Da"
 
@@ -11992,7 +12264,7 @@ msgstr "Da"
 #: application/views/qso/edit_ajax.php:592
 #: application/views/qso/edit_ajax.php:604
 #: application/views/qso/edit_ajax.php:618
-#: application/views/qso/edit_ajax.php:630 application/views/qso/index.php:712
+#: application/views/qso/edit_ajax.php:630 application/views/qso/index.php:711
 #: application/views/satellite/create.php:76
 #: application/views/satellite/edit.php:32
 #: application/views/satellite/edit.php:35
@@ -12687,7 +12959,7 @@ msgid "View QSO"
 msgstr ""
 
 #: application/views/dashboard/index.php:384
-#: application/views/qso/index.php:923
+#: application/views/qso/index.php:922
 #, php-format
 msgid "Max. %d previous contact is shown"
 msgid_plural "Max. %d previous contacts are shown"
@@ -12747,7 +13019,7 @@ msgstr "Potrebne"
 #: application/views/qso/edit_ajax.php:532
 #: application/views/qso/edit_ajax.php:561
 #: application/views/qso/edit_ajax.php:589
-#: application/views/qso/edit_ajax.php:615 application/views/qso/index.php:709
+#: application/views/qso/edit_ajax.php:615 application/views/qso/index.php:708
 #: application/views/search/search_result_ajax.php:183
 #: application/views/search/search_result_ajax.php:263
 #: application/views/search/search_result_ajax.php:301
@@ -12833,7 +13105,7 @@ msgstr "Prejeto"
 #: application/views/qso/edit_ajax.php:594
 #: application/views/qso/edit_ajax.php:606
 #: application/views/qso/edit_ajax.php:620
-#: application/views/qso/edit_ajax.php:632 application/views/qso/index.php:714
+#: application/views/qso/edit_ajax.php:632 application/views/qso/index.php:713
 #: application/views/search/search_result_ajax.php:189
 #: application/views/search/search_result_ajax.php:231
 #: application/views/view_log/partial/log_ajax.php:222
@@ -14162,10 +14434,10 @@ msgid "QSL Date"
 msgstr "Datum QSL"
 
 #: application/views/eqslcard/index.php:68
-#: application/views/interface_assets/footer.php:2659
-#: application/views/interface_assets/footer.php:2677
-#: application/views/interface_assets/footer.php:2696
-#: application/views/interface_assets/footer.php:2714
+#: application/views/interface_assets/footer.php:2671
+#: application/views/interface_assets/footer.php:2689
+#: application/views/interface_assets/footer.php:2708
+#: application/views/interface_assets/footer.php:2726
 #: application/views/qslcard/index.php:81
 #: application/views/view_log/qso.php:731
 #: application/views/view_log/qso.php:739
@@ -14175,99 +14447,6 @@ msgstr "Ogled"
 #: application/views/errors/html/error_404.php:82
 msgid "Go Back to Dashboard"
 msgstr "Nazaj na nadzorno ploščo"
-
-#: application/views/gridlookup/index.php:8
-msgid ""
-"Invalid gridsquare — use 2, 4, 6, 8 or 10 characters (e.g. FN, FN31, FN31pr)."
-msgstr ""
-
-#: application/views/gridlookup/index.php:15
-msgid "Gridsquare borders"
-msgstr ""
-
-#: application/views/gridlookup/index.php:18
-msgid "Tracking"
-msgstr ""
-
-#: application/views/gridlookup/index.php:19
-#: application/views/logbookadvanced/mergedialog.php:71
-#: application/views/qslpostcard/designer.php:241
-msgid "Field"
-msgstr ""
-
-#: application/views/gridlookup/index.php:20
-msgid "Square"
-msgstr ""
-
-#: application/views/gridlookup/index.php:21
-msgid "Subsquare"
-msgstr ""
-
-#: application/views/gridlookup/index.php:22
-msgid "Locating…"
-msgstr ""
-
-#: application/views/gridlookup/index.php:23
-msgid "Location access denied."
-msgstr ""
-
-#: application/views/gridlookup/index.php:24
-msgid "Location unavailable."
-msgstr ""
-
-#: application/views/gridlookup/index.php:25
-msgid "Location request timed out."
-msgstr ""
-
-#: application/views/gridlookup/index.php:35
-msgid "Plan your activity here"
-msgstr ""
-
-#: application/views/gridlookup/index.php:43
-msgid "2, 4, 6, 8 or 10 character Maidenhead locator"
-msgstr ""
-
-#: application/views/gridlookup/index.php:43
-msgid "e.g. FN31pr"
-msgstr ""
-
-#: application/views/gridlookup/index.php:44
-msgid "to"
-msgstr ""
-
-#: application/views/gridlookup/index.php:47
-msgid "Optional second gridsquare for distance and bearing"
-msgstr ""
-
-#: application/views/gridlookup/index.php:47
-msgid "e.g. JN58qm"
-msgstr ""
-
-#: application/views/gridlookup/index.php:48
-msgid "Go"
-msgstr ""
-
-#: application/views/gridlookup/index.php:50
-msgid "Find my location and gridsquare"
-msgstr ""
-
-#: application/views/gridlookup/index.php:50
-msgid "Locate me"
-msgstr ""
-
-#: application/views/gridlookup/index.php:53
-#: application/views/simplefle/index.php:162
-msgid "Refs"
-msgstr ""
-
-#: application/views/gridlookup/index.php:65
-#: application/views/qso/index.php:759
-msgid "More options"
-msgstr ""
-
-#: application/views/gridlookup/index.php:66
-msgid "Hide options"
-msgstr ""
 
 #: application/views/gridmap/index.php:27
 msgid "View a map of worked / confirmed gridsquares"
@@ -14791,76 +14970,76 @@ msgstr ""
 msgid "Failed to load the modal. Please try again."
 msgstr ""
 
-#: application/views/interface_assets/footer.php:544
+#: application/views/interface_assets/footer.php:554
 msgid "Description:"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:547
+#: application/views/interface_assets/footer.php:557
 msgid "Query description"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:563
+#: application/views/interface_assets/footer.php:573
 msgid "Your query has been saved!"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:565
+#: application/views/interface_assets/footer.php:575
 #: application/views/search/filter.php:43
 msgid "Edit queries"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:567
+#: application/views/interface_assets/footer.php:577
 msgid "Stored queries:"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:572
+#: application/views/interface_assets/footer.php:582
 #: application/views/search/filter.php:57
 msgid "Run Query"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:584
-#: application/views/interface_assets/footer.php:720
-#: application/views/interface_assets/footer.php:790
+#: application/views/interface_assets/footer.php:594
+#: application/views/interface_assets/footer.php:730
+#: application/views/interface_assets/footer.php:800
 msgid "Stored Queries"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:589
-#: application/views/interface_assets/footer.php:795
+#: application/views/interface_assets/footer.php:599
+#: application/views/interface_assets/footer.php:805
 msgid "You need to make a query before you search!"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:610
-#: application/views/interface_assets/footer.php:747
+#: application/views/interface_assets/footer.php:620
+#: application/views/interface_assets/footer.php:757
 #: application/views/search/filter.php:76
 msgid "Export to ADIF"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:611
-#: application/views/interface_assets/footer.php:748
+#: application/views/interface_assets/footer.php:621
+#: application/views/interface_assets/footer.php:758
 #: application/views/search/main.php:32
 msgid "Open in the Advanced Logbook"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:655
+#: application/views/interface_assets/footer.php:665
 msgid "Warning! Are you sure you want delete this stored query?"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:669
+#: application/views/interface_assets/footer.php:679
 msgid "The stored query has been deleted!"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:678
+#: application/views/interface_assets/footer.php:688
 msgid "The stored query could not be deleted. Please try again!"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:704
+#: application/views/interface_assets/footer.php:714
 msgid "The query description has been updated!"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:708
+#: application/views/interface_assets/footer.php:718
 msgid "Something went wrong with the save. Please try again!"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:837
+#: application/views/interface_assets/footer.php:847
 msgid ""
 "Stop here for a Moment. Your chosen DXCC is outdated and not valid anymore. "
 "Check which DXCC for this particular location is the correct one. If you are "
@@ -14870,15 +15049,15 @@ msgstr ""
 "Preverite, katera DXCC za to lokacijo je pravilna. Če ste prepričani, "
 "prezrite to opozorilo."
 
-#: application/views/interface_assets/footer.php:891
+#: application/views/interface_assets/footer.php:901
 msgid "Count: "
 msgstr ""
 
-#: application/views/interface_assets/footer.php:892
+#: application/views/interface_assets/footer.php:902
 msgid "Grids: "
 msgstr ""
 
-#: application/views/interface_assets/footer.php:1118
+#: application/views/interface_assets/footer.php:1128
 #: application/views/logbookadvanced/index.php:13
 #: application/views/map/qso_map.php:7
 #: application/views/satellite/flightpath.php:11
@@ -14886,82 +15065,82 @@ msgctxt "Map Options"
 msgid "Gridsquares"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:1312
+#: application/views/interface_assets/footer.php:1322
 msgid "Location Lookup failed. Please check browser console."
 msgstr ""
 
-#: application/views/interface_assets/footer.php:1463
-#: application/views/interface_assets/footer.php:1467
-#: application/views/interface_assets/footer.php:1470
-#: application/views/interface_assets/footer.php:1607
-#: application/views/interface_assets/footer.php:1611
-#: application/views/interface_assets/footer.php:1614
+#: application/views/interface_assets/footer.php:1473
+#: application/views/interface_assets/footer.php:1477
+#: application/views/interface_assets/footer.php:1480
+#: application/views/interface_assets/footer.php:1617
+#: application/views/interface_assets/footer.php:1621
+#: application/views/interface_assets/footer.php:1624
 msgid "grid square"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:1470
-#: application/views/interface_assets/footer.php:1614
+#: application/views/interface_assets/footer.php:1480
+#: application/views/interface_assets/footer.php:1624
 msgid "Total count"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2396
+#: application/views/interface_assets/footer.php:2406
 msgid "QSL Card for "
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2416
+#: application/views/interface_assets/footer.php:2426
 msgid "Warning! Are you sure you want to delete this QSL card?"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2456
+#: application/views/interface_assets/footer.php:2466
 #: application/views/view_log/qso.php:43
 msgid "eQSL Card"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2458
+#: application/views/interface_assets/footer.php:2468
 msgid "eQSL Card for "
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2670
-#: application/views/interface_assets/footer.php:2707
+#: application/views/interface_assets/footer.php:2682
+#: application/views/interface_assets/footer.php:2719
 #: application/views/view_log/qso.php:729
 msgid "QSL image file"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2689
+#: application/views/interface_assets/footer.php:2701
 msgid "Front QSL Card"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2725
+#: application/views/interface_assets/footer.php:2737
 msgid "Back QSL Card"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2729
+#: application/views/interface_assets/footer.php:2741
 msgid "The QSL card upload could not be completed."
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2729
+#: application/views/interface_assets/footer.php:2741
 #: application/views/qslpostcard/designer.php:31
 msgid "Upload failed"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2737
-#: application/views/interface_assets/footer.php:2762
+#: application/views/interface_assets/footer.php:2749
+#: application/views/interface_assets/footer.php:2774
 msgid "Add additional QSOs to a QSL Card"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2773
+#: application/views/interface_assets/footer.php:2785
 msgid "Something went wrong. Please try again!"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2845
+#: application/views/interface_assets/footer.php:2857
 msgid "US Counties for state"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2898
+#: application/views/interface_assets/footer.php:2910
 msgid "Confirmed counties for state:"
 msgstr ""
 
-#: application/views/interface_assets/footer.php:2898
+#: application/views/interface_assets/footer.php:2910
 msgid "Worked counties for state:"
 msgstr ""
 
@@ -16057,7 +16236,7 @@ msgstr ""
 #: application/views/qso/edit_ajax.php:538
 #: application/views/qso/edit_ajax.php:567
 #: application/views/qso/edit_ajax.php:595
-#: application/views/qso/edit_ajax.php:621 application/views/qso/index.php:715
+#: application/views/qso/edit_ajax.php:621 application/views/qso/index.php:714
 #: application/views/search/search_result_ajax.php:186
 #: application/views/search/search_result_ajax.php:228
 #: application/views/view_log/partial/log_ajax.php:219
@@ -16093,7 +16272,7 @@ msgstr ""
 #: application/views/qslprint/qsolist.php:148
 #: application/views/qslprint/qsolist.php:237
 #: application/views/qso/edit_ajax.php:443
-#: application/views/qso/edit_ajax.php:476 application/views/qso/index.php:726
+#: application/views/qso/edit_ajax.php:476 application/views/qso/index.php:725
 #: application/views/search/search_result_ajax.php:205
 #: application/views/search/search_result_ajax.php:247
 #: application/views/view_log/partial/log_ajax.php:241
@@ -16114,7 +16293,7 @@ msgstr ""
 #: application/views/qslprint/qsolist.php:145
 #: application/views/qslprint/qsolist.php:236
 #: application/views/qso/edit_ajax.php:444
-#: application/views/qso/edit_ajax.php:477 application/views/qso/index.php:727
+#: application/views/qso/edit_ajax.php:477 application/views/qso/index.php:726
 #: application/views/search/search_result_ajax.php:202
 #: application/views/search/search_result_ajax.php:244
 #: application/views/view_log/partial/log_ajax.php:238
@@ -16133,7 +16312,7 @@ msgstr ""
 #: application/views/qslprint/qsolist.php:154
 #: application/views/qslprint/qsolist.php:238
 #: application/views/qso/edit_ajax.php:445
-#: application/views/qso/edit_ajax.php:478 application/views/qso/index.php:728
+#: application/views/qso/edit_ajax.php:478 application/views/qso/index.php:727
 #: application/views/search/search_result_ajax.php:211
 #: application/views/search/search_result_ajax.php:253
 #: application/views/view_log/partial/log_ajax.php:247
@@ -16148,7 +16327,7 @@ msgstr ""
 #: application/views/oqrs/qsolist.php:118
 #: application/views/qslprint/qsolist.php:151
 #: application/views/qso/edit_ajax.php:446
-#: application/views/qso/edit_ajax.php:479 application/views/qso/index.php:729
+#: application/views/qso/edit_ajax.php:479 application/views/qso/index.php:728
 #: application/views/search/search_result_ajax.php:250
 #: application/views/view_log/partial/log_ajax.php:282
 msgid "Manager"
@@ -16783,7 +16962,7 @@ msgstr ""
 #: application/views/qso/edit_ajax.php:596
 #: application/views/qso/edit_ajax.php:607
 #: application/views/qso/edit_ajax.php:622
-#: application/views/qso/edit_ajax.php:633 application/views/qso/index.php:716
+#: application/views/qso/edit_ajax.php:633 application/views/qso/index.php:715
 #: application/views/search/search_result_ajax.php:192
 #: application/views/search/search_result_ajax.php:234
 #: application/views/search/search_result_ajax.php:308
@@ -17752,7 +17931,7 @@ msgid "Note Contents"
 msgstr ""
 
 #: application/views/notes/add.php:67 application/views/notes/edit.php:63
-#: application/views/qso/index.php:791
+#: application/views/qso/index.php:790
 msgid "Save Note"
 msgstr ""
 
@@ -18207,7 +18386,7 @@ msgstr ""
 #: application/views/qslprint/qslprint.php:42
 #: application/views/qslprint/qsolist.php:16
 #: application/views/qslprint/qsolist.php:109
-#: application/views/qso/index.php:735
+#: application/views/qso/index.php:734
 #: application/views/search/search_result_ajax.php:208
 #: application/views/view_log/partial/log_ajax.php:244
 #: src/QSLManager/QSO.php:452
@@ -19207,19 +19386,19 @@ msgstr ""
 msgid "Sat Mode"
 msgstr ""
 
-#: application/views/qso/edit_ajax.php:279 application/views/qso/index.php:684
+#: application/views/qso/edit_ajax.php:279 application/views/qso/index.php:683
 msgid "Antenna Azimuth (°)"
 msgstr ""
 
-#: application/views/qso/edit_ajax.php:279 application/views/qso/index.php:686
+#: application/views/qso/edit_ajax.php:279 application/views/qso/index.php:685
 msgid "Antenna azimuth in decimal degrees."
 msgstr ""
 
-#: application/views/qso/edit_ajax.php:284 application/views/qso/index.php:690
+#: application/views/qso/edit_ajax.php:284 application/views/qso/index.php:689
 msgid "Antenna Elevation (°)"
 msgstr ""
 
-#: application/views/qso/edit_ajax.php:284 application/views/qso/index.php:692
+#: application/views/qso/edit_ajax.php:284 application/views/qso/index.php:691
 msgid "Antenna elevation in decimal degrees."
 msgstr ""
 
@@ -19230,8 +19409,8 @@ msgid "Station County"
 msgstr ""
 
 #: application/views/qso/edit_ajax.php:397
-#: application/views/qso/edit_ajax.php:516 application/views/qso/index.php:701
-#: application/views/qso/index.php:745
+#: application/views/qso/edit_ajax.php:516 application/views/qso/index.php:700
+#: application/views/qso/index.php:744
 msgid "Note: Gets exported to third-party services."
 msgstr ""
 
@@ -19240,8 +19419,8 @@ msgid "Sent Method"
 msgstr ""
 
 #: application/views/qso/edit_ajax.php:442
-#: application/views/qso/edit_ajax.php:475 application/views/qso/index.php:722
-#: application/views/qso/index.php:725
+#: application/views/qso/edit_ajax.php:475 application/views/qso/index.php:721
+#: application/views/qso/index.php:724
 msgid "Method"
 msgstr ""
 
@@ -19262,7 +19441,7 @@ msgstr ""
 msgid "Received Method"
 msgstr ""
 
-#: application/views/qso/edit_ajax.php:513 application/views/qso/index.php:742
+#: application/views/qso/edit_ajax.php:513 application/views/qso/index.php:741
 msgid "Get the default message for eQSL, for this station."
 msgstr ""
 
@@ -19311,7 +19490,7 @@ msgstr ""
 msgid "TimeOff is less than TimeOn"
 msgstr ""
 
-#: application/views/qso/index.php:31 application/views/qso/index.php:906
+#: application/views/qso/index.php:31 application/views/qso/index.php:905
 msgid "Previous Contacts"
 msgstr ""
 
@@ -19424,14 +19603,6 @@ msgstr ""
 msgid "IOTA Reference"
 msgstr ""
 
-#: application/views/qso/index.php:313 application/views/qso/index.php:595
-#: application/views/station_profile/create.php:214
-#: application/views/station_profile/edit.php:239
-#: application/views/user/edit.php:859 application/views/view_log/qso.php:348
-#: application/views/view_log/qso.php:681
-msgid "SOTA Reference"
-msgstr ""
-
 #: application/views/qso/index.php:429 application/views/view_log/qso.php:107
 msgid "Frequency (RX)"
 msgstr ""
@@ -19476,45 +19647,45 @@ msgstr ""
 msgid "Satellite Mode"
 msgstr ""
 
-#: application/views/qso/index.php:699
+#: application/views/qso/index.php:698
 msgid "QSO Note"
 msgstr ""
 
-#: application/views/qso/index.php:742
+#: application/views/qso/index.php:741
 msgid "QSL MSG"
 msgstr ""
 
-#: application/views/qso/index.php:761
+#: application/views/qso/index.php:760
 msgid "Reset to Default"
 msgstr ""
 
-#: application/views/qso/index.php:764
+#: application/views/qso/index.php:763
 msgid "Save QSO"
 msgstr "Shrani QSO"
 
-#: application/views/qso/index.php:778
+#: application/views/qso/index.php:777
 msgid "Callsign Notes"
 msgstr ""
 
-#: application/views/qso/index.php:779
+#: application/views/qso/index.php:778
 msgid ""
 "Store private information about your QSO partner. These notes are never "
 "shared or exported to external services."
 msgstr ""
 
-#: application/views/qso/index.php:828
+#: application/views/qso/index.php:827
 msgid "Winkey"
 msgstr ""
 
-#: application/views/qso/index.php:880
+#: application/views/qso/index.php:879
 msgid "Suggestions"
 msgstr ""
 
-#: application/views/qso/index.php:889
+#: application/views/qso/index.php:888
 msgid "QSO Partner's Profile"
 msgstr ""
 
-#: application/views/qso/index.php:890
+#: application/views/qso/index.php:889
 msgid ""
 "Profile picture and data fetched from third-party services. This information "
 "is not stored on your Wavelog instance."
@@ -19702,10 +19873,6 @@ msgstr ""
 
 #: application/views/satellite/index.php:101
 msgid "OMM"
-msgstr ""
-
-#: application/views/satellite/pass.php:21
-msgid "Satellite passes"
 msgstr ""
 
 #: application/views/satellite/pass.php:32
@@ -21830,15 +21997,25 @@ msgid ""
 "not."
 msgstr ""
 
-#: application/views/user/edit.php:1192
+#: application/views/user/edit.php:1198
+msgid "Display radio name"
+msgstr ""
+
+#: application/views/user/edit.php:1199
+msgid ""
+"This setting controls whether the radio's name is displayed in the widget or "
+"not."
+msgstr ""
+
+#: application/views/user/edit.php:1203
 msgid "Display only most recently updated radio"
 msgstr ""
 
-#: application/views/user/edit.php:1196
+#: application/views/user/edit.php:1207
 msgid "No, show all radios"
 msgstr ""
 
-#: application/views/user/edit.php:1198
+#: application/views/user/edit.php:1209
 msgid ""
 "If you have multiple CAT radios configured, this setting controls whether "
 "the widget should display all on-air radios of the user, or just the most "
@@ -21846,89 +22023,89 @@ msgid ""
 "effect."
 msgstr ""
 
-#: application/views/user/edit.php:1208
+#: application/views/user/edit.php:1219
 msgid "QSOs widget"
 msgstr ""
 
-#: application/views/user/edit.php:1217
+#: application/views/user/edit.php:1228
 msgid "Display exact QSO time"
 msgstr ""
 
-#: application/views/user/edit.php:1218
+#: application/views/user/edit.php:1229
 msgid ""
 "This setting control whether exact QSO time should displayed in the QSO "
 "widget or not."
 msgstr ""
 
-#: application/views/user/edit.php:1232
+#: application/views/user/edit.php:1243
 msgid "Miscellaneous"
 msgstr ""
 
-#: application/views/user/edit.php:1240
+#: application/views/user/edit.php:1251
 msgid "AMSAT Status Upload"
 msgstr ""
 
-#: application/views/user/edit.php:1249
+#: application/views/user/edit.php:1260
 msgid "Upload status of SAT QSOs to"
 msgstr ""
 
-#: application/views/user/edit.php:1259
+#: application/views/user/edit.php:1270
 msgid "Mastodonserver"
 msgstr ""
 
-#: application/views/user/edit.php:1262
+#: application/views/user/edit.php:1273
 msgid "URL of Mastodonserver"
 msgstr ""
 
-#: application/views/user/edit.php:1264
+#: application/views/user/edit.php:1275
 #, php-format
 msgid "Main URL of your Mastodon server, e.g. %s"
 msgstr ""
 
-#: application/views/user/edit.php:1282
+#: application/views/user/edit.php:1293
 msgid "Winkeyer Features Enabled"
 msgstr ""
 
-#: application/views/user/edit.php:1283
+#: application/views/user/edit.php:1294
 #, php-format
 msgid ""
 "Winkeyer support in Wavelog is very experimental. Read the wiki first at %s "
 "before enabling."
 msgstr ""
 
-#: application/views/user/edit.php:1295
+#: application/views/user/edit.php:1306
 msgid "Hams.at"
 msgstr ""
 
-#: application/views/user/edit.php:1298
+#: application/views/user/edit.php:1309
 msgid "Private Feed Key"
 msgstr ""
 
-#: application/views/user/edit.php:1300
+#: application/views/user/edit.php:1311
 #, php-format
 msgctxt "Hint for Hamsat API Key; uses Link"
 msgid "See your profile at %s."
 msgstr ""
 
-#: application/views/user/edit.php:1309
+#: application/views/user/edit.php:1320
 msgid "Show Workable Passes Only"
 msgstr ""
 
-#: application/views/user/edit.php:1310
+#: application/views/user/edit.php:1321
 msgid ""
 "If enabled shows only workable passes based on the gridsquare set in your "
 "hams.at account. Requires private feed key to be set."
 msgstr ""
 
-#: application/views/user/edit.php:1323
+#: application/views/user/edit.php:1334
 msgid "Save Account"
 msgstr ""
 
-#: application/views/user/edit.php:1329
+#: application/views/user/edit.php:1340
 msgid "Search settings"
 msgstr ""
 
-#: application/views/user/edit.php:1331
+#: application/views/user/edit.php:1342
 msgid "No settings match your search."
 msgstr ""
 
@@ -22435,10 +22612,6 @@ msgstr ""
 msgid "More QSOs"
 msgstr ""
 
-#: application/views/view_log/qso.php:615
-msgid "Share"
-msgstr ""
-
 #: application/views/view_log/qso.php:755
 msgid "Uploaded QSL Card front image"
 msgstr ""
@@ -22557,6 +22730,40 @@ msgstr ""
 
 #: application/views/webadif/mark_webadif.php:16
 msgid "The QSOs are marked as exported to QO-100 Dx Club."
+msgstr ""
+
+#: application/views/widgets/on_air.php:159
+#: application/views/widgets/on_air.php:217
+#: application/views/widgets/on_air.php:271
+#, php-format
+msgctxt "on air status test: callsign is on-air/off-air"
+msgid "%s is %s"
+msgstr ""
+
+#: application/views/widgets/on_air.php:181
+#: application/views/widgets/on_air.php:198
+#, php-format
+msgid "Updated: %s (%s)"
+msgstr ""
+
+#: application/views/widgets/on_air.php:181
+msgid "auto-refreshed every 60s"
+msgstr ""
+
+#: application/views/widgets/on_air.php:198
+msgid "auto-refreshed by QRZ.com every 60s"
+msgstr ""
+
+#: application/views/widgets/on_air.php:242
+#, php-format
+msgid "Last updated: %s"
+msgstr ""
+
+#: application/views/widgets/on_air.php:318
+#: application/views/widgets/on_air.php:322
+#: application/views/widgets/on_air.php:325
+#: application/views/widgets/on_air.php:333
+msgid "Last updated:"
 msgstr ""
 
 #: application/views/widgets/oqrs.php:21
