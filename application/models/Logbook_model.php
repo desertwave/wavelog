@@ -1669,17 +1669,17 @@ class Logbook_model extends CI_Model {
 			$clublogrdate = $qso->COL_CLUBLOG_QSO_DOWNLOAD_DATE;
 		}
 
-		if ($dcl_sent == 'N' && $qso->COL_CLUBLOG_QSO_UPLOAD_STATUS != $dcl_sent) {
+		if ($dcl_sent == 'N' && $qso->COL_DCL_QSL_SENT != $dcl_sent) {
 			$dclsdate = null;
-		} elseif (!$qso->COL_DCL_QSLSDATE || $qso->COL_DCL_QSLSDATE != $dcl_sent) {
+		} elseif (!$qso->COL_DCL_QSLSDATE || $qso->COL_DCL_QSL_SENT != $dcl_sent) {
 			$dclsdate = date('Y-m-d H:i:s');
 		} else {
 			$dclsdate = $qso->COL_DCL_QSLSDATE;
 		}
 
-		if ($dcl_rcvd == 'N' && $qso->COL_DCL_QSLRDATE != $dcl_rcvd) {
+		if ($dcl_rcvd == 'N' && $qso->COL_DCL_QSL_RCVD != $dcl_rcvd) {
 			$dclrdate = null;
-		} elseif (!$qso->COL_DCL_QSLRDATE || $qso->COL_DCL_QSLRDATE != $dcl_rcvd) {
+		} elseif (!$qso->COL_DCL_QSLRDATE || $qso->COL_DCL_QSL_RCVD != $dcl_rcvd) {
 			$dclrdate = date('Y-m-d H:i:s');
 		} else {
 			$dclrdate = $qso->COL_DCL_QSLRDATE;
@@ -2919,6 +2919,12 @@ class Logbook_model extends CI_Model {
 			}
 			$extrawhere .= " COL_QRZCOM_QSO_DOWNLOAD_STATUS='Y'";
 		}
+		if (isset($user_default_confirmation) && strpos($user_default_confirmation, 'C') !== false) {
+			if ($extrawhere != '') {
+				$extrawhere .= " OR";
+			}
+			$extrawhere .= " COL_CLUBLOG_QSO_DOWNLOAD_STATUS='Y'";
+		}
 
 
 		$this->db->select('COL_CALL');
@@ -3031,6 +3037,12 @@ class Logbook_model extends CI_Model {
 			}
 			$extrawhere .= " COL_QRZCOM_QSO_DOWNLOAD_STATUS='Y'";
 		}
+		if (isset($user_default_confirmation) && strpos($user_default_confirmation, 'C') !== false) {
+			if ($extrawhere != '') {
+				$extrawhere .= " OR";
+			}
+			$extrawhere .= " COL_CLUBLOG_QSO_DOWNLOAD_STATUS='Y'";
+		}
 		if ($extrawhere == '') {
 			$extrawhere='1=0';	// No default_confirmations set? in that case everything is false
 		}
@@ -3111,6 +3123,12 @@ class Logbook_model extends CI_Model {
 				$extrawhere .= " OR";
 			}
 			$extrawhere .= " COL_QRZCOM_QSO_DOWNLOAD_STATUS='Y'";
+		}
+		if (isset($user_default_confirmation) && strpos($user_default_confirmation, 'C') !== false) {
+			if ($extrawhere != '') {
+				$extrawhere .= " OR";
+			}
+			$extrawhere .= " COL_CLUBLOG_QSO_DOWNLOAD_STATUS='Y'";
 		}
 
 
@@ -4245,9 +4263,10 @@ class Logbook_model extends CI_Model {
 				COUNT(DISTINCT t.COL_CALL) as Unique_Callsigns,
 				COUNT(DISTINCT CASE WHEN t.COL_COUNTRY != 'Invalid' AND t.COL_DXCC > 0 THEN t.COL_DXCC END) as Countries_Worked,
 				COUNT(DISTINCT CASE WHEN t.COL_QSL_RCVD = 'Y' AND t.COL_COUNTRY != 'Invalid' AND t.COL_DXCC > 0 THEN t.COL_DXCC END) as Countries_Worked_QSL,
-				COUNT(DISTINCT CASE WHEN t.COL_EQSL_QSL_RCVD = 'Y' AND t.COL_COUNTRY != 'Invalid' AND t.COL_DXCC > 0 THEN t.COL_DXCC END) as Countries_Worked_EQSL,
 				COUNT(DISTINCT CASE WHEN t.COL_LOTW_QSL_RCVD = 'Y' AND t.COL_COUNTRY != 'Invalid' AND t.COL_DXCC > 0 THEN t.COL_DXCC END) as Countries_Worked_LOTW,
-				COUNT(DISTINCT CASE WHEN (t.COL_QSL_RCVD = 'Y' OR t.COL_EQSL_QSL_RCVD = 'Y' OR t.COL_LOTW_QSL_RCVD = 'Y') AND t.COL_COUNTRY != 'Invalid' AND t.COL_DXCC > 0 THEN t.COL_DXCC END) as Countries_Worked_Confirmed,
+				-- DXCC confirmed totals intentionally count only paper QSL + LoTW.
+				-- eQSL is tracked separately in the UI as display-only information.
+				COUNT(DISTINCT CASE WHEN (t.COL_QSL_RCVD = 'Y' OR t.COL_LOTW_QSL_RCVD = 'Y') AND t.COL_COUNTRY != 'Invalid' AND t.COL_DXCC > 0 THEN t.COL_DXCC END) as Countries_Worked_Confirmed,
 				COUNT(DISTINCT CASE WHEN d.end IS NULL AND d.adif != 0 AND t.COL_COUNTRY != 'Invalid' AND t.COL_DXCC > 0 THEN t.COL_DXCC END) as Countries_Current,
 				-- QSL stats (SUM - no filtering, all QSOs)
 				SUM(CASE WHEN t.COL_QSL_SENT = 'Y' THEN 1 ELSE 0 END) as QSL_Sent,
@@ -4283,10 +4302,9 @@ class Logbook_model extends CI_Model {
 				$row = $query->row();
 				return [
 					// Country stats
-				'Unique_Callsigns' => $row->Unique_Callsigns,
+					'Unique_Callsigns' => $row->Unique_Callsigns,
 					'Countries_Worked' => $row->Countries_Worked,
 					'Countries_Worked_QSL' => $row->Countries_Worked_QSL,
-					'Countries_Worked_EQSL' => $row->Countries_Worked_EQSL,
 					'Countries_Worked_LOTW' => $row->Countries_Worked_LOTW,
 					'Countries_Worked_Confirmed' => $row->Countries_Worked_Confirmed,
 					'Countries_Current' => $row->Countries_Current,
@@ -4322,7 +4340,6 @@ class Logbook_model extends CI_Model {
 		return [
 			'Countries_Worked' => 0,
 			'Countries_Worked_QSL' => 0,
-			'Countries_Worked_EQSL' => 0,
 			'Countries_Worked_LOTW' => 0,
 			'Countries_Worked_Confirmed' => 0,
 			'Countries_Current' => 0,
@@ -5817,9 +5834,9 @@ class Logbook_model extends CI_Model {
 			$nameRow = '';
 		}
 
-		$data = array(
-			'COL_CONTEST_ID ' => xss_clean($nameRow),
-		);
+			$data = array(
+				'COL_CONTEST_ID' => xss_clean($nameRow),
+			);
 
 		$this->db->where(array('COL_PRIMARY_KEY' => $qso_id));
 		$this->db->update($this->config->item('table_name'), $data);
@@ -5829,7 +5846,7 @@ class Logbook_model extends CI_Model {
 
 	function mark_dcl_rcvd($key) {
 		$data = array(
-			'COL_DCL_QSL_RCVD ' => 'Y',
+			'COL_DCL_QSL_RCVD' => 'Y',
 		);
 
 		$this->db->where(array('COL_PRIMARY_KEY' => $key));
@@ -6210,22 +6227,27 @@ class Logbook_model extends CI_Model {
 		if (isset($user_default_confirmation)) {
 			$qso = (array) $qso;
 			if (strpos($user_default_confirmation, 'Q') !== false) {        // QSL
-				if ($qso['COL_QSL_RCVD'] == 'Y') {
+				if (($qso['COL_QSL_RCVD'] ?? null) === 'Y') {
 					$confirmed = true;
 				}
 			}
 			if (strpos($user_default_confirmation, 'L') !== false) { // LoTW
-				if ($qso['COL_LOTW_QSL_RCVD'] == 'Y') {
+				if (($qso['COL_LOTW_QSL_RCVD'] ?? null) === 'Y') {
 					$confirmed = true;
 				}
 			}
 			if (strpos($user_default_confirmation, 'E') !== false) { // eQsl
-				if ($qso['COL_EQSL_QSL_RCVD'] == 'Y') {
+				if (($qso['COL_EQSL_QSL_RCVD'] ?? null) === 'Y') {
 					$confirmed = true;
 				}
 			}
 			if (strpos($user_default_confirmation, 'Z') !== false) { // QRZ
-				if ($qso['COL_QRZCOM_QSO_DOWNLOAD_STATUS'] == 'Y') {
+				if (($qso['COL_QRZCOM_QSO_DOWNLOAD_STATUS'] ?? null) === 'Y') {
+					$confirmed = true;
+				}
+			}
+			if (strpos($user_default_confirmation, 'C') !== false) { // Clublog
+				if (($qso['COL_CLUBLOG_QSO_DOWNLOAD_STATUS'] ?? null) === 'Y') {
 					$confirmed = true;
 				}
 			}

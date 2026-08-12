@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@wavelog.org\n"
-"POT-Creation-Date: 2026-08-09 10:10+0000\n"
+"POT-Creation-Date: 2026-08-11 16:14+0000\n"
 "PO-Revision-Date: 2026-03-20 07:25+0000\n"
 "Last-Translator: Viliam Petrik <tatralom@gmail.com>\n"
 "Language-Team: Slovak <https://translate.wavelog.org/projects/wavelog/main-"
@@ -224,11 +224,11 @@ msgstr "Tropo ducting"
 #: application/controllers/Update.php:28 application/controllers/User.php:15
 #: application/controllers/User.php:61 application/controllers/User.php:108
 #: application/controllers/User.php:125 application/controllers/User.php:148
-#: application/controllers/User.php:407 application/controllers/User.php:408
-#: application/controllers/User.php:1163 application/controllers/User.php:1181
-#: application/controllers/User.php:1227 application/controllers/User.php:1479
-#: application/controllers/User.php:1617 application/controllers/User.php:1837
-#: application/controllers/User.php:1853 application/controllers/User.php:1877
+#: application/controllers/User.php:408 application/controllers/User.php:409
+#: application/controllers/User.php:1167 application/controllers/User.php:1185
+#: application/controllers/User.php:1231 application/controllers/User.php:1483
+#: application/controllers/User.php:1621 application/controllers/User.php:1841
+#: application/controllers/User.php:1857 application/controllers/User.php:1881
 #: application/controllers/User_options.php:8
 #: application/controllers/Usermode.php:14
 #: application/controllers/Webadif.php:10
@@ -254,7 +254,7 @@ msgstr "Mapa aktivovaných lokátorov"
 #: application/controllers/Awards.php:1421
 #: application/controllers/Awards.php:1457
 #: application/controllers/Gridmap.php:34
-#: application/controllers/Visitor.php:533
+#: application/controllers/Visitor.php:532
 #: application/views/activators/index.php:107
 #: application/views/contesting/logger/index.php:57
 #: application/views/interface_assets/footer.php:53
@@ -265,13 +265,13 @@ msgstr "Lokátory"
 
 #: application/controllers/Activated_gridmap.php:34
 #: application/controllers/Gridmap.php:35
-#: application/controllers/Visitor.php:534
+#: application/controllers/Visitor.php:533
 msgid "Gridsquares confirmed"
 msgstr "Potvrdené lokátory"
 
 #: application/controllers/Activated_gridmap.php:35
 #: application/controllers/Gridmap.php:36
-#: application/controllers/Visitor.php:535
+#: application/controllers/Visitor.php:534
 msgid "Gridsquares not confirmed"
 msgstr "Nepotvrdené lokátory"
 
@@ -281,26 +281,26 @@ msgstr "Celkom aktivovaných lokátorov"
 
 #: application/controllers/Activated_gridmap.php:38
 #: application/controllers/Gridmap.php:39
-#: application/controllers/Visitor.php:538
+#: application/controllers/Visitor.php:537
 #: application/views/qslpostcard/designer.php:151
 msgid "Fields"
 msgstr "Veľké lokátory"
 
 #: application/controllers/Activated_gridmap.php:39
 #: application/controllers/Gridmap.php:40
-#: application/controllers/Visitor.php:539
+#: application/controllers/Visitor.php:538
 msgid "Fields confirmed"
 msgstr "Potvrdené veľké lokátory"
 
 #: application/controllers/Activated_gridmap.php:40
 #: application/controllers/Gridmap.php:41
-#: application/controllers/Visitor.php:540
+#: application/controllers/Visitor.php:539
 msgid "Fields not confirmed"
 msgstr "Nepotvrdené veľké lokátory"
 
 #: application/controllers/Activated_gridmap.php:41
 #: application/controllers/Gridmap.php:42
-#: application/controllers/Visitor.php:541
+#: application/controllers/Visitor.php:540
 msgid "Total fields worked"
 msgstr "Celkový počet veľkých lokátorov"
 
@@ -311,7 +311,7 @@ msgstr ""
 #: application/controllers/Activationplanner.php:32
 #: application/controllers/Activationplanner.php:33
 #: application/views/station_profile/create.php:125
-#: application/views/station_profile/edit.php:150
+#: application/views/station_profile/edit.php:147
 msgid "Zones"
 msgstr "Zóny"
 
@@ -650,8 +650,8 @@ msgid " and "
 msgstr " a "
 
 #: application/controllers/Awards.php:713
-#: application/controllers/Logbook.php:1452
-#: application/views/activationplanner/index.php:69
+#: application/controllers/Logbook.php:1470
+#: application/views/activationplanner/index.php:84
 #: application/views/awards/index.php:8 application/views/bandmap/list.php:335
 #: application/views/bands/index.php:57
 #: application/views/dashboard/index.php:10
@@ -670,7 +670,7 @@ msgstr " a "
 #: application/views/qso/edit_ajax.php:362
 #: application/views/search/search_result_ajax.php:9
 #: application/views/station_profile/create.php:211
-#: application/views/station_profile/edit.php:236
+#: application/views/station_profile/edit.php:233
 #: application/views/stationsetup/locationlist.php:18
 #: application/views/user/edit.php:302 application/views/user/edit.php:325
 #: application/views/user/edit.php:348 application/views/user/edit.php:371
@@ -681,8 +681,8 @@ msgid "SOTA"
 msgstr "SOTA"
 
 #: application/controllers/Awards.php:811
-#: application/controllers/Logbook.php:1453
-#: application/views/activationplanner/index.php:67
+#: application/controllers/Logbook.php:1471
+#: application/views/activationplanner/index.php:82
 #: application/views/bandmap/list.php:337 application/views/bands/index.php:64
 #: application/views/dashboard/index.php:11
 #: application/views/logbookadvanced/edit.php:40
@@ -694,7 +694,7 @@ msgstr "SOTA"
 #: application/views/qso/edit_ajax.php:372
 #: application/views/search/search_result_ajax.php:10
 #: application/views/station_profile/create.php:225
-#: application/views/station_profile/edit.php:250
+#: application/views/station_profile/edit.php:247
 #: application/views/stationsetup/locationlist.php:24
 #: application/views/user/edit.php:303 application/views/user/edit.php:326
 #: application/views/user/edit.php:349 application/views/user/edit.php:372
@@ -704,8 +704,8 @@ msgid "WWFF"
 msgstr "WWFF"
 
 #: application/controllers/Awards.php:911
-#: application/controllers/Logbook.php:1454
-#: application/views/activationplanner/index.php:68
+#: application/controllers/Logbook.php:1472
+#: application/views/activationplanner/index.php:83
 #: application/views/adif/import.php:65 application/views/bandmap/list.php:336
 #: application/views/bands/index.php:54
 #: application/views/dashboard/index.php:12
@@ -719,7 +719,7 @@ msgstr "WWFF"
 #: application/views/qso/edit_ajax.php:368
 #: application/views/search/search_result_ajax.php:11
 #: application/views/station_profile/create.php:239
-#: application/views/station_profile/edit.php:264
+#: application/views/station_profile/edit.php:261
 #: application/views/stationsetup/locationlist.php:25
 #: application/views/user/edit.php:304 application/views/user/edit.php:327
 #: application/views/user/edit.php:350 application/views/user/edit.php:373
@@ -1038,7 +1038,7 @@ msgid "No user has configured Clublog."
 msgstr "Žiadny používateľ nekonfiguroval Clublog."
 
 #: application/controllers/Clublog.php:93
-#: application/controllers/Logbook.php:797
+#: application/controllers/Logbook.php:815
 #: application/views/awards/cq/index.php:131
 #: application/views/awards/dok/index.php:102
 #: application/views/awards/dxcc/index.php:140
@@ -1059,7 +1059,7 @@ msgstr "Žiadny používateľ nekonfiguroval Clublog."
 #: application/views/qso/edit_ajax.php:417
 #: application/views/search/search_result_ajax.php:124
 #: application/views/station_profile/create.php:324
-#: application/views/station_profile/edit.php:350
+#: application/views/station_profile/edit.php:347
 #: application/views/timeline/index.php:74
 #: application/views/update/index.php:16 application/views/user/edit.php:739
 #: application/views/user/edit.php:1037
@@ -1186,7 +1186,7 @@ msgid "Access denied"
 msgstr ""
 
 #: application/controllers/Contesting.php:1052
-#: application/controllers/User.php:1435
+#: application/controllers/User.php:1439
 msgid "Incorrect username or password!"
 msgstr "Nesprávne používateľské meno alebo heslo!"
 
@@ -1266,6 +1266,7 @@ msgstr "Upraviť Cronjob"
 #: application/views/debug/index.php:749 application/views/debug/index.php:755
 #: application/views/debug/index.php:761 application/views/debug/index.php:767
 #: application/views/debug/index.php:773 application/views/debug/index.php:779
+#: application/views/debug/index.php:785
 msgid "never"
 msgstr "nikdy"
 
@@ -1337,8 +1338,8 @@ msgstr "Nespustené"
 msgid "SOTA CSV Export"
 msgstr "SOTA CSV export"
 
-#: application/controllers/Dashboard.php:177
-#: application/controllers/Visitor.php:131
+#: application/controllers/Dashboard.php:176
+#: application/controllers/Visitor.php:130
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -1394,42 +1395,42 @@ msgstr "Kľúč(e) vymazaný(é)."
 msgid "(empty)"
 msgstr "(prázdne)"
 
-#: application/controllers/Debug.php:131
+#: application/controllers/Debug.php:132
 msgid "Debug"
 msgstr "Debug"
 
-#: application/controllers/Debug.php:183
+#: application/controllers/Debug.php:184
 msgid "Migrate data now"
 msgstr "Migruj údaje teraz"
 
-#: application/controllers/Debug.php:186
+#: application/controllers/Debug.php:187
 msgid "Migration already done. Run again?"
 msgstr "Migrácia už prebehla. Spustiť znovu?"
 
-#: application/controllers/Debug.php:190
+#: application/controllers/Debug.php:191
 msgid "No data to migrate"
 msgstr "Žiadne údaje na migráciu"
 
-#: application/controllers/Debug.php:194 application/controllers/Debug.php:199
+#: application/controllers/Debug.php:195 application/controllers/Debug.php:200
 msgid "No migration possible"
 msgstr "Migrácia nie je možná"
 
-#: application/controllers/Debug.php:264
+#: application/controllers/Debug.php:265
 msgid "Wavelog was updated successfully!"
 msgstr "Wavelog bol úspešne aktualizovaný!"
 
-#: application/controllers/Debug.php:282
+#: application/controllers/Debug.php:283
 msgid "Selfupdate() not available. Check the Error Log."
 msgstr "Automatická aktualizácia() nie je dostupná. Skontroluj error log."
 
-#: application/controllers/Debug.php:341
+#: application/controllers/Debug.php:342
 msgid ""
 "File Migration was successful, but please check also manually. If everything "
 "seems right you can delete the folders 'assets/qslcard' and 'images/"
 "eqsl_card_images'."
 msgstr ""
 
-#: application/controllers/Debug.php:344
+#: application/controllers/Debug.php:345
 msgid "File Migration failed. Please check the Error Log."
 msgstr "Migrácia súborov zlyhala. Skontroluj error log."
 
@@ -1473,10 +1474,10 @@ msgid "DX Calendar"
 msgstr "DX kalendár"
 
 #: application/controllers/Eqsl.php:45
-#: application/views/dashboard/index.php:572
-#: application/views/dashboard/index.php:575
+#: application/views/dashboard/index.php:571
+#: application/views/dashboard/index.php:574
 #: application/views/eqslcard/index.php:3
-#: application/views/visitor/index.php:310
+#: application/views/visitor/index.php:308
 msgid "eQSL Cards"
 msgstr "eQSL karty"
 
@@ -1597,7 +1598,7 @@ msgid "Gridsquare Map"
 msgstr "Mapa lokátorov"
 
 #: application/controllers/Gridmap.php:37
-#: application/controllers/Visitor.php:536
+#: application/controllers/Visitor.php:535
 msgid "Total gridsquares worked"
 msgstr "Celkový počet urobených lokátorov"
 
@@ -1622,7 +1623,7 @@ msgid "User not found."
 msgstr ""
 
 #: application/controllers/Header_auth.php:110
-#: application/controllers/User.php:1425
+#: application/controllers/User.php:1429
 msgid ""
 "You can't login to a clubstation directly. Use your personal account instead."
 msgstr ""
@@ -1635,12 +1636,12 @@ msgid ""
 "are currently allowed to log in."
 msgstr ""
 
-#: application/controllers/Header_auth.php:355
-#: application/controllers/Header_auth.php:359
+#: application/controllers/Header_auth.php:356
+#: application/controllers/Header_auth.php:360
 msgid "Something went terribly wrong. Check the error log."
 msgstr ""
 
-#: application/controllers/Header_auth.php:435
+#: application/controllers/Header_auth.php:436
 msgid "SSO Config Error. Check error log."
 msgstr ""
 
@@ -1845,8 +1846,8 @@ msgstr "Staničné denníky"
 msgid "Logbook"
 msgstr "Logbook"
 
-#: application/controllers/Logbook.php:785
-#: application/controllers/Logbook.php:800
+#: application/controllers/Logbook.php:803
+#: application/controllers/Logbook.php:818
 #: application/views/activated_gridmap/index.php:61
 #: application/views/awards/amsat_rover/index.php:52
 #: application/views/awards/dok/index.php:86
@@ -1882,7 +1883,7 @@ msgstr "Logbook"
 msgid "QSL"
 msgstr "QSL"
 
-#: application/controllers/Logbook.php:788
+#: application/controllers/Logbook.php:806
 #: application/views/activated_gridmap/index.php:69
 #: application/views/awards/amsat_rover/index.php:47
 #: application/views/awards/cq/index.php:119
@@ -1926,11 +1927,12 @@ msgstr "QSL"
 #: application/views/timeline/index.php:66 application/views/user/edit.php:736
 #: application/views/user/edit.php:1013 application/views/view_log/qso.php:490
 #: application/views/view_log/qso.php:495
+#: application/views/visitor/index.php:273
 #: application/views/visitor/mini.php:186
 msgid "LoTW"
 msgstr "LoTW"
 
-#: application/controllers/Logbook.php:791
+#: application/controllers/Logbook.php:809
 #: application/views/activated_gridmap/index.php:77
 #: application/views/awards/cq/index.php:123
 #: application/views/awards/dok/index.php:94
@@ -1953,7 +1955,6 @@ msgstr "LoTW"
 #: application/views/awards/wpx/index.php:40
 #: application/views/awards/wwff/index.php:105
 #: application/views/calltester/call_info.php:81
-#: application/views/dashboard/index.php:495
 #: application/views/gridmap/index.php:190
 #: application/views/logbookadvanced/useroptions.php:130
 #: application/views/oqrs/qsolist.php:14 application/views/oqrs/qsolist.php:131
@@ -1965,19 +1966,19 @@ msgstr "LoTW"
 #: application/views/search/search_result_ajax.php:263
 #: application/views/search/search_result_ajax.php:276
 #: application/views/station_profile/create.php:276
-#: application/views/station_profile/edit.php:301
+#: application/views/station_profile/edit.php:298
 #: application/views/timeline/index.php:70 application/views/user/edit.php:737
 #: application/views/user/edit.php:1021 application/views/user/edit.php:1095
 msgid "eQSL"
 msgstr "eQSL"
 
-#: application/controllers/Logbook.php:994
+#: application/controllers/Logbook.php:1012
 msgid "All callbook lookups failed or provided no results."
 msgstr ""
 "Všetky vyhľadávania v callbooku zlyhali alebo neposkytli žiadne výsledky."
 "Všetky vyhľadávania v callbooku zlyhali alebo neposkytli žiadne výsledky."
 
-#: application/controllers/Logbook.php:1447
+#: application/controllers/Logbook.php:1465
 #: application/controllers/Radio.php:56
 #: application/views/accumulate/index.php:37
 #: application/views/activated_gridmap/index.php:44
@@ -2021,7 +2022,7 @@ msgstr ""
 #: application/views/contesting/manager/export_cbr.php:106
 #: application/views/continents/index.php:44 application/views/csv/index.php:42
 #: application/views/dashboard/index.php:5
-#: application/views/debug/index.php:802
+#: application/views/debug/index.php:808
 #: application/views/distancerecords/index.php:23
 #: application/views/dxatlas/index.php:42
 #: application/views/eqsl/analysis.php:39
@@ -2084,7 +2085,7 @@ msgstr ""
 msgid "Mode"
 msgstr "Mód"
 
-#: application/controllers/Logbook.php:1448
+#: application/controllers/Logbook.php:1466
 #: application/views/awards/73on73/index.php:43
 #: application/views/awards/pota/index.php:258
 #: application/views/awards/sota/index.php:168
@@ -2111,7 +2112,7 @@ msgstr "Mód"
 msgid "RST (S)"
 msgstr "RST (S)"
 
-#: application/controllers/Logbook.php:1449
+#: application/controllers/Logbook.php:1467
 #: application/views/awards/73on73/index.php:42
 #: application/views/awards/pota/index.php:259
 #: application/views/awards/sota/index.php:169
@@ -2139,7 +2140,7 @@ msgstr "RST (S)"
 msgid "RST (R)"
 msgstr "RST (R)"
 
-#: application/controllers/Logbook.php:1450
+#: application/controllers/Logbook.php:1468
 #: application/views/contesting/manager/export_cbr.php:282
 #: application/views/dashboard/index.php:8
 #: application/views/qslcard/searchresult.php:15
@@ -2160,7 +2161,8 @@ msgstr "RST (R)"
 msgid "Country"
 msgstr "Krajina"
 
-#: application/controllers/Logbook.php:1451
+#: application/controllers/Logbook.php:1469
+#: application/views/activationplanner/index.php:85
 #: application/views/awards/iota/index.php:208
 #: application/views/bandmap/list.php:338 application/views/bands/index.php:52
 #: application/views/dashboard/index.php:9
@@ -2182,7 +2184,7 @@ msgstr "Krajina"
 #: application/views/qso/edit_ajax.php:353
 #: application/views/search/search_result_ajax.php:8
 #: application/views/station_profile/create.php:185
-#: application/views/station_profile/edit.php:210
+#: application/views/station_profile/edit.php:207
 #: application/views/stationsetup/locationlist.php:17
 #: application/views/timeline/index.php:306 application/views/user/edit.php:301
 #: application/views/user/edit.php:324 application/views/user/edit.php:347
@@ -2192,7 +2194,7 @@ msgstr "Krajina"
 msgid "IOTA"
 msgstr "IOTA"
 
-#: application/controllers/Logbook.php:1455
+#: application/controllers/Logbook.php:1473
 #: application/views/awards/counties/details_ajax.php:8
 #: application/views/awards/counties/index.php:76
 #: application/views/awards/rac/index.php:156
@@ -2223,12 +2225,12 @@ msgstr "IOTA"
 msgid "State"
 msgstr "Štát"
 
-#: application/controllers/Logbook.php:1456
+#: application/controllers/Logbook.php:1474
 #: application/views/activated_gridmap/index.php:107
-#: application/views/activationplanner/index.php:19
-#: application/views/activationplanner/index.php:51
-#: application/views/activationplanner/index.php:66
-#: application/views/activationplanner/index.php:90
+#: application/views/activationplanner/index.php:23
+#: application/views/activationplanner/index.php:65
+#: application/views/activationplanner/index.php:81
+#: application/views/activationplanner/index.php:106
 #: application/views/awards/ffma/index.php:38
 #: application/views/awards/gridmaster/index.php:53
 #: application/views/awards/vucc/band.php:17
@@ -2282,8 +2284,9 @@ msgstr "Štát"
 msgid "Gridsquare"
 msgstr "Lokátor"
 
-#: application/controllers/Logbook.php:1457
+#: application/controllers/Logbook.php:1475
 #: application/views/activated_gridmap/index.php:108
+#: application/views/activationplanner/index.php:29
 #: application/views/awards/ffma/index.php:40
 #: application/views/awards/gridmaster/index.php:55
 #: application/views/contesting/logger/components/map.php:82
@@ -2313,7 +2316,7 @@ msgstr "Lokátor"
 msgid "Distance"
 msgstr "Vzdialenosť"
 
-#: application/controllers/Logbook.php:1458
+#: application/controllers/Logbook.php:1476
 #: application/views/accumulate/index.php:27
 #: application/views/activated_gridmap/index.php:15
 #: application/views/activators/index.php:17
@@ -2363,7 +2366,7 @@ msgstr "Vzdialenosť"
 #: application/views/contesting/manager/export_cbr.php:76
 #: application/views/continents/index.php:35 application/views/csv/index.php:31
 #: application/views/dashboard/index.php:16
-#: application/views/debug/index.php:803 application/views/dxatlas/index.php:31
+#: application/views/debug/index.php:809 application/views/dxatlas/index.php:31
 #: application/views/eqsl/download.php:41
 #: application/views/eqslcard/index.php:36
 #: application/views/gridmap/index.php:78 application/views/kml/index.php:19
@@ -2422,7 +2425,7 @@ msgstr "Vzdialenosť"
 msgid "Band"
 msgstr "Pásmo"
 
-#: application/controllers/Logbook.php:1459
+#: application/controllers/Logbook.php:1477
 #: application/controllers/Radio.php:55 application/views/bandmap/list.php:172
 #: application/views/bandmap/list.php:562
 #: application/views/bandmap/list.php:602
@@ -2452,7 +2455,7 @@ msgstr "Pásmo"
 msgid "Frequency"
 msgstr "Frekvencia"
 
-#: application/controllers/Logbook.php:1460
+#: application/controllers/Logbook.php:1478
 #: application/controllers/Radio.php:53
 #: application/views/contesting/logger/components/qso-form.php:157
 #: application/views/contesting/manager/export_cbr.php:61
@@ -2478,7 +2481,7 @@ msgstr "Frekvencia"
 msgid "Operator"
 msgstr "Operátor"
 
-#: application/controllers/Logbook.php:1481
+#: application/controllers/Logbook.php:1499
 #: application/controllers/Stationsetup.php:423
 #: application/views/awards/dxcc/index.php:91
 #: application/views/awards/dxcc/index.php:471
@@ -2531,7 +2534,7 @@ msgstr "Rýchly náhľad"
 #: application/views/lotw/import.php:3
 #: application/views/lotw_views/index.php:19
 #: application/views/lotw_views/upload_cert.php:3
-#: application/views/user/edit.php:1067 application/views/visitor/index.php:328
+#: application/views/user/edit.php:1067 application/views/visitor/index.php:326
 msgid "Logbook of the World"
 msgstr "Logbook of the World"
 
@@ -2902,16 +2905,16 @@ msgstr "Informácie o verzii sa nebudú zobrazovať žiadnemu používateľovi"
 #: application/controllers/Staticmap.php:202
 #: application/controllers/Visitor.php:48
 #: application/controllers/Visitor.php:77
-#: application/controllers/Visitor.php:144
-#: application/controllers/Visitor.php:156
-#: application/controllers/Visitor.php:180
-#: application/controllers/Visitor.php:206
-#: application/controllers/Visitor.php:218
-#: application/controllers/Visitor.php:242
-#: application/controllers/Visitor.php:318
-#: application/controllers/Visitor.php:344
-#: application/controllers/Visitor.php:378
-#: application/controllers/Visitor.php:635
+#: application/controllers/Visitor.php:143
+#: application/controllers/Visitor.php:155
+#: application/controllers/Visitor.php:179
+#: application/controllers/Visitor.php:205
+#: application/controllers/Visitor.php:217
+#: application/controllers/Visitor.php:241
+#: application/controllers/Visitor.php:317
+#: application/controllers/Visitor.php:343
+#: application/controllers/Visitor.php:377
+#: application/controllers/Visitor.php:634
 #: application/controllers/Widgets.php:67
 msgid "Unknown Public Page."
 msgstr "Neznáma verejná stránka."
@@ -3018,10 +3021,11 @@ msgid "QRZ ADIF Information"
 msgstr "QRZ ADIF informácie"
 
 #: application/controllers/Qsl.php:24 application/views/dashboard/index.php:493
-#: application/views/dashboard/index.php:509
-#: application/views/dashboard/index.php:512
+#: application/views/dashboard/index.php:508
+#: application/views/dashboard/index.php:511
 #: application/views/qslcard/index.php:3
-#: application/views/visitor/index.php:287
+#: application/views/visitor/index.php:272
+#: application/views/visitor/index.php:285
 msgid "QSL Cards"
 msgstr "QSL karty"
 
@@ -3384,11 +3388,11 @@ msgstr "Jednoduchý rýchly záznam do denníka"
 
 #: application/controllers/Staticmap.php:198
 #: application/controllers/Visitor.php:73
-#: application/controllers/Visitor.php:176
-#: application/controllers/Visitor.php:238
-#: application/controllers/Visitor.php:340
-#: application/controllers/Visitor.php:374
-#: application/controllers/Visitor.php:631
+#: application/controllers/Visitor.php:175
+#: application/controllers/Visitor.php:237
+#: application/controllers/Visitor.php:339
+#: application/controllers/Visitor.php:373
+#: application/controllers/Visitor.php:630
 #: application/controllers/Widgets.php:63
 msgid "Empty Logbook"
 msgstr "Prázdny denník"
@@ -3400,7 +3404,7 @@ msgstr "Zadať polohu stanice"
 
 #: application/controllers/Station.php:74
 #: application/controllers/Station.php:99 application/controllers/User.php:269
-#: application/controllers/User.php:1019 application/controllers/User.php:1199
+#: application/controllers/User.php:1022 application/controllers/User.php:1203
 msgid "Invalid security token"
 msgstr "Neplatný bezpečnostný token"
 
@@ -3419,7 +3423,7 @@ msgstr "Upraviť polohu stanice "
 #: application/views/qso/index.php:402
 #: application/views/search/search_result_ajax.php:18
 #: application/views/station_profile/create.php:431
-#: application/views/station_profile/edit.php:463
+#: application/views/station_profile/edit.php:460
 #: application/views/user/edit.php:403 application/views/user/edit.php:879
 #: application/views/view_log/partial/log_ajax.php:19
 #: application/views/view_log/qso.php:9 application/views/webadif/export.php:75
@@ -3433,7 +3437,7 @@ msgid "Duplicate Station Location:"
 msgstr "Duplicitná poloha stanice:"
 
 #: application/controllers/Station.php:233
-#: application/controllers/User.php:1500 application/controllers/User.php:1753
+#: application/controllers/User.php:1504 application/controllers/User.php:1757
 #, php-format
 msgid "Please check value for grid locator (%s)"
 msgstr "Skontroluj hodnotu pre lokátor (%s)"
@@ -3459,12 +3463,13 @@ msgstr "Nie je dovolené"
 #: application/controllers/Stationsetup.php:156
 #: application/controllers/Stationsetup.php:177
 #: application/controllers/Stationsetup.php:478
-#: application/views/activationplanner/index.php:21
+#: application/views/activationplanner/index.php:31
 #: application/views/contesting/logger/components/qso-form.php:31
 #: application/views/contesting/logger/components/qso-form.php:34
 #: application/views/contesting/manager/index.php:152
 #: application/views/qslpostcard/designer.php:47
 #: application/views/qso/index.php:764 application/views/simplefle/index.php:39
+#: application/views/widgets/lotw_upload.php:123
 #: application/views/widgets/on_air.php:190
 #: application/views/widgets/on_air.php:249
 msgid "Error"
@@ -3492,7 +3497,7 @@ msgid "Error. Link is already in use!"
 msgstr "Chyba. Odkaz sa už používa!"
 
 #: application/controllers/Stationsetup.php:278
-#: application/views/debug/index.php:877
+#: application/views/debug/index.php:883
 #: application/views/options/appearance.php:31
 #: application/views/options/appearance.php:40
 #: application/views/options/appearance.php:49
@@ -3500,8 +3505,8 @@ msgstr "Chyba. Odkaz sa už používa!"
 #: application/views/options/version_dialog.php:30
 #: application/views/station_profile/create.php:310
 #: application/views/station_profile/create.php:367
-#: application/views/station_profile/edit.php:336
-#: application/views/station_profile/edit.php:395
+#: application/views/station_profile/edit.php:333
+#: application/views/station_profile/edit.php:392
 #: application/views/stationsetup/locationlist.php:55
 #: application/views/stationsetup/stationsetup.php:107
 #: application/views/user/edit.php:535
@@ -3788,27 +3793,35 @@ msgstr "Aktualizácia POTA dokončená. Výsledok: "
 msgid "POTA Update failed. Result: "
 msgstr "Aktualizácia POTA zlyhala. Výsledok: "
 
-#: application/controllers/Update.php:596
+#: application/controllers/Update.php:616
+msgid "POTA boundaries update complete. Result: "
+msgstr ""
+
+#: application/controllers/Update.php:618
+msgid "POTA boundaries update failed. Result: "
+msgstr ""
+
+#: application/controllers/Update.php:635
 msgid "TLE Update complete. Result: "
 msgstr "Aktualizácia TLE dokončená. Výsledok: "
 
-#: application/controllers/Update.php:598
+#: application/controllers/Update.php:637
 msgid "TLE Update failed. Result: "
 msgstr "Aktualizácia TLE zlyhala. Výsledok: "
 
-#: application/controllers/Update.php:625
+#: application/controllers/Update.php:664
 msgid "LoTW SAT Update"
 msgstr "LoTW SAT aktualizácia"
 
-#: application/controllers/Update.php:653
+#: application/controllers/Update.php:692
 msgid "Update of Hams of Note"
 msgstr "Update Hams of Note"
 
-#: application/controllers/Update.php:693
+#: application/controllers/Update.php:732
 msgid "VUCC Grid file update complete. Result: "
 msgstr "Aktualizácia súboru VUCC lokátorov dokončená. Výsledok: "
 
-#: application/controllers/Update.php:695
+#: application/controllers/Update.php:734
 msgid "VUCC Grid file update failed. Result: "
 msgstr "Aktualizácia súboru VUCC lokátorov zlyhala. Výsledok: "
 
@@ -3842,65 +3855,65 @@ msgstr "Neplatný parameter!"
 msgid "Add User"
 msgstr "Pridať používateľa"
 
-#: application/controllers/User.php:342
+#: application/controllers/User.php:343
 #, php-format
 msgid "Username %s already in use!"
 msgstr "Používateľské meno %s je už obsadené!"
 
-#: application/controllers/User.php:345
+#: application/controllers/User.php:346
 #, php-format
 msgid "E-mail %s already in use!"
 msgstr "E-mail %s sa už používa!"
 
-#: application/controllers/User.php:348
+#: application/controllers/User.php:349
 msgid "Invalid Password!"
 msgstr "Neplatné heslo!"
 
-#: application/controllers/User.php:352
+#: application/controllers/User.php:353
 #, php-format
 msgid "User %s added!"
 msgstr "Používateľ %s pridaný!"
 
-#: application/controllers/User.php:356
+#: application/controllers/User.php:357
 msgid "Users"
 msgstr "Používatelia"
 
-#: application/controllers/User.php:465
+#: application/controllers/User.php:466
 msgid "Can't be changed. Manage this through your Identity Provider."
 msgstr ""
 
-#: application/controllers/User.php:468
+#: application/controllers/User.php:469
 #: application/views/club/permissions.php:318
 msgid "Edit User"
 msgstr "Upraviť používateľa"
 
-#: application/controllers/User.php:1094 application/controllers/User.php:1097
+#: application/controllers/User.php:1097 application/controllers/User.php:1100
 #, php-format
 msgid "User %s edited"
 msgstr "Používateľ %s upravený"
 
-#: application/controllers/User.php:1166
+#: application/controllers/User.php:1170
 msgid "Profile"
 msgstr "Profil"
 
-#: application/controllers/User.php:1189
+#: application/controllers/User.php:1193
 #: application/views/club/permissions.php:375
 msgid "Delete User"
 msgstr "Vymazať používateľa"
 
-#: application/controllers/User.php:1205
+#: application/controllers/User.php:1209
 msgid "User deleted"
 msgstr "Používateľ bol odstránený"
 
-#: application/controllers/User.php:1208
+#: application/controllers/User.php:1212
 msgid "Could not delete user!"
 msgstr "Používateľa sa nepodarilo vymazať!"
 
-#: application/controllers/User.php:1208
+#: application/controllers/User.php:1212
 msgid "Database error:"
 msgstr "Chyba databázy:"
 
-#: application/controllers/User.php:1282
+#: application/controllers/User.php:1286
 msgid ""
 "Congrats! Wavelog was successfully installed. You can now login for the "
 "first time."
@@ -3909,22 +3922,22 @@ msgstr ""
 "prihlásiť.Gratulujeme! Wavelog bol úspešne nainštalovaný. Teraz sa môžete "
 "prihlásiť prvýkrát."
 
-#: application/controllers/User.php:1320
+#: application/controllers/User.php:1324
 msgid "This is not allowed!"
 msgstr "To nie je povolené!"
 
-#: application/controllers/User.php:1357 application/controllers/User.php:1370
+#: application/controllers/User.php:1361 application/controllers/User.php:1374
 msgid "Login failed. Try again."
 msgstr "Prihlásenie zlyhalo. Skúste to znova."
 
-#: application/controllers/User.php:1378
+#: application/controllers/User.php:1382
 #: application/views/interface_assets/header.php:429
 #: application/views/user/login.php:80
 #: application/views/visitor/layout/header.php:87
 msgid "Login"
 msgstr "Prihlásiť sa"
 
-#: application/controllers/User.php:1428
+#: application/controllers/User.php:1432
 msgid ""
 "Your account is locked, due to too many failed login-attempts. Please reset "
 "your password."
@@ -3933,7 +3946,7 @@ msgstr ""
 "prihlásenie. Prosím, resetujte svoje heslo.Váš účet je zablokovaný kvôli "
 "príliš veľa neúspešným pokusom o prihlásenie. Prosím, obnovte svoje heslo."
 
-#: application/controllers/User.php:1432
+#: application/controllers/User.php:1436
 msgid ""
 "Sorry. This instance is currently in maintenance mode. If this message "
 "appears unexpectedly or keeps showing up, please contact an administrator. "
@@ -3943,18 +3956,18 @@ msgstr ""
 "správa objaví neočakávane alebo sa stále zobrazuje, kontaktujte správcu. Len "
 "administrátori sa môžu momentálne prihlásiť."
 
-#: application/controllers/User.php:1459
+#: application/controllers/User.php:1463
 #, php-format
 msgid "User %s logged out."
 msgstr "Používateľ %s sa odhlásil."
 
-#: application/controllers/User.php:1482
+#: application/controllers/User.php:1486
 #: application/views/oqrs/request_grouped.php:19
 #: application/views/user/modals/first_login_wizard.php:26
 msgid "Station Name"
 msgstr "Názov stanice"
 
-#: application/controllers/User.php:1483 application/views/debug/index.php:804
+#: application/controllers/User.php:1487 application/views/debug/index.php:810
 #: application/views/public_search/result.php:17
 #: application/views/station_profile/create.php:60
 #: application/views/station_profile/edit.php:77
@@ -3964,27 +3977,27 @@ msgstr "Názov stanice"
 msgid "Station Callsign"
 msgstr "Značka stanice"
 
-#: application/controllers/User.php:1484
+#: application/controllers/User.php:1488
 #: application/views/station_profile/create.php:82
 #: application/views/station_profile/edit.php:99
 #: application/views/user/modals/first_login_wizard.php:42
 msgid "Station DXCC"
 msgstr "DXCC stanice"
 
-#: application/controllers/User.php:1485
+#: application/controllers/User.php:1489
 msgid "Station CQ Zone"
 msgstr "CQ zóna stanice"
 
-#: application/controllers/User.php:1486
+#: application/controllers/User.php:1490
 msgid "Station ITU Zone"
 msgstr "ITU zóna stanice"
 
-#: application/controllers/User.php:1487
+#: application/controllers/User.php:1491
 #: application/views/user/modals/first_login_wizard.php:93
 msgid "Station Locator"
 msgstr "Lokátor stanice"
 
-#: application/controllers/User.php:1508
+#: application/controllers/User.php:1512
 #, php-format
 msgid ""
 "Station created successfully! Welcome to Wavelog! To complete your station "
@@ -3994,48 +4007,48 @@ msgstr ""
 "nastavenia vašej stanice kliknite %stu%s.Stanica bola úspešne vytvorená! "
 "Vitajte vo Wavelog! Na dokončenie nastavenia stanice kliknite %ssem%s."
 
-#: application/controllers/User.php:1511
+#: application/controllers/User.php:1515
 msgid "Station setup failed! Please set up your station manually."
 msgstr "Stanica nebola nastavená! Nastav svoju stanicu manuálne."
 
-#: application/controllers/User.php:1528
+#: application/controllers/User.php:1532
 msgid "Password Reset is disabled on the Demo!"
 msgstr "Obnovenie hesla je v demo režime zakázané!"
 
-#: application/controllers/User.php:1542
+#: application/controllers/User.php:1546
 msgid "Forgot Password"
 msgstr "Zabudnuté heslo"
 
-#: application/controllers/User.php:1592
+#: application/controllers/User.php:1596
 #: application/views/user/modals/more_actions_modal.php:88
 msgid "Email settings are incorrect."
 msgstr "Nastavenia e-mailu sú nesprávne."
 
-#: application/controllers/User.php:1596 application/controllers/User.php:1601
+#: application/controllers/User.php:1600 application/controllers/User.php:1605
 msgid "Password Reset Processed."
 msgstr "Proces resetovania hesla bol spracovaný."
 
-#: application/controllers/User.php:1707
+#: application/controllers/User.php:1711
 #: application/views/user/forgot_password.php:51
 #: application/views/user/reset_password.php:8
 #: application/views/user/reset_password.php:35
 msgid "Reset Password"
 msgstr "Obnoviť heslo"
 
-#: application/controllers/User.php:1727
+#: application/controllers/User.php:1731
 #, php-format
 msgid ""
 "Couldn't set account to this username. Please try another one than \"%s\"."
 msgstr ""
 "Nepodarilo sa nastaviť účet na toto používateľské meno. Skúste iné ako „%s“."
 
-#: application/controllers/User.php:1736
+#: application/controllers/User.php:1740
 #, php-format
 msgid ""
 "Couldn't set account to this email. Please try another address than \"%s\"."
 msgstr "Nedá sa nastaviť účet na tento email. Skúste inú adresu ako \"%s\"."
 
-#: application/controllers/User.php:1775
+#: application/controllers/User.php:1779
 #, php-format
 msgid ""
 "You currently can't impersonate another user. You need to set %s to %s in "
@@ -4045,7 +4058,7 @@ msgstr ""
 "vo vašom súbore config.php!Momentálne nemôžete predstierať, že ste iný "
 "používateľ. Musíte nastaviť %s na %s vo vašom config.php!"
 
-#: application/controllers/User.php:1786
+#: application/controllers/User.php:1790
 #: application/views/user/modals/admin_impersonate_modal.php:36
 msgid ""
 "You currently can't impersonate another user. Please change the "
@@ -4056,15 +4069,15 @@ msgstr ""
 "že ste iný používateľ. Najprv zmeňte encryption_key vo svojom súbore config."
 "php!"
 
-#: application/controllers/User.php:1793
+#: application/controllers/User.php:1797
 msgid "Invalid Hash"
 msgstr "Neplatný hash"
 
-#: application/controllers/User.php:1806
+#: application/controllers/User.php:1810
 msgid "The impersonation hash is too old. Please try again."
 msgstr "Impersonizačný hash je príliš starý. Skúste to znova."
 
-#: application/controllers/User.php:1813
+#: application/controllers/User.php:1817
 msgid ""
 "You can't impersonate another user while you're not logged in as the source "
 "user"
@@ -4072,15 +4085,15 @@ msgstr ""
 "Nemôžeš sa vydávať za iného používateľa, keď nie si prihlásený ako zdrojový "
 "používateľ"
 
-#: application/controllers/User.php:1819
+#: application/controllers/User.php:1823
 msgid "There was a problem with your session. Please try again."
 msgstr "Vyskytol sa problém s vašou reláciou. Skúste to znova."
 
-#: application/controllers/User.php:1826
+#: application/controllers/User.php:1830
 msgid "The requested user to impersonate does not exist"
 msgstr "Požadovaný používateľ na zosobnenie neexistuje"
 
-#: application/controllers/User.php:1847
+#: application/controllers/User.php:1851
 msgid ""
 "Could not determine the correct permission level for the clubstation. Try "
 "again after re-login."
@@ -4089,13 +4102,13 @@ msgstr ""
 "znova po opätovnom prihlásení.Nemožno určiť správnu úroveň povolení pre "
 "klubovú stanicu. Skúste to znova po opätovnom prihlásení."
 
-#: application/controllers/User.php:1888 application/controllers/User.php:1900
-#: application/controllers/User.php:1906 application/controllers/User.php:1915
-#: application/controllers/User.php:1923
+#: application/controllers/User.php:1892 application/controllers/User.php:1904
+#: application/controllers/User.php:1910 application/controllers/User.php:1919
+#: application/controllers/User.php:1927
 msgid "Ups.. Something went wrong. Try to log back in."
 msgstr "Ups.. Niečo sa pokazilo. Skús sa znovu prihlásiť."
 
-#: application/controllers/User.php:1929
+#: application/controllers/User.php:1933
 msgid ""
 "The ability to return quickly has been disabled after the security hash "
 "expired. Please log in again."
@@ -4104,7 +4117,7 @@ msgstr ""
 "hashu. Prosím, prihláste sa znova.Možnosť rýchlo sa vrátiť bola deaktivovaná "
 "po vypršaní bezpečnostného hashu. Prosím, prihláste sa znova."
 
-#: application/controllers/User.php:1945
+#: application/controllers/User.php:1949
 #, php-format
 msgid ""
 "You have been logged out of the account %s. Welcome back, %s, to your "
@@ -4113,20 +4126,20 @@ msgstr ""
 "Boli ste odhlásený z účtu %s. Vitajte späť, %s, vo vašom osobnom účte!Boli "
 "ste odhlásení z účtu %s. Vitajte späť, %s, na svojom osobnom účte!"
 
-#: application/controllers/Visitor.php:383
+#: application/controllers/Visitor.php:382
 msgid "No public slug found."
 msgstr ""
 
-#: application/controllers/Visitor.php:389
+#: application/controllers/Visitor.php:388
 msgid "Satellite Gridsquare Map"
 msgstr "Satelitná lokátorová mapa"
 
-#: application/controllers/Visitor.php:569
+#: application/controllers/Visitor.php:568
 #: application/views/stationsetup/stationsetup.php:48
 msgid "Public Search"
 msgstr "Verejné vyhľadávanie"
 
-#: application/controllers/Visitor.php:602
+#: application/controllers/Visitor.php:601
 msgid "Export Map"
 msgstr "Exportovať mapu"
 
@@ -4146,14 +4159,16 @@ msgstr "Žiadne stanice, ktoré používajú Wavelog OQRS, neboli nájdené."
 
 #: application/controllers/Widgets.php:146
 #: application/controllers/Widgets.php:157
+#: application/controllers/Widgets.php:261
+#: application/controllers/Widgets.php:271
 msgid "User slug not specified"
 msgstr "Používateľský slug nešpecifikovaný"
 
-#: application/controllers/Widgets.php:170
+#: application/controllers/Widgets.php:169
 msgid "User has on-air widget disabled"
 msgstr "Používateľ má deaktivovaný widget naživo"
 
-#: application/controllers/Widgets.php:229
+#: application/controllers/Widgets.php:228
 msgid ""
 "No CAT interfaced radios found. You need to have at least one radio "
 "interface configured."
@@ -4162,11 +4177,15 @@ msgstr ""
 "rádiové rozhranie.Nie sú nájdené žiadne rádia prepojené cez CAT. Musíš mať "
 "nakonfigurované aspoň jedno rozhranie rádia."
 
-#: application/controllers/Widgets.php:440
+#: application/controllers/Widgets.php:282
+msgid "User has disabled the LoTW upload widget"
+msgstr ""
+
+#: application/controllers/Widgets.php:540
 msgid "User not found by slug"
 msgstr "Používateľ nebol nájdený podľa slugu"
 
-#: application/controllers/Widgets.php:443
+#: application/controllers/Widgets.php:543
 msgid "Multiple users found by slug"
 msgstr "Viacero používateľov nájdených podľa slugu"
 
@@ -4482,20 +4501,20 @@ msgstr "Nezadaný volací znak"
 msgid "DXCC has to be Numeric"
 msgstr "DXCC musí byť číselné"
 
-#: application/models/Logbook_model.php:4770
+#: application/models/Logbook_model.php:4787
 #, php-format
 msgid ""
 "Differing station callsign %s while importing QSO with %s for %s: SKIPPED"
 msgstr ""
 
-#: application/models/Logbook_model.php:4778
+#: application/models/Logbook_model.php:4795
 #, php-format
 msgid ""
 "Differing locator %s while importing QSO with %s for station locator %s: "
 "SKIPPED"
 msgstr ""
 
-#: application/models/Logbook_model.php:4794
+#: application/models/Logbook_model.php:4811
 msgid ""
 "You tried to import a QSO without valid date. This QSO wasn't imported. It's "
 "invalid"
@@ -4503,28 +4522,28 @@ msgstr ""
 "Pokúsil si sa importovať QSO bez platného dátumu. Toto QSO nebolo "
 "importované. Je neplatné"
 
-#: application/models/Logbook_model.php:4804
+#: application/models/Logbook_model.php:4821
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given CALL. This QSO wasn't "
 "imported. It's invalid."
 msgstr ""
 
-#: application/models/Logbook_model.php:4811
+#: application/models/Logbook_model.php:4828
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO with an invalid CALL. This QSO wasn't "
 "imported. The invalid input is '%s'."
 msgstr ""
 
-#: application/models/Logbook_model.php:4881
+#: application/models/Logbook_model.php:4898
 #, php-format
 msgid ""
 "QSO on %s: Band '%s' is not in the band configuration. This QSO wasn't "
 "imported."
 msgstr ""
 
-#: application/models/Logbook_model.php:4888
+#: application/models/Logbook_model.php:4905
 #, php-format
 msgid ""
 "QSO on %s: You tried to import a QSO without any given Band. This QSO wasn't "
@@ -4534,63 +4553,63 @@ msgstr ""
 "nebolo importované. Je neplatnéQSO na %s: Pokúsil si sa importovať QSO bez "
 "uvedeného pásma. Toto QSO nebolo importované. Je neplatné."
 
-#: application/models/Logbook_model.php:5162
+#: application/models/Logbook_model.php:5179
 msgid "the qslrdate is invalid (YYYYMMDD)"
 msgstr "qslrdate je neplatné (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5173
+#: application/models/Logbook_model.php:5190
 msgid "the qslsdate is invalid (YYYYMMDD)"
 msgstr "qslsdate je neplatné (RRRRMMDD)"
 
-#: application/models/Logbook_model.php:5234
+#: application/models/Logbook_model.php:5251
 msgid "the clublog_qso_upload_date is invalid (YYYYMMDD)"
 msgstr "clublog_qso_upload_date je neplatné (YYYYMMDD)"
 
-#: application/models/Logbook_model.php:5610
+#: application/models/Logbook_model.php:5627
 #: application/views/simplefle/index.php:41
 msgid "Duplicate for"
 msgstr "Duplicita pre"
 
-#: application/models/Logbook_model.php:5677
-#: application/models/Logbook_model.php:5777
+#: application/models/Logbook_model.php:5694
+#: application/models/Logbook_model.php:5794
 msgid "QSO could not be matched"
 msgstr "QSO nebolo možné spárovať"
 
-#: application/models/Logbook_model.php:5685
+#: application/models/Logbook_model.php:5702
 msgid "confirmed by LoTW/Clublog/eQSL/Contest"
 msgstr "potvrdené cez LoTW/Clublog/eQSL/Contest"
 
-#: application/models/Logbook_model.php:5691
+#: application/models/Logbook_model.php:5708
 msgid "confirmed by award manager"
 msgstr "potvrdené diplomovým manažérom"
 
-#: application/models/Logbook_model.php:5695
+#: application/models/Logbook_model.php:5712
 msgid "confirmed by cross-check of DCL data"
 msgstr "potvrdené krížovou kontrolou údajov DCL"
 
-#: application/models/Logbook_model.php:5699
+#: application/models/Logbook_model.php:5716
 msgid "confirmation pending"
 msgstr "potvrdenie čaká"
 
-#: application/models/Logbook_model.php:5702
+#: application/models/Logbook_model.php:5719
 msgid "unconfirmed"
 msgstr "nepotvrdené"
 
-#: application/models/Logbook_model.php:5705
+#: application/models/Logbook_model.php:5722
 #: application/views/satellite/index.php:82
 #: application/views/satellite/satinfo.php:41
 msgid "unknown"
 msgstr "neznáme"
 
-#: application/models/Logbook_model.php:5780
+#: application/models/Logbook_model.php:5797
 msgid "POTA reference already in log"
 msgstr "POTA referencia už v logu"
 
-#: application/models/Logbook_model.php:5783
+#: application/models/Logbook_model.php:5800
 msgid "QSO updated"
 msgstr "QSO aktualizované"
 
-#: application/models/Logbook_model.php:6189
+#: application/models/Logbook_model.php:6206
 #: application/views/activated_gridmap/index.php:109
 #: application/views/activationplanner/index.php:9
 #: application/views/awards/ffma/index.php:42
@@ -4656,24 +4675,24 @@ msgctxt "QSL Card Designer; No mailable address found"
 msgid "!!! NO MAILABLE ADDRESS FOUND !!!"
 msgstr ""
 
-#: application/models/Update_model.php:502
+#: application/models/Update_model.php:708
 msgid "Newer release available:"
 msgstr "K dispozícii je novšia verzia:"
 
-#: application/models/Update_model.php:506
+#: application/models/Update_model.php:712
 msgid "You are running the latest version."
 msgstr "Používaš najnovšiu verziu."
 
-#: application/models/Update_model.php:647
+#: application/models/Update_model.php:852
 msgid "cURL error:"
 msgstr "cURL chyba:"
 
-#: application/models/Update_model.php:681
+#: application/models/Update_model.php:886
 msgid "SAT already existing. LoTW status updated."
 msgstr "SAT už existuje. Stav LoTW aktualizovaný."
 
-#: application/models/Update_model.php:684
-#: application/models/Update_model.php:713
+#: application/models/Update_model.php:889
+#: application/models/Update_model.php:918
 #, php-format
 msgid "LoTW status for %d QSO updated"
 msgid_plural "LoTW status for %d QSOs updated"
@@ -4681,27 +4700,27 @@ msgstr[0] "Stav LoTW pre %d spojenie aktualizovaný"
 msgstr[1] "Stav LoTW pre %d spojenia aktualizovaný"
 msgstr[2] "Stav LoTW pre %d spojení aktualizovaný"
 
-#: application/models/Update_model.php:687
+#: application/models/Update_model.php:892
 msgid "SAT already existing. Updating LoTW status failed."
 msgstr "SAT už existuje. Aktualizácia stavu LoTW zlyhala."
 
-#: application/models/Update_model.php:690
+#: application/models/Update_model.php:895
 msgid "SAT already existing. Ignored."
 msgstr "SAT už existuje. Ignorované."
 
-#: application/models/Update_model.php:697
+#: application/models/Update_model.php:902
 msgid "SAT already existing. Display name updated."
 msgstr "SAT už existuje. Názov bol aktualizovaný."
 
-#: application/models/Update_model.php:699
+#: application/models/Update_model.php:904
 msgid "SAT already existing. Updating display name failed."
 msgstr "SAT už existuje. Aktualizácia zobrazovaného mena zlyhala."
 
-#: application/models/Update_model.php:709
+#: application/models/Update_model.php:914
 msgid "New SAT. Inserted."
 msgstr "Nový SAT. Vložené."
 
-#: application/models/Update_model.php:717
+#: application/models/Update_model.php:922
 msgid "New SAT. Insert failed."
 msgstr "Nový SAT. Vloženie zlyhalo."
 
@@ -4819,7 +4838,7 @@ msgstr "Rozdiel"
 #: application/views/continents/index.php:46 application/views/csv/index.php:21
 #: application/views/csv/index.php:33 application/views/csv/index.php:44
 #: application/views/csv/index.php:60 application/views/csv/index.php:82
-#: application/views/csv/index.php:94 application/views/dashboard/index.php:666
+#: application/views/csv/index.php:94 application/views/dashboard/index.php:665
 #: application/views/distances/index.php:25
 #: application/views/distances/index.php:40
 #: application/views/distances/index.php:50
@@ -5096,7 +5115,7 @@ msgid "Clear Markers"
 msgstr "Vymazať značky"
 
 #: application/views/activated_gridmap/index.php:105
-#: application/views/activationplanner/index.php:88
+#: application/views/activationplanner/index.php:104
 #: application/views/awards/ffma/index.php:34
 #: application/views/awards/gridmaster/index.php:49
 #: application/views/contesting/logger/components/map.php:76
@@ -5107,7 +5126,7 @@ msgid "Latitude"
 msgstr "Zemepisná šírka"
 
 #: application/views/activated_gridmap/index.php:106
-#: application/views/activationplanner/index.php:89
+#: application/views/activationplanner/index.php:105
 #: application/views/awards/ffma/index.php:36
 #: application/views/awards/gridmaster/index.php:51
 #: application/views/contesting/logger/components/map.php:78
@@ -5122,16 +5141,69 @@ msgid ""
 "Invalid gridsquare — use 2, 4, 6, 8 or 10 characters (e.g. FN, FN31, FN31pr)."
 msgstr ""
 
-#: application/views/activationplanner/index.php:17
+#: application/views/activationplanner/index.php:21
 #: application/views/satellite/pass.php:21
 msgid "Satellite passes"
 msgstr "Prelety satelitov"
 
-#: application/views/activationplanner/index.php:18
+#: application/views/activationplanner/index.php:22
 msgid "Gridsquare borders"
 msgstr ""
 
-#: application/views/activationplanner/index.php:20
+#: application/views/activationplanner/index.php:24
+#: application/views/activationplanner/index.php:76
+msgid "Nearby refs"
+msgstr ""
+
+#: application/views/activationplanner/index.php:25
+#, php-format
+msgid "References within %s of the gridsquare"
+msgstr ""
+
+#: application/views/activationplanner/index.php:26
+#: application/views/qslcard/confirmationresult.php:21
+#: application/views/user/index.php:30
+msgid "Type"
+msgstr "Typ"
+
+#: application/views/activationplanner/index.php:27
+#: application/views/awards/sig/qso_list.php:13
+msgid "Reference"
+msgstr "Referencie"
+
+#: application/views/activationplanner/index.php:28
+#: application/views/api/index.php:135
+#: application/views/awards/iota/index.php:210
+#: application/views/contest_admin/add.php:34
+#: application/views/contest_admin/create.php:24
+#: application/views/contesting/manager/components/session_modal.php:122
+#: application/views/contesting/manager/export_cbr.php:252
+#: application/views/dashboard/index.php:19
+#: application/views/labels/index.php:42 application/views/labels/index.php:76
+#: application/views/logbookadvanced/index.php:966
+#: application/views/logbookadvanced/qslcarousel.php:34
+#: application/views/logbookadvanced/useroptions.php:91
+#: application/views/lotw/satupdate.php:7
+#: application/views/qso/components/fav_modal.php:8
+#: application/views/qso/components/winkeysettings.php:11
+#: application/views/qso/components/winkeysettings.php:28
+#: application/views/qso/edit_ajax.php:172 application/views/qso/index.php:289
+#: application/views/satellite/satinfo.php:6
+#: application/views/search/result.php:16
+#: application/views/search/search_result_ajax.php:19
+#: application/views/stationsetup/locationlist.php:12
+#: application/views/stationsetup/stationsetup.php:43
+#: application/views/themes/index.php:82
+#: application/views/timeline/index.php:307 application/views/user/edit.php:309
+#: application/views/user/edit.php:332 application/views/user/edit.php:355
+#: application/views/user/edit.php:378 application/views/user/edit.php:402
+#: application/views/view_log/partial/log_ajax.php:20
+#: application/views/view_log/qso.php:232
+#: application/views/view_log/qso.php:629
+msgid "Name"
+msgstr "Meno"
+
+#: application/views/activationplanner/index.php:30
 #: application/views/api/components/create_token_modal.php:6
 #: application/views/api/components/new_token_modal.php:7
 #: application/views/api/components/new_token_modal.php:23
@@ -5154,91 +5226,112 @@ msgstr ""
 msgid "Close"
 msgstr "Zatvoriť"
 
-#: application/views/activationplanner/index.php:22
+#: application/views/activationplanner/index.php:32
 msgid "Tracking"
 msgstr ""
 
-#: application/views/activationplanner/index.php:23
+#: application/views/activationplanner/index.php:33
 #: application/views/logbookadvanced/mergedialog.php:71
 #: application/views/qslpostcard/designer.php:241
 msgid "Field"
 msgstr ""
 
-#: application/views/activationplanner/index.php:24
+#: application/views/activationplanner/index.php:34
 msgid "Square"
 msgstr ""
 
-#: application/views/activationplanner/index.php:25
+#: application/views/activationplanner/index.php:35
 msgid "Subsquare"
 msgstr ""
 
-#: application/views/activationplanner/index.php:26
+#: application/views/activationplanner/index.php:36
 msgid "Locating…"
 msgstr ""
 
-#: application/views/activationplanner/index.php:27
+#: application/views/activationplanner/index.php:37
 msgid "Location access denied."
 msgstr ""
 
-#: application/views/activationplanner/index.php:28
+#: application/views/activationplanner/index.php:38
 msgid "Location unavailable."
 msgstr ""
 
-#: application/views/activationplanner/index.php:29
+#: application/views/activationplanner/index.php:39
 msgid "Location request timed out."
 msgstr ""
 
-#: application/views/activationplanner/index.php:31
+#: application/views/activationplanner/index.php:41
 msgid "Create station location"
 msgstr ""
 
-#: application/views/activationplanner/index.php:32
+#: application/views/activationplanner/index.php:42
 msgid "References in this grid"
 msgstr ""
 
-#: application/views/activationplanner/index.php:34
+#: application/views/activationplanner/index.php:43
+#: application/views/calltester/call_info.php:30
+#: application/views/labels/index.php:82
+#: application/views/logbookadvanced/statecheckresult.php:12
+#: application/views/statistics/index.php:113
+#: application/views/statistics/index.php:161
+msgid "QSOs"
+msgstr "Spojenia"
+
+#: application/views/activationplanner/index.php:44
+msgid "last"
+msgstr ""
+
+#: application/views/activationplanner/index.php:45
+msgid "Inactive"
+msgstr ""
+
+#: application/views/activationplanner/index.php:46
+msgid "valid"
+msgstr ""
+
+#: application/views/activationplanner/index.php:48
 #: application/views/view_log/qso.php:615
 msgid "Share"
 msgstr "Zdieľať"
 
-#: application/views/activationplanner/index.php:35
+#: application/views/activationplanner/index.php:49
 msgid "Share activation"
 msgstr ""
 
-#: application/views/activationplanner/index.php:36
+#: application/views/activationplanner/index.php:50
 #, php-format
 msgid "📻 Planning an activation from %s"
 msgstr ""
 
-#: application/views/activationplanner/index.php:46
+#: application/views/activationplanner/index.php:60
 msgid "Plan your activity here"
 msgstr ""
 
-#: application/views/activationplanner/index.php:54
+#: application/views/activationplanner/index.php:68
 msgid "2, 4, 6, 8 or 10 character Maidenhead locator"
 msgstr ""
 
-#: application/views/activationplanner/index.php:54
+#: application/views/activationplanner/index.php:68
 msgid "e.g. FN31pr"
 msgstr ""
 
-#: application/views/activationplanner/index.php:55
+#: application/views/activationplanner/index.php:69
 msgid "to"
 msgstr ""
 
-#: application/views/activationplanner/index.php:58
+#: application/views/activationplanner/index.php:72
 msgid "Optional second gridsquare for distance and bearing"
 msgstr ""
 
-#: application/views/activationplanner/index.php:58
+#: application/views/activationplanner/index.php:72
 msgid "e.g. JN58qm"
 msgstr ""
 
-#: application/views/activationplanner/index.php:59
+#: application/views/activationplanner/index.php:73
 msgid "Go"
 msgstr ""
 
-#: application/views/activationplanner/index.php:60
+#: application/views/activationplanner/index.php:74
 #: application/views/awards/cq/index.php:70
 #: application/views/awards/dxcc/index.php:69
 #: application/views/awards/itu/index.php:72
@@ -5249,33 +5342,33 @@ msgstr ""
 #: application/views/gridmap/index.php:54
 #: application/views/interface_assets/footer.php:56
 #: application/views/logbookadvanced/index.php:357
-#: application/views/qso/index.php:757 application/views/user/edit.php:1341
+#: application/views/qso/index.php:757 application/views/user/edit.php:1367
 msgid "Clear"
 msgstr "Vyčistiť"
 
-#: application/views/activationplanner/index.php:61
+#: application/views/activationplanner/index.php:75
 msgid "Find my location and gridsquare"
 msgstr ""
 
-#: application/views/activationplanner/index.php:61
+#: application/views/activationplanner/index.php:75
 msgid "Locate me"
 msgstr ""
 
-#: application/views/activationplanner/index.php:64
+#: application/views/activationplanner/index.php:79
 #: application/views/simplefle/index.php:162
 msgid "Refs"
 msgstr "Ref"
 
-#: application/views/activationplanner/index.php:76
+#: application/views/activationplanner/index.php:92
 #: application/views/qso/index.php:758
 msgid "More options"
 msgstr ""
 
-#: application/views/activationplanner/index.php:77
+#: application/views/activationplanner/index.php:93
 msgid "Hide options"
 msgstr ""
 
-#: application/views/activationplanner/index.php:91
+#: application/views/activationplanner/index.php:107
 #: application/views/awards/cq/index.php:3
 #: application/views/awards/cq/index.php:205
 #: application/views/bandmap/list.php:569
@@ -5292,7 +5385,7 @@ msgstr ""
 #: application/views/lookup/index.php:3 application/views/map/qso_map.php:114
 #: application/views/qso/edit_ajax.php:293 application/views/qso/index.php:519
 #: application/views/station_profile/create.php:129
-#: application/views/station_profile/edit.php:154
+#: application/views/station_profile/edit.php:151
 #: application/views/stationsetup/locationlist.php:21
 #: application/views/timeline/index.php:344
 #: application/views/timeplotter/index.php:39
@@ -5301,7 +5394,7 @@ msgstr ""
 msgid "CQ Zone"
 msgstr "CQ zóna"
 
-#: application/views/activationplanner/index.php:92
+#: application/views/activationplanner/index.php:108
 #: application/views/awards/itu/index.php:3
 #: application/views/awards/itu/index.php:207
 #: application/views/gridmap/index.php:230
@@ -5314,7 +5407,7 @@ msgstr "CQ zóna"
 #: application/views/lookup/index.php:8 application/views/map/qso_map.php:115
 #: application/views/qso/edit_ajax.php:302 application/views/qso/index.php:529
 #: application/views/station_profile/create.php:144
-#: application/views/station_profile/edit.php:169
+#: application/views/station_profile/edit.php:166
 #: application/views/stationsetup/locationlist.php:22
 #: application/views/user/modals/first_login_wizard.php:86
 #: application/views/zonechecker/index.php:24
@@ -5424,6 +5517,7 @@ msgstr "Nič sa nenašlo!"
 #: application/views/user/index.php:153 application/views/user/profile.php:29
 #: application/views/view_log/qso.php:83 application/views/view_log/qso.php:625
 #: application/views/visitor/mini.php:183
+#: application/views/widgets/lotw_upload.php:97
 #: application/views/zonechecker/result.php:64
 msgid "Callsign"
 msgstr "Volacia značka"
@@ -5505,7 +5599,7 @@ msgstr ""
 #: application/views/calltester/call_info.php:55
 #: application/views/contesting/logger/components/qso-form.php:145
 #: application/views/dashboard/index.php:339
-#: application/views/debug/index.php:799
+#: application/views/debug/index.php:805
 #: application/views/distancerecords/index.php:20
 #: application/views/eqsl/analysis.php:36
 #: application/views/eqsl/download.php:36 application/views/eqsl/result.php:33
@@ -5552,7 +5646,7 @@ msgstr "Dátum"
 #: application/views/contesting/logger/components/qso-form.php:146
 #: application/views/contesting/manager/export_cbr.php:158
 #: application/views/dashboard/index.php:341
-#: application/views/debug/index.php:800
+#: application/views/debug/index.php:806
 #: application/views/distancerecords/index.php:21
 #: application/views/eqsl/analysis.php:37
 #: application/views/eqsl/download.php:37 application/views/eqsl/result.php:34
@@ -5582,7 +5676,7 @@ msgstr "Čas"
 #: application/views/awards/vucc/band.php:23
 #: application/views/dashboard/index.php:415
 #: application/views/dcl_views/key_import.php:45
-#: application/views/debug/index.php:801 application/views/debug/index.php:836
+#: application/views/debug/index.php:807 application/views/debug/index.php:842
 #: application/views/dxcalendar/index.php:17
 #: application/views/eqsl/analysis.php:38
 #: application/views/eqsl/download.php:38 application/views/eqsl/result.php:35
@@ -5647,7 +5741,7 @@ msgstr "Maximálna veľkosť nahrávaného súboru je "
 #: application/views/clublog/export.php:70
 #: application/views/contesting/logger/index.php:59
 #: application/views/debug/index.php:246 application/views/debug/index.php:263
-#: application/views/debug/index.php:791 application/views/hrdlog/export.php:25
+#: application/views/debug/index.php:797 application/views/hrdlog/export.php:25
 #: application/views/hrdlog/export.php:74
 #: application/views/interface_assets/footer.php:38
 #: application/views/notes/add.php:23 application/views/notes/edit.php:29
@@ -6159,12 +6253,12 @@ msgstr "POTA REF v ADIF"
 #: application/views/awards/amsat_rover/index.php:159
 #: application/views/contesting/manager/index.php:31
 #: application/views/cron/index.php:76
-#: application/views/dashboard/index.php:515
-#: application/views/dashboard/index.php:549
-#: application/views/dashboard/index.php:578
-#: application/views/dashboard/index.php:607
-#: application/views/dashboard/index.php:636
-#: application/views/dashboard/index.php:665
+#: application/views/dashboard/index.php:514
+#: application/views/dashboard/index.php:548
+#: application/views/dashboard/index.php:577
+#: application/views/dashboard/index.php:606
+#: application/views/dashboard/index.php:635
+#: application/views/dashboard/index.php:664
 #: application/views/logbookadvanced/attachContest.php:11
 #: application/views/lotw/satupdate.php:7
 #: application/views/lotw_views/index.php:48
@@ -6626,37 +6720,6 @@ msgid ""
 "users can only see their own tokens."
 msgstr ""
 
-#: application/views/api/index.php:135
-#: application/views/awards/iota/index.php:210
-#: application/views/contest_admin/add.php:34
-#: application/views/contest_admin/create.php:24
-#: application/views/contesting/manager/components/session_modal.php:122
-#: application/views/contesting/manager/export_cbr.php:252
-#: application/views/dashboard/index.php:19
-#: application/views/labels/index.php:42 application/views/labels/index.php:76
-#: application/views/logbookadvanced/index.php:966
-#: application/views/logbookadvanced/qslcarousel.php:34
-#: application/views/logbookadvanced/useroptions.php:91
-#: application/views/lotw/satupdate.php:7
-#: application/views/qso/components/fav_modal.php:8
-#: application/views/qso/components/winkeysettings.php:11
-#: application/views/qso/components/winkeysettings.php:28
-#: application/views/qso/edit_ajax.php:172 application/views/qso/index.php:289
-#: application/views/satellite/satinfo.php:6
-#: application/views/search/result.php:16
-#: application/views/search/search_result_ajax.php:19
-#: application/views/stationsetup/locationlist.php:12
-#: application/views/stationsetup/stationsetup.php:43
-#: application/views/themes/index.php:82
-#: application/views/timeline/index.php:307 application/views/user/edit.php:309
-#: application/views/user/edit.php:332 application/views/user/edit.php:355
-#: application/views/user/edit.php:378 application/views/user/edit.php:402
-#: application/views/view_log/partial/log_ajax.php:20
-#: application/views/view_log/qso.php:232
-#: application/views/view_log/qso.php:629
-msgid "Name"
-msgstr "Meno"
-
 #: application/views/api/index.php:138
 msgid "Expires"
 msgstr ""
@@ -7104,7 +7167,7 @@ msgstr ""
 #: application/views/dashboard/index.php:429
 #: application/views/dashboard/index.php:438
 #: application/views/dashboard/index.php:487
-#: application/views/dashboard/index.php:671
+#: application/views/dashboard/index.php:670
 #: application/views/map/qso_map.php:26 application/views/search/result.php:35
 #: application/views/visitor/index.php:266
 msgid "Worked"
@@ -7124,7 +7187,7 @@ msgstr "Urobené"
 #: application/views/dashboard/index.php:429
 #: application/views/dashboard/index.php:438
 #: application/views/dashboard/index.php:491
-#: application/views/dashboard/index.php:676
+#: application/views/dashboard/index.php:675
 #: application/views/interface_assets/footer.php:49
 #: application/views/map/qso_map.php:25 application/views/search/result.php:32
 #: application/views/visitor/index.php:270
@@ -7161,11 +7224,11 @@ msgstr ""
 #: application/views/awards/wapc/index.php:193
 #: application/views/awards/was/index.php:185
 #: application/views/awards/wpx/index.php:176
-#: application/views/dashboard/index.php:516
-#: application/views/dashboard/index.php:550
-#: application/views/dashboard/index.php:579
-#: application/views/dashboard/index.php:608
-#: application/views/dashboard/index.php:637
+#: application/views/dashboard/index.php:515
+#: application/views/dashboard/index.php:549
+#: application/views/dashboard/index.php:578
+#: application/views/dashboard/index.php:607
+#: application/views/dashboard/index.php:636
 #: application/views/simplefle/index.php:27
 #: application/views/statistics/qsltable.php:88
 #: application/views/statistics/qsltable.php:150
@@ -7311,11 +7374,11 @@ msgstr "Predvolené dátumy"
 #: application/views/awards/wae/index.php:52
 #: application/views/awards/wwff/index.php:57
 #: application/views/contestcalendar/index.php:44
-#: application/views/dashboard/index.php:517
-#: application/views/dashboard/index.php:551
-#: application/views/dashboard/index.php:580
-#: application/views/dashboard/index.php:609
-#: application/views/dashboard/index.php:638
+#: application/views/dashboard/index.php:516
+#: application/views/dashboard/index.php:550
+#: application/views/dashboard/index.php:579
+#: application/views/dashboard/index.php:608
+#: application/views/dashboard/index.php:637
 #: application/views/gridmap/index.php:47
 #: application/views/logbookadvanced/index.php:349
 #: application/views/statistics/index.php:61
@@ -8493,7 +8556,7 @@ msgid "City"
 msgstr "Mesto"
 
 #: application/views/awards/jcc/index.php:200
-#: application/views/dashboard/index.php:667
+#: application/views/dashboard/index.php:666
 #: application/views/distances/index.php:27
 #: application/views/qslprint/qslprint.php:86
 #: application/views/qslprint/qslprint.php:87
@@ -8850,7 +8913,7 @@ msgstr "Použiť filtre"
 #: application/views/awards/pota/index.php:253
 #: application/views/qso/index.php:337 application/views/qso/index.php:621
 #: application/views/station_profile/create.php:242
-#: application/views/station_profile/edit.php:267
+#: application/views/station_profile/edit.php:264
 #: application/views/user/edit.php:867 application/views/view_log/qso.php:362
 #: application/views/view_log/qso.php:695
 msgid "POTA Reference(s)"
@@ -8938,7 +9001,7 @@ msgstr ""
 
 #: application/views/awards/sig/index.php:25
 #: application/views/station_profile/create.php:255
-#: application/views/station_profile/edit.php:280
+#: application/views/station_profile/edit.php:277
 msgid "Special Interest Group"
 msgstr "Special Interest Group"
 
@@ -8959,10 +9022,6 @@ msgstr "Počet referencií"
 #: application/views/simplefle/index.php:147
 msgid "QSO List"
 msgstr "Zoznam QSO"
-
-#: application/views/awards/sig/qso_list.php:13
-msgid "Reference"
-msgstr "Referencie"
 
 #: application/views/awards/sig/qso_list.php:14
 #: application/views/logbookadvanced/index.php:933
@@ -9048,7 +9107,7 @@ msgstr ""
 #: application/views/awards/sota/index.php:163
 #: application/views/qso/index.php:313 application/views/qso/index.php:595
 #: application/views/station_profile/create.php:214
-#: application/views/station_profile/edit.php:239
+#: application/views/station_profile/edit.php:236
 #: application/views/user/edit.php:859 application/views/view_log/qso.php:348
 #: application/views/view_log/qso.php:681
 msgid "SOTA Reference"
@@ -9609,7 +9668,7 @@ msgstr "Pre tento diplom sa používajú oblasti: WWFF (ADIF: WWFF_REF)"
 #: application/views/awards/wwff/index.php:163
 #: application/views/qso/index.php:325 application/views/qso/index.php:608
 #: application/views/station_profile/create.php:228
-#: application/views/station_profile/edit.php:253
+#: application/views/station_profile/edit.php:250
 #: application/views/user/edit.php:863 application/views/view_log/qso.php:355
 #: application/views/view_log/qso.php:688
 msgid "WWFF Reference"
@@ -10170,6 +10229,7 @@ msgid "No spots found"
 msgstr "Žiadne spoty neboli nájdené"
 
 #: application/views/bandmap/list.php:156
+#: application/views/widgets/lotw_upload.php:112
 msgid "No data available"
 msgstr "Nie sú k dispozícii žiadne údaje"
 
@@ -10798,14 +10858,6 @@ msgstr "Prvé QSO"
 #: application/views/stationsetup/stationsetup.php:159
 msgid "Last QSO"
 msgstr "Posledné QSO"
-
-#: application/views/calltester/call_info.php:30
-#: application/views/labels/index.php:82
-#: application/views/logbookadvanced/statecheckresult.php:12
-#: application/views/statistics/index.php:113
-#: application/views/statistics/index.php:161
-msgid "QSOs"
-msgstr "Spojenia"
 
 #: application/views/calltester/call_info.php:47
 #, php-format
@@ -11916,7 +11968,7 @@ msgid "Time window"
 msgstr ""
 
 #: application/views/contesting/logger/components/winkeyer.php:4
-#: application/views/user/edit.php:1284
+#: application/views/user/edit.php:1310
 msgid "Winkeyer"
 msgstr "Winkeyer"
 
@@ -12435,7 +12487,7 @@ msgstr ""
 
 #: application/views/contesting/manager/components/session_modal.php:143
 msgid ""
-"When enabled, the sent serial number starts at 1 on each band instead of "
+"If enabled, the sent serial number starts at 1 on each band instead of "
 "running continuously across the whole contest (required by some multi-op "
 "categories)."
 msgstr ""
@@ -12628,12 +12680,12 @@ msgstr ""
 #: application/views/station_profile/create.php:389
 #: application/views/station_profile/create.php:409
 #: application/views/station_profile/create.php:416
-#: application/views/station_profile/edit.php:355
-#: application/views/station_profile/edit.php:363
-#: application/views/station_profile/edit.php:393
-#: application/views/station_profile/edit.php:420
-#: application/views/station_profile/edit.php:440
-#: application/views/station_profile/edit.php:447
+#: application/views/station_profile/edit.php:352
+#: application/views/station_profile/edit.php:360
+#: application/views/station_profile/edit.php:390
+#: application/views/station_profile/edit.php:417
+#: application/views/station_profile/edit.php:437
+#: application/views/station_profile/edit.php:444
 #: application/views/stationsetup/locationlist.php:49
 #: application/views/stationsetup/locationlist.php:59
 #: application/views/user/edit.php:1206
@@ -12690,12 +12742,12 @@ msgstr "Áno"
 #: application/views/station_profile/create.php:390
 #: application/views/station_profile/create.php:408
 #: application/views/station_profile/create.php:415
-#: application/views/station_profile/edit.php:356
-#: application/views/station_profile/edit.php:364
-#: application/views/station_profile/edit.php:394
-#: application/views/station_profile/edit.php:421
-#: application/views/station_profile/edit.php:439
-#: application/views/station_profile/edit.php:446
+#: application/views/station_profile/edit.php:353
+#: application/views/station_profile/edit.php:361
+#: application/views/station_profile/edit.php:391
+#: application/views/station_profile/edit.php:418
+#: application/views/station_profile/edit.php:436
+#: application/views/station_profile/edit.php:443
 #: application/views/stationsetup/locationlist.php:47
 #: application/views/stationsetup/locationlist.php:57
 #: application/views/user/edit.php:676 application/views/user/edit.php:680
@@ -13041,10 +13093,10 @@ msgstr "Identifikátor"
 #: application/views/options/appearance.php:48
 #: application/views/options/appearance.php:57
 #: application/views/station_profile/create.php:312
-#: application/views/station_profile/edit.php:338
+#: application/views/station_profile/edit.php:335
 #: application/views/stationsetup/stationsetup.php:104
 #: application/views/user/edit.php:533 application/views/user/edit.php:534
-#: application/views/user/edit.php:1169
+#: application/views/user/edit.php:1169 application/views/user/edit.php:1249
 msgid "Enabled"
 msgstr "Povolené"
 
@@ -13428,16 +13480,16 @@ msgstr "Podrobnosti"
 msgid "DXCCs Breakdown"
 msgstr "Rozpis DXCC"
 
-#: application/views/dashboard/index.php:499
-#: application/views/visitor/index.php:279
+#: application/views/dashboard/index.php:498
+#: application/views/visitor/index.php:277
 msgid "Needed"
 msgstr "Chýbajúce"
 
-#: application/views/dashboard/index.php:521
-#: application/views/dashboard/index.php:555
-#: application/views/dashboard/index.php:584
-#: application/views/dashboard/index.php:613
-#: application/views/dashboard/index.php:642
+#: application/views/dashboard/index.php:520
+#: application/views/dashboard/index.php:554
+#: application/views/dashboard/index.php:583
+#: application/views/dashboard/index.php:612
+#: application/views/dashboard/index.php:641
 #: application/views/oqrs/qsolist.php:51 application/views/oqrs/qsolist.php:131
 #: application/views/oqrs/qsolist.php:160
 #: application/views/qslprint/qsolist.php:84
@@ -13461,9 +13513,9 @@ msgstr "Chýbajúce"
 #: application/views/view_log/partial/log_ajax.php:429
 #: application/views/view_log/partial/log_ajax.php:486
 #: application/views/view_log/partial/log_ajax.php:539
-#: application/views/visitor/index.php:291
-#: application/views/visitor/index.php:314
-#: application/views/visitor/index.php:332
+#: application/views/visitor/index.php:289
+#: application/views/visitor/index.php:312
+#: application/views/visitor/index.php:330
 #: application/views/widgets/qsos.php:19 src/QSLManager/QSO.php:420
 #: src/QSLManager/QSO.php:521 src/QSLManager/QSO.php:575
 #: src/QSLManager/QSO.php:664 src/QSLManager/QSO.php:721
@@ -13471,11 +13523,11 @@ msgstr "Chýbajúce"
 msgid "Sent"
 msgstr "Odoslané"
 
-#: application/views/dashboard/index.php:526
-#: application/views/dashboard/index.php:560
-#: application/views/dashboard/index.php:589
-#: application/views/dashboard/index.php:618
-#: application/views/dashboard/index.php:647
+#: application/views/dashboard/index.php:525
+#: application/views/dashboard/index.php:559
+#: application/views/dashboard/index.php:588
+#: application/views/dashboard/index.php:617
+#: application/views/dashboard/index.php:646
 #: application/views/oqrs/qsolist.php:93 application/views/oqrs/qsolist.php:144
 #: application/views/oqrs/qsolist.php:175
 #: application/views/qslprint/qsolist.php:126
@@ -13499,16 +13551,16 @@ msgstr "Odoslané"
 #: application/views/view_log/partial/log_ajax.php:460
 #: application/views/view_log/partial/log_ajax.php:517
 #: application/views/view_log/partial/log_ajax.php:562
-#: application/views/visitor/index.php:296
-#: application/views/visitor/index.php:319
-#: application/views/visitor/index.php:337 src/QSLManager/QSO.php:465
+#: application/views/visitor/index.php:294
+#: application/views/visitor/index.php:317
+#: application/views/visitor/index.php:335 src/QSLManager/QSO.php:465
 #: src/QSLManager/QSO.php:548 src/QSLManager/QSO.php:625
 #: src/QSLManager/QSO.php:691 src/QSLManager/QSO.php:771
 #: src/QSLManager/QSO.php:838
 msgid "Received"
 msgstr "Došlé"
 
-#: application/views/dashboard/index.php:531
+#: application/views/dashboard/index.php:530
 #: application/views/logbookadvanced/edit.php:182
 #: application/views/logbookadvanced/edit.php:189
 #: application/views/logbookadvanced/edit.php:215
@@ -13545,7 +13597,7 @@ msgstr "Došlé"
 #: application/views/view_log/partial/log_ajax.php:408
 #: application/views/view_log/partial/log_ajax.php:545
 #: application/views/view_log/partial/log_ajax.php:568
-#: application/views/visitor/index.php:301 src/QSLManager/QSO.php:426
+#: application/views/visitor/index.php:299 src/QSLManager/QSO.php:426
 #: src/QSLManager/QSO.php:471 src/QSLManager/QSO.php:533
 #: src/QSLManager/QSO.php:556 src/QSLManager/QSO.php:670
 #: src/QSLManager/QSO.php:697 src/QSLManager/QSO.php:822
@@ -13553,19 +13605,19 @@ msgstr "Došlé"
 msgid "Requested"
 msgstr "Požadované"
 
-#: application/views/dashboard/index.php:543
-#: application/views/dashboard/index.php:546
+#: application/views/dashboard/index.php:542
+#: application/views/dashboard/index.php:545
 msgctxt "Probably no translation needed as this is a name."
 msgid "Logbook of the World"
 msgstr "Logbook of the World"
 
-#: application/views/dashboard/index.php:633
+#: application/views/dashboard/index.php:632
 #: application/views/user/edit.php:1121
 msgid "Club Log"
 msgstr "ClubLog"
 
-#: application/views/dashboard/index.php:659
-#: application/views/dashboard/index.php:662
+#: application/views/dashboard/index.php:658
+#: application/views/dashboard/index.php:661
 msgid "VUCC-Grids"
 msgstr "VUCC-grids"
 
@@ -13991,7 +14043,7 @@ msgstr ""
 msgid "Uptime"
 msgstr ""
 
-#: application/views/debug/index.php:156 application/views/debug/index.php:875
+#: application/views/debug/index.php:156 application/views/debug/index.php:881
 msgid "Online"
 msgstr ""
 
@@ -14202,6 +14254,7 @@ msgstr "Pobočka"
 #: application/views/debug/index.php:650 application/views/debug/index.php:661
 #: application/views/debug/index.php:671
 #: application/views/lotw_views/index.php:104
+#: application/views/widgets/lotw_upload.php:106
 msgid "n/a"
 msgstr "n/a"
 
@@ -14250,7 +14303,7 @@ msgstr "Aktualizácia DXCC z Club Log"
 #: application/views/debug/index.php:744 application/views/debug/index.php:750
 #: application/views/debug/index.php:756 application/views/debug/index.php:762
 #: application/views/debug/index.php:768 application/views/debug/index.php:774
-#: application/views/debug/index.php:780
+#: application/views/debug/index.php:780 application/views/debug/index.php:786
 #: application/views/station_profile/edit.php:53
 msgid "Update"
 msgstr "Aktualizovať"
@@ -14268,38 +14321,42 @@ msgid "POTA file download"
 msgstr "Stiahnutie súboru POTA"
 
 #: application/views/debug/index.php:741
+msgid "POTA park boundaries (GeoJSON)"
+msgstr ""
+
+#: application/views/debug/index.php:747
 msgid "SCP file download"
 msgstr "Stiahnuť súbor SCP"
 
-#: application/views/debug/index.php:747
+#: application/views/debug/index.php:753
 msgid "SOTA file download"
 msgstr "Stiahnutie súboru SOTA"
 
-#: application/views/debug/index.php:753
+#: application/views/debug/index.php:759
 msgid "WWFF file download"
 msgstr "Stiahnutie súboru WWFF"
 
-#: application/views/debug/index.php:759
+#: application/views/debug/index.php:765
 msgid "TLE update"
 msgstr "Aktualizácia TLE"
 
-#: application/views/debug/index.php:765
+#: application/views/debug/index.php:771
 msgid "Hams Of Note update"
 msgstr "Aktualizácia Hams Of Note"
 
-#: application/views/debug/index.php:771
+#: application/views/debug/index.php:777
 msgid "HAMqsl"
 msgstr "HAMqsl"
 
-#: application/views/debug/index.php:777
+#: application/views/debug/index.php:783
 msgid "VUCC Grids"
 msgstr "VUCC Grids"
 
-#: application/views/debug/index.php:787
+#: application/views/debug/index.php:793
 msgid "QSO-DB Maintenance"
 msgstr "Údržba QSO-DB"
 
-#: application/views/debug/index.php:791
+#: application/views/debug/index.php:797
 #, php-format
 msgid "The Database contains %d QSO without a station-profile (location)"
 msgid_plural ""
@@ -14308,176 +14365,176 @@ msgstr[0] "Databáza obsahuje %d spojenie bez profilu stanice (lokácie)"
 msgstr[1] "Databáza obsahuje %d spojenia bez profilu stanice (lokácie)"
 msgstr[2] "Databáza obsahuje %d spojení bez profilu stanice (lokácie)"
 
-#: application/views/debug/index.php:829
+#: application/views/debug/index.php:835
 msgid "Please mark QSOs and reassign them to an existing station location:"
 msgstr "Prosím označ spojenia a priraď ich k existujúcej polohe stanice:"
 
-#: application/views/debug/index.php:837
+#: application/views/debug/index.php:843
 msgctxt "Stationlocation"
 msgid "Target Location"
 msgstr "Cieľové miesto"
 
-#: application/views/debug/index.php:838 application/views/debug/index.php:849
+#: application/views/debug/index.php:844 application/views/debug/index.php:855
 msgid "Reassign"
 msgstr "Zmeniť priradenie"
 
-#: application/views/debug/index.php:858
+#: application/views/debug/index.php:864
 msgid "Every QSO in your Database is assigned to a station-profile (location)"
 msgstr ""
 "Každé QSO vo vašej databáze je priradené k profilu stanice (polohe)Každé "
 "spojenie vo vašej databáze je priradené k profilu stanice (miestu)"
 
-#: application/views/debug/index.php:858
+#: application/views/debug/index.php:864
 msgid "Everything ok"
 msgstr "Všetko v poriadku"
 
-#: application/views/debug/index.php:876
+#: application/views/debug/index.php:882
 msgid "Degraded"
 msgstr ""
 
-#: application/views/debug/index.php:877
+#: application/views/debug/index.php:883
 msgid "Worker backend is not configured."
 msgstr ""
 
-#: application/views/debug/index.php:878
+#: application/views/debug/index.php:884
 msgid "Unreachable"
 msgstr ""
 
-#: application/views/debug/index.php:878
+#: application/views/debug/index.php:884
 msgid "Worker is configured but did not respond."
 msgstr ""
 
-#: application/views/debug/index.php:879
+#: application/views/debug/index.php:885
 msgid "Outdated"
 msgstr ""
 
-#: application/views/debug/index.php:879
+#: application/views/debug/index.php:885
 msgid ""
 "Please update your Wavelog Worker to version 0.2.0 or newer to see the "
 "status."
 msgstr ""
 
-#: application/views/debug/index.php:898
+#: application/views/debug/index.php:904
 msgid "Albanian"
 msgstr "Albánčina"
 
-#: application/views/debug/index.php:899
+#: application/views/debug/index.php:905
 msgid "Armenian"
 msgstr "Arménčina"
 
-#: application/views/debug/index.php:900
+#: application/views/debug/index.php:906
 msgid "Bosnian"
 msgstr "Bosniančina"
 
-#: application/views/debug/index.php:901
+#: application/views/debug/index.php:907
 msgid "Bulgarian"
 msgstr "Bulharčina"
 
-#: application/views/debug/index.php:902
+#: application/views/debug/index.php:908
 msgid "Chinese (Simplified)"
 msgstr "Čínština (zjednodušená)"
 
-#: application/views/debug/index.php:903
+#: application/views/debug/index.php:909
 msgid "Croatian"
 msgstr "Chorvátčina"
 
-#: application/views/debug/index.php:904
+#: application/views/debug/index.php:910
 msgid "Czech"
 msgstr "Čeština"
 
-#: application/views/debug/index.php:905
+#: application/views/debug/index.php:911
 msgid "Dutch"
 msgstr "Holandčina"
 
-#: application/views/debug/index.php:906
+#: application/views/debug/index.php:912
 msgid "English"
 msgstr "Angličtina"
 
-#: application/views/debug/index.php:907
+#: application/views/debug/index.php:913
 msgid "Estonian"
 msgstr "Estónčina"
 
-#: application/views/debug/index.php:908
+#: application/views/debug/index.php:914
 msgid "Finnish"
 msgstr "Fínčina"
 
-#: application/views/debug/index.php:909
+#: application/views/debug/index.php:915
 msgid "French"
 msgstr "Francúzština"
 
-#: application/views/debug/index.php:910
+#: application/views/debug/index.php:916
 msgid "German"
 msgstr "Nemčina"
 
-#: application/views/debug/index.php:911
+#: application/views/debug/index.php:917
 msgid "Greek"
 msgstr "Gréčtina"
 
-#: application/views/debug/index.php:912
+#: application/views/debug/index.php:918
 msgid "Hungarian"
 msgstr "Maďarčina"
 
-#: application/views/debug/index.php:913
+#: application/views/debug/index.php:919
 msgid "Italian"
 msgstr "Taliančina"
 
-#: application/views/debug/index.php:914
+#: application/views/debug/index.php:920
 msgid "Japanese"
 msgstr "Japončina"
 
-#: application/views/debug/index.php:915
+#: application/views/debug/index.php:921
 msgid "Latvian"
 msgstr "Lotyščina"
 
-#: application/views/debug/index.php:916
+#: application/views/debug/index.php:922
 msgid "Lithuanian"
 msgstr "Litovčina"
 
-#: application/views/debug/index.php:917
+#: application/views/debug/index.php:923
 msgid "Montenegrin"
 msgstr "Čiernohorčina"
 
-#: application/views/debug/index.php:918
+#: application/views/debug/index.php:924
 msgid "Polish"
 msgstr "Polština"
 
-#: application/views/debug/index.php:919
+#: application/views/debug/index.php:925
 msgid "Portuguese"
 msgstr "Portugalčina"
 
-#: application/views/debug/index.php:920
+#: application/views/debug/index.php:926
 msgid "Romanian"
 msgstr ""
 
-#: application/views/debug/index.php:921
+#: application/views/debug/index.php:927
 msgid "Russian"
 msgstr "Ruština"
 
-#: application/views/debug/index.php:922
+#: application/views/debug/index.php:928
 msgid "Serbian"
 msgstr "Srbčina"
 
-#: application/views/debug/index.php:923
+#: application/views/debug/index.php:929
 msgid "Slovak"
 msgstr "Slovenčina"
 
-#: application/views/debug/index.php:924
+#: application/views/debug/index.php:930
 msgid "Slovenian"
 msgstr "Slovinčina"
 
-#: application/views/debug/index.php:925
+#: application/views/debug/index.php:931
 msgid "Spanish"
 msgstr "Španielčina"
 
-#: application/views/debug/index.php:926
+#: application/views/debug/index.php:932
 msgid "Swedish"
 msgstr "Švédčina"
 
-#: application/views/debug/index.php:927
+#: application/views/debug/index.php:933
 msgid "Turkish"
 msgstr "Turečtina"
 
-#: application/views/debug/index.php:928
+#: application/views/debug/index.php:934
 msgid "Ukrainian"
 msgstr "Ukrajinský"
 
@@ -19431,11 +19488,6 @@ msgstr "Dátum QSO"
 msgid "Confirmation date"
 msgstr "Potvrdené dňa"
 
-#: application/views/qslcard/confirmationresult.php:21
-#: application/views/user/index.php:30
-msgid "Type"
-msgstr "Typ"
-
 #: application/views/qslcard/confirmationresult.php:54
 msgid "No confirmations found."
 msgstr "Neboli nájdené žiadne potvrdenia."
@@ -20077,6 +20129,14 @@ msgstr "Postuj na Bluesky"
 msgid "Toot on Mastodon"
 msgstr "Pípanie na Mastodone"
 
+#: application/views/qso/components/share_modal.php:14
+msgid "Share on Telegram"
+msgstr ""
+
+#: application/views/qso/components/share_modal.php:17
+msgid "Share on Whatsapp"
+msgstr ""
+
 #: application/views/qso/components/winkeysettings.php:15
 #: application/views/qso/components/winkeysettings.php:32
 msgid "Macro"
@@ -20092,7 +20152,7 @@ msgstr ""
 
 #: application/views/qso/components/winkeysettings.php:49
 msgid ""
-"When enabled, the Enter key drives the QSO: empty call sends CQ, an unclear "
+"If enabled, the Enter key drives the QSO: empty call sends CQ, an unclear "
 "call (with \"?\") asks again, a full call without exchange sends the report, "
 "and a complete QSO is logged with a TU. In S&P mode the first Enter sends "
 "only your own call, and logging sends your report instead of a TU. Alt+Enter "
@@ -20212,7 +20272,7 @@ msgstr "Elevácia antény v desatinných stupňoch."
 
 #: application/views/qso/edit_ajax.php:347 application/views/qso/index.php:572
 #: application/views/station_profile/create.php:114
-#: application/views/station_profile/edit.php:139
+#: application/views/station_profile/edit.php:136
 msgid "Station County"
 msgstr "Okres stanice"
 
@@ -20408,7 +20468,7 @@ msgstr "Prehľadaj DXCluster pre najnovší spot"
 
 #: application/views/qso/index.php:297 application/views/qso/index.php:578
 #: application/views/station_profile/create.php:188
-#: application/views/station_profile/edit.php:213
+#: application/views/station_profile/edit.php:210
 #: application/views/user/edit.php:855 application/views/view_log/qso.php:341
 #: application/views/view_log/qso.php:674
 msgid "IOTA Reference"
@@ -21443,17 +21503,17 @@ msgid "Station city. For example: Oslo"
 msgstr "Mesto stanice. Napríklad: Oslo"
 
 #: application/views/station_profile/create.php:109
-#: application/views/station_profile/edit.php:134
+#: application/views/station_profile/edit.php:131
 msgid "Station state. Applies to certain countries only."
 msgstr "Štát stanice. Platí len pre určité krajiny."
 
 #: application/views/station_profile/create.php:116
-#: application/views/station_profile/edit.php:141
+#: application/views/station_profile/edit.php:138
 msgid "Station County (Only used for specific DXCCs)."
 msgstr "Kraj stanice (iba pre niektoré DXCC)."
 
 #: application/views/station_profile/create.php:139
-#: application/views/station_profile/edit.php:164
+#: application/views/station_profile/edit.php:161
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your CQ Zone then %s to find it!"
@@ -21462,14 +21522,14 @@ msgstr "Ak nevieš, v ktorej CQ zóne sa nachádzaš, potom %s, aby si to zistil
 #: application/views/station_profile/create.php:139
 #: application/views/station_profile/create.php:154
 #: application/views/station_profile/create.php:175
-#: application/views/station_profile/edit.php:164
-#: application/views/station_profile/edit.php:179
-#: application/views/station_profile/edit.php:200
+#: application/views/station_profile/edit.php:161
+#: application/views/station_profile/edit.php:176
+#: application/views/station_profile/edit.php:197
 msgid "click here"
 msgstr "klikni sem"
 
 #: application/views/station_profile/create.php:154
-#: application/views/station_profile/edit.php:179
+#: application/views/station_profile/edit.php:176
 #, php-format
 msgctxt "uses 'click here'"
 msgid "If you don't know your ITU Zone then %s to find it!"
@@ -21477,18 +21537,18 @@ msgstr "Ak nevieš svoju ITU zónu, potom %s aby si ju zistil!"
 
 #: application/views/station_profile/create.php:165
 #: application/views/station_profile/create.php:168
+#: application/views/station_profile/edit.php:187
 #: application/views/station_profile/edit.php:190
-#: application/views/station_profile/edit.php:193
 msgid "Station Gridsquare"
 msgstr "Lokátor stanice"
 
 #: application/views/station_profile/create.php:172
-#: application/views/station_profile/edit.php:197
+#: application/views/station_profile/edit.php:194
 msgid "Get Gridsquare"
 msgstr "Získaj lokátor"
 
 #: application/views/station_profile/create.php:175
-#: application/views/station_profile/edit.php:200
+#: application/views/station_profile/edit.php:197
 #, php-format
 msgctxt "uses 'click here'"
 msgid ""
@@ -21497,7 +21557,7 @@ msgid ""
 msgstr "Lokátor stanice. Napríklad: HM54AP. Ak neviete svoj lokátor, potom %s!"
 
 #: application/views/station_profile/create.php:176
-#: application/views/station_profile/edit.php:201
+#: application/views/station_profile/edit.php:198
 msgid ""
 "If you are located on a grid line, enter multiple grid squares separated "
 "with commas. For example: IO77,IO78,IO87,IO88."
@@ -21507,50 +21567,50 @@ msgstr ""
 "lokátorovej línii, zadaj viacero lokátorových štvorcov"
 
 #: application/views/station_profile/create.php:199
-#: application/views/station_profile/edit.php:224
+#: application/views/station_profile/edit.php:221
 msgid "Station IOTA reference. For example: EU-005"
 msgstr "IOTA referencia stanice. Napríklad: EU-005"
 
 #: application/views/station_profile/create.php:200
-#: application/views/station_profile/edit.php:225
+#: application/views/station_profile/edit.php:222
 msgid "IOTA World website"
 msgstr "IOTA World webstránka"
 
 #: application/views/station_profile/create.php:200
-#: application/views/station_profile/edit.php:225
+#: application/views/station_profile/edit.php:222
 #, php-format
 msgid "You can look up IOTA references at the %s."
 msgstr "Môžeš si vyhľadať IOTA referencie na %s."
 
 #: application/views/station_profile/create.php:216
-#: application/views/station_profile/edit.php:241
+#: application/views/station_profile/edit.php:238
 msgid "SOTA Maps website"
 msgstr "Webová stránka SOTA Maps"
 
 #: application/views/station_profile/create.php:216
-#: application/views/station_profile/edit.php:241
+#: application/views/station_profile/edit.php:238
 #, php-format
 msgid "Station SOTA reference. You can look up SOTA references at the %s."
 msgstr "SOTA referencie stanice. SOTA referencie môžeš vyhľadať na %s."
 
 #: application/views/station_profile/create.php:230
-#: application/views/station_profile/edit.php:255
+#: application/views/station_profile/edit.php:252
 msgid "GMA Map website"
 msgstr "Webová stránka GMA Map"
 
 #: application/views/station_profile/create.php:230
-#: application/views/station_profile/edit.php:255
+#: application/views/station_profile/edit.php:252
 #, php-format
 msgid "Station WWFF reference. You can look up WWFF references at the %s."
 msgstr "WWFF referencia stanice. WWFF referencie môžete vyhľadať na %s."
 
 #: application/views/station_profile/create.php:244
-#: application/views/station_profile/edit.php:269
+#: application/views/station_profile/edit.php:266
 msgid "POTA Map website"
 msgstr "POTA Map webstránka"
 
 #: application/views/station_profile/create.php:244
-#: application/views/station_profile/edit.php:269
+#: application/views/station_profile/edit.php:266
 #, php-format
 msgid ""
 "Station POTA reference(s). Multiple comma separated values allowed. You can "
@@ -21562,50 +21622,50 @@ msgstr ""
 "vyhľadať na %s."
 
 #: application/views/station_profile/create.php:258
-#: application/views/station_profile/edit.php:283
+#: application/views/station_profile/edit.php:280
 msgid "Special Interest Group Name"
 msgstr "Názov špeciálnej záujmovej skupiny"
 
 #: application/views/station_profile/create.php:260
-#: application/views/station_profile/edit.php:285
+#: application/views/station_profile/edit.php:282
 msgid "Station Special Interest Group Name (e.g. GMA)."
 msgstr "Názov špeciálnej záujmovej skupiny stanice (napr. GMA)."
 
 #: application/views/station_profile/create.php:263
-#: application/views/station_profile/edit.php:288
+#: application/views/station_profile/edit.php:285
 msgid "Special Interest Group Information"
 msgstr "Informácie o skupine so špeciálnymi záujmami"
 
 #: application/views/station_profile/create.php:265
-#: application/views/station_profile/edit.php:290
+#: application/views/station_profile/edit.php:287
 msgid "Station Special Interest Group Info (e.g. DA/NW-357)."
 msgstr "Informácie o skupine osobitného záujmu stanice (napr. DA/NW-357)."
 
 #: application/views/station_profile/create.php:276
-#: application/views/station_profile/edit.php:301
+#: application/views/station_profile/edit.php:298
 #: application/views/user/edit.php:1095
 #, php-format
 msgid "Trouble? Check the %swiki%s."
 msgstr "Problémy? Mrkni na %swiki%s."
 
 #: application/views/station_profile/create.php:279
-#: application/views/station_profile/edit.php:304
+#: application/views/station_profile/edit.php:301
 msgctxt "Probably no translation needed"
 msgid "eQSL QTH Nickname"
 msgstr "eQSL QTH nick"
 
 #: application/views/station_profile/create.php:281
-#: application/views/station_profile/edit.php:306
+#: application/views/station_profile/edit.php:303
 msgid "The QTH Nickname which is configured in your eQSL Profile"
 msgstr "QTH nick, ktorá je nakonfigurovaná vo vašom eQSL profile"
 
 #: application/views/station_profile/create.php:284
-#: application/views/station_profile/edit.php:309
+#: application/views/station_profile/edit.php:306
 msgid "Default QSLMSG"
 msgstr "Predvolená QSLMSG"
 
 #: application/views/station_profile/create.php:287
-#: application/views/station_profile/edit.php:312
+#: application/views/station_profile/edit.php:309
 msgid ""
 "Define a default message that will be populated and sent for each QSO for "
 "this station location."
@@ -21615,7 +21675,7 @@ msgstr ""
 "pri každom QSO z tejto stanice."
 
 #: application/views/station_profile/create.php:296
-#: application/views/station_profile/edit.php:321
+#: application/views/station_profile/edit.php:318
 msgid "Subscription Required"
 msgstr "Vyžaduje sa predplatné"
 
@@ -21624,35 +21684,35 @@ msgid "Test API-Key"
 msgstr "Otestovať API kľúč"
 
 #: application/views/station_profile/create.php:305
-#: application/views/station_profile/edit.php:331
+#: application/views/station_profile/edit.php:328
 #, php-format
 msgctxt "the QRZ.com Logbook settings page"
 msgid "Find your API key on %s"
 msgstr "Nájdi svoj API kľúč na %s"
 
 #: application/views/station_profile/create.php:305
-#: application/views/station_profile/edit.php:331
+#: application/views/station_profile/edit.php:328
 msgid "the QRZ.com Logbook settings page"
 msgstr "stránka s nastaveniami logbooku QRZ.com"
 
 #: application/views/station_profile/create.php:308
-#: application/views/station_profile/edit.php:334
+#: application/views/station_profile/edit.php:331
 msgid "QRZ.com Logbook Upload"
 msgstr "QRZ.com logbook upload"
 
 #: application/views/station_profile/create.php:311
-#: application/views/station_profile/edit.php:337
+#: application/views/station_profile/edit.php:334
 #: application/views/stationsetup/locationlist.php:51
 msgid "Realtime"
 msgstr "V reálnom čase"
 
 #: application/views/station_profile/create.php:327
-#: application/views/station_profile/edit.php:353
+#: application/views/station_profile/edit.php:350
 msgid "Ignore Clublog Upload"
 msgstr "Ignorovať upload Clublog"
 
 #: application/views/station_profile/create.php:332
-#: application/views/station_profile/edit.php:358
+#: application/views/station_profile/edit.php:355
 msgid ""
 "If enabled, the QSOs made from this location will not be uploaded to "
 "Clublog. If this is deactivated on it's own please check if the Call is "
@@ -21665,17 +21725,17 @@ msgstr ""
 "je volačka správne nakonfigurovaná na Clublog"
 
 #: application/views/station_profile/create.php:335
-#: application/views/station_profile/edit.php:361
+#: application/views/station_profile/edit.php:358
 msgid "ClubLog Realtime Upload"
 msgstr "ClubLog upload v reálnom čase"
 
 #: application/views/station_profile/create.php:353
-#: application/views/station_profile/edit.php:378
+#: application/views/station_profile/edit.php:375
 msgid "HRDLog.net Username"
 msgstr "HRDLog.net používateľské meno"
 
 #: application/views/station_profile/create.php:355
-#: application/views/station_profile/edit.php:380
+#: application/views/station_profile/edit.php:377
 msgid ""
 "The username you are registered with at HRDlog.net (usually your callsign)."
 msgstr ""
@@ -21683,76 +21743,76 @@ msgstr ""
 "volací znak)."
 
 #: application/views/station_profile/create.php:358
-#: application/views/station_profile/edit.php:383
+#: application/views/station_profile/edit.php:380
 msgid "HRDLog.net API Key"
 msgstr "HRDLog.net API kľúč"
 
 #: application/views/station_profile/create.php:360
-#: application/views/station_profile/edit.php:388
+#: application/views/station_profile/edit.php:385
 #, php-format
 msgctxt "HRDLog.net Userprofile page"
 msgid "Create your API Code on your %s"
 msgstr "Vytvor si svoj API kód na tvojom %s"
 
 #: application/views/station_profile/create.php:360
-#: application/views/station_profile/edit.php:388
+#: application/views/station_profile/edit.php:385
 msgid "HRDLog.net Userprofile page"
 msgstr "Stránka používateľského profilu HRDLog.net"
 
 #: application/views/station_profile/create.php:363
-#: application/views/station_profile/edit.php:391
+#: application/views/station_profile/edit.php:388
 msgid "HRDLog.net Logbook Realtime Upload"
 msgstr "HRDLog.net logbook upload v reálnom čase"
 
 #: application/views/station_profile/create.php:382
-#: application/views/station_profile/edit.php:410
+#: application/views/station_profile/edit.php:407
 msgctxt "Probably no translation needed"
 msgid "QO-100 Dx Club API Key"
 msgstr "API kľúč QO-100 Dx klubu"
 
 #: application/views/station_profile/create.php:384
-#: application/views/station_profile/edit.php:415
+#: application/views/station_profile/edit.php:412
 #, php-format
 msgctxt "QO-100 Dx Club's profile page"
 msgid "Create your API key on your %s"
 msgstr "Vytvorte svoj API kľúč na svojom %s"
 
 #: application/views/station_profile/create.php:384
-#: application/views/station_profile/edit.php:415
+#: application/views/station_profile/edit.php:412
 msgid "QO-100 Dx Club's profile page"
 msgstr "Profilová stránka QO-100 Dx Clubu"
 
 #: application/views/station_profile/create.php:387
-#: application/views/station_profile/edit.php:418
+#: application/views/station_profile/edit.php:415
 msgid "QO-100 Dx Club Realtime Upload"
 msgstr "QO-100 Dx Club upload v reálnom čase"
 
 #: application/views/station_profile/create.php:406
-#: application/views/station_profile/edit.php:437
+#: application/views/station_profile/edit.php:434
 msgid "OQRS Enabled"
 msgstr "OQRS povolené"
 
 #: application/views/station_profile/create.php:413
-#: application/views/station_profile/edit.php:444
+#: application/views/station_profile/edit.php:441
 #: application/views/stationsetup/locationlist.php:33
 msgid "OQRS Email alert"
 msgstr "OQRS e-mailové upozornenie"
 
 #: application/views/station_profile/create.php:418
-#: application/views/station_profile/edit.php:449
+#: application/views/station_profile/edit.php:446
 msgid "Make sure email is set up under admin and global options."
 msgstr ""
 "Uistite sa, že e-mail je nastavený v správe a globálnych možnostiach.Uisti "
 "sa, že e-mail je nastavený pod administrátorom a globálnymi možnosťami."
 
 #: application/views/station_profile/create.php:421
-#: application/views/station_profile/edit.php:452
+#: application/views/station_profile/edit.php:449
 #: application/views/stationsetup/locationlist.php:32
 msgid "OQRS Text"
 msgstr "Text OQRS"
 
 #: application/views/station_profile/create.php:423
-#: application/views/station_profile/edit.php:454
+#: application/views/station_profile/edit.php:451
 msgid "Some info you want to add regarding QSL'ing."
 msgstr "Niektoré informácie, ktoré chceš pridať k QSL."
 
@@ -23029,9 +23089,9 @@ msgstr ""
 "a funkčné aspoň jedno CAT rádio.Všimnite si, že na používanie tohto widgetu "
 "musíte mať nakonfigurované a funkčné aspoň jedno CAT rádio."
 
-#: application/views/user/edit.php:1175
+#: application/views/user/edit.php:1175 application/views/user/edit.php:1253
 #, php-format
-msgid "When enabled, widget will be available at %s."
+msgid "If enabled, widget will be available at %s."
 msgstr "Keď je povolený, widget bude dostupný na %s."
 
 #: application/views/user/edit.php:1187
@@ -23097,36 +23157,40 @@ msgstr ""
 "alebo nie.Toto nastavenie kontroluje, či sa má vo widgete QSO zobraziť "
 "presný čas QSO"
 
-#: application/views/user/edit.php:1243
+#: application/views/user/edit.php:1240
+msgid "Last LoTW Upload widget"
+msgstr ""
+
+#: application/views/user/edit.php:1269
 msgid "Miscellaneous"
 msgstr "Rôzne"
 
-#: application/views/user/edit.php:1251
+#: application/views/user/edit.php:1277
 msgid "AMSAT Status Upload"
 msgstr "Upload AMSAT statusu"
 
-#: application/views/user/edit.php:1260
+#: application/views/user/edit.php:1286
 msgid "Upload status of SAT QSOs to"
 msgstr "Nahratie stavu SAT QSOs na"
 
-#: application/views/user/edit.php:1270
+#: application/views/user/edit.php:1296
 msgid "Mastodonserver"
 msgstr "Mastodon server"
 
-#: application/views/user/edit.php:1273
+#: application/views/user/edit.php:1299
 msgid "URL of Mastodonserver"
 msgstr "URL servera Mastodon"
 
-#: application/views/user/edit.php:1275
+#: application/views/user/edit.php:1301
 #, php-format
 msgid "Main URL of your Mastodon server, e.g. %s"
 msgstr "Hlavná URL adresa vášho Mastodon servera, napr. %s"
 
-#: application/views/user/edit.php:1293
+#: application/views/user/edit.php:1319
 msgid "Winkeyer Features Enabled"
 msgstr "Povolené funkcie Winkeyer"
 
-#: application/views/user/edit.php:1294
+#: application/views/user/edit.php:1320
 #, php-format
 msgid ""
 "Winkeyer support in Wavelog is very experimental. Read the wiki first at %s "
@@ -23136,25 +23200,25 @@ msgstr ""
 "najskôr prečítajte wiki na %s.Podpora Winkeyer vo Wavelog je veľmi "
 "experimentálna. Najprv si prečítaj wiki na %s, než to povolíš."
 
-#: application/views/user/edit.php:1306
+#: application/views/user/edit.php:1332
 msgid "Hams.at"
 msgstr "Hams.at"
 
-#: application/views/user/edit.php:1309
+#: application/views/user/edit.php:1335
 msgid "Private Feed Key"
 msgstr "Súkromný kľúč kanála"
 
-#: application/views/user/edit.php:1311
+#: application/views/user/edit.php:1337
 #, php-format
 msgctxt "Hint for Hamsat API Key; uses Link"
 msgid "See your profile at %s."
 msgstr "Pozri si svoj profil na %s."
 
-#: application/views/user/edit.php:1320
+#: application/views/user/edit.php:1346
 msgid "Show Workable Passes Only"
 msgstr "Zobraz iba použiteľné oblety"
 
-#: application/views/user/edit.php:1321
+#: application/views/user/edit.php:1347
 msgid ""
 "If enabled shows only workable passes based on the gridsquare set in your "
 "hams.at account. Requires private feed key to be set."
@@ -23165,15 +23229,15 @@ msgstr ""
 "nastaveného lokátora vo vašom účte na hams.at. Vyžaduje nastavenie "
 "privátneho kľúča kanála."
 
-#: application/views/user/edit.php:1334
+#: application/views/user/edit.php:1360
 msgid "Save Account"
 msgstr "Uložiť účet"
 
-#: application/views/user/edit.php:1340
+#: application/views/user/edit.php:1366
 msgid "Search settings"
 msgstr ""
 
-#: application/views/user/edit.php:1342
+#: application/views/user/edit.php:1368
 msgid "No settings match your search."
 msgstr ""
 
@@ -23893,6 +23957,14 @@ msgstr "Označ spojenia ako exportované do QO-100 Dx klubu"
 #: application/views/webadif/mark_webadif.php:16
 msgid "The QSOs are marked as exported to QO-100 Dx Club."
 msgstr "Spojenia sú označené ako exportované do QO-100 Dx Clubu."
+
+#: application/views/widgets/lotw_upload.php:88
+msgid "Last LoTW Uploads"
+msgstr ""
+
+#: application/views/widgets/lotw_upload.php:98
+msgid "Last Upload (UTC)"
+msgstr ""
 
 #: application/views/widgets/on_air.php:159
 #: application/views/widgets/on_air.php:217
